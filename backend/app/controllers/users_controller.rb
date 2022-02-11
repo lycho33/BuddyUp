@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     #user can't vist anything before logging in
-    before_action :logged_in_user, only: [:show]
+    # before_action :logged_in_user, only: [:show]
 
     def show
         @user = User.find(params[:id])
