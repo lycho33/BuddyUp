@@ -11,18 +11,30 @@ function Signup() {
     setUsername(username)
   }
 
+  const handleName = e => {
+    setUsername(e.target.value)
+  }
+
+  const handleEmail = e => {
+    setEmail(e.target.value)
+  }
+
+  const handlePassword = e => {
+    setPassword(e.target.value)
+  }
+
   return (
     <div>
       <h1>Signup</h1>
       <form onSubmit={handleChange}>
         <label>Username</label>
-        <input type="text" value={username} />
+        <input type="text" value={username} onChange={handleName}/>
 
         <label>Email</label>
-        <input type="text" value={email}/>
+        <input type="text" value={email} onChange={handleEmail}/>
         
         <label>Password</label>
-        <input type="text" value={password}/>
+        <input type="text" value={password} onChange={handlePassword}/>
 
         <button type='submit'>Submit</button>
       </form>
