@@ -27,4 +27,14 @@ module SessionsHelper
         redirect_to(session[:forwarding_url] || default)
         session.delete(:forwarding_url)
     end
+    
+    private
+    #store location & redirect to login
+    def logged_in_user
+        unless logged_in?
+            store_location
+            flash[:danger] = "Please log in."
+            redirect_to login_url
+        end
+    end
 end
