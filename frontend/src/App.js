@@ -44,13 +44,11 @@ const App = () => {
 
   return (
     <div className="App">
-      <Login/>
-      <SignUp />
-
+      <h1>APP</h1>
       <Routes>
-        <Route exact path='/' element={Home} />
-        <Route exact path='/login' element={Login} />
-        <Route exact path='/signup' element={Signup} />
+        <Route exact path='/' element={<Home props={isLoggedIn, user} loggedInStatus={isLoggedIn} />} />
+        <Route exact path='/login' element={<Login props={isLoggedIn, user} loggedInStatus={isLoggedIn} />} />
+        <Route exact path='/signup' element={<SignUp props={isLoggedIn, user} loggedInStatus={isLoggedIn} />} />
       </Routes>
     </div>
   );
