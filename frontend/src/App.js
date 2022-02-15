@@ -45,6 +45,7 @@ const App = () => {
   return (
     <div className="App">
       <Login/>
+      <SignUp />
 
       <Routes>
         <Route exact path='/' element={Home} />
