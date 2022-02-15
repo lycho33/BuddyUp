@@ -46,8 +46,8 @@ const App = () => {
     <div className="App">
       <h1>APP</h1>
       <Routes>
-        <Route exact path='/' element={<Home props={isLoggedIn, user} loggedInStatus={isLoggedIn} />} />
-        <Route exact path='/login' element={<Login props={isLoggedIn, user} loggedInStatus={isLoggedIn} />} />
+        <Route exact path='/' element={<Home props={handleLogin, handleLogout, user} loggedInStatus={isLoggedIn} />} />
+        <Route exact path='/login' element={<Login props={handleLogin, handleLogout, user} loggedInStatus={isLoggedIn} />} />
         <Route exact path='/signup' element={<SignUp props={isLoggedIn, user} loggedInStatus={isLoggedIn} />} />
       </Routes>
     </div>
