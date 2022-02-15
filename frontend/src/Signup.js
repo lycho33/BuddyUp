@@ -7,8 +7,9 @@ function Signup() {
   const [passwordConfirm, setPasswordConfirm] = useState('')
 
   const handleChange = e => {
+    debugger
     const {username, value} = e.target
-    setUsername(username)
+    setUsername(value)
   }
 
   const handleName = e => {
@@ -36,7 +37,7 @@ function Signup() {
         <label>Password</label>
         <input type="text" value={password} onChange={handlePassword}/>
 
-        <button type='submit'>Submit</button>
+        <button type='submit'>SignUp</button>
       </form>
     </div>
   )
