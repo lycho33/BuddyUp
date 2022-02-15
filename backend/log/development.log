@@ -465,3 +465,15 @@ Started GET "/users" for ::1 at 2022-02-15 15:04:11 -0500
   
 ActionController::RoutingError (No route matches [GET] "/users"):
   
+Started GET "/users" for ::1 at 2022-02-15 15:21:40 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users" for ::1 at 2022-02-15 15:21:41 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
