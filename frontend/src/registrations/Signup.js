@@ -24,6 +24,9 @@ function Signup() {
         <label>Password</label>
         <input type="text" value={password} onChange={e => setPassword(e.target.value)}/>
 
+        <label>Password Confirmation</label>
+        <input type="text" value={passwordConfirm} onChange={e => setPasswordConfirm(e.target.value)}/>
+
         <button type='submit'>Sign Up</button>
       </form>
     </div>
