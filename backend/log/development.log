@@ -11,3 +11,64 @@ Migrating to CreateUsers (20220211000923)
   [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2022-02-15 13:41:07 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-2.6.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-2.6.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.5ms | Allocations: 350)
+Completed 200 OK in 17ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 2600)
+
+
+Started GET "/rails/info/routes" for ::1 at 2022-02-15 13:41:25 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /usr/share/rvm/gems/ruby-2.6.1/gems/railties-6.1.4.4/lib/rails/templates/layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-2.6.1/gems/railties-6.1.4.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/share/rvm/gems/ruby-2.6.1/gems/actionpack-6.1.4.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [28 times] (Duration: 5.3ms | Allocations: 3306)
+  Rendered /usr/share/rvm/gems/ruby-2.6.1/gems/actionpack-6.1.4.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 1.9ms | Allocations: 947)
+  Rendered /usr/share/rvm/gems/ruby-2.6.1/gems/railties-6.1.4.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 10.2ms | Allocations: 7081)
+  Rendered layout /usr/share/rvm/gems/ruby-2.6.1/gems/railties-6.1.4.4/lib/rails/templates/layouts/application.html.erb (Duration: 10.6ms | Allocations: 7327)
+Completed 200 OK in 27ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 9994)
+
+
+Started GET "/sign_up" for ::1 at 2022-02-15 13:41:45 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/sign_up"):
+  
+Started GET "/logged_in" for ::1 at 2022-02-15 13:41:52 -0500
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `authorize'
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 11ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 2804)
+
+
+Started GET "/login" for ::1 at 2022-02-15 13:41:58 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started GET "/logout" for ::1 at 2022-02-15 13:42:06 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/logout"):
+  
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/logged_in" for ::1 at 2022-02-15 13:43:27 -0500
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `authorize'
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 893)
+
+
+Started GET "/login" for ::1 at 2022-02-15 13:43:31 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  

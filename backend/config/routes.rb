@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # resources :users
   # get 'sign_up', to: 'users#new'
   post 'sign_up', to: 'users#create'
-  get 'logged_in' to: 'users#show'
+  get 'logged_in', to: 'users#show'
 
   # get 'sign_in', to: 'sessions#new'
   # post 'sign_in', to: 'sessions#create', as: 'log_in'
