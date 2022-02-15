@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { BrowserRouter as Router} from 'react-router-dom'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createStore, applyMiddleware, compose } from 'redux';
@@ -15,9 +16,9 @@ const store = createStore(reducer,
 );
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Router>
     <App />
-  </Provider>,
+  </Router>,
   document.getElementById('root')
 );
 

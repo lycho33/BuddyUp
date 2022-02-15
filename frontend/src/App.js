@@ -3,6 +3,9 @@ import React, { useState, useEffect } from "react"
 import axios from 'axios'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import SignUp from './registrations/Signup'
+import Home from './Home'
+import Login from './registrations/Login'
+import Signup from './registrations/Signup'
 
 const App = () => {
   
@@ -41,12 +44,12 @@ const App = () => {
 
   return (
     <div className="App">
-      <SignUp/>
+      <Login/>
 
       <Routes>
-        <Route exact path='/' element={} />
-        <Route exact path='/login' element={} />
-        <Route exact path='/signup' element={} />
+        <Route exact path='/' element={Home} />
+        <Route exact path='/login' element={Login} />
+        <Route exact path='/signup' element={Signup} />
       </Routes>
     </div>
   );
