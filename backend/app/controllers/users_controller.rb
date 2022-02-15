@@ -1,35 +1,52 @@
 class UsersController < ApplicationController
-    #user can't vist anything before logging in
-    # before_action :logged_in_user, only: [:show]
-    skip_before_action :authorize, only: :create
-    
-    def index
-        users = User.all
-    end
-    
-    # def new
-    #     @user = User.new
-    # end
 
-    def create
-        @user = User.new(user_params)
-        if @user.save
-            #automatically logs in after signing up
-            log_in @user
-            flash[:success] = "Welcome to the app!"
-            redirect_to @user
+    def index
+        @users = User.all
+        if @users
+          render json: {
+            users: @users
+          }
         else
-            render 'new'
+          render json: {
+            status: 500,
+            errors: ['no users found']
+          }
         end
     end
 
     def show
         @user = User.find(params[:id])
+       if @user
+          render json: {
+            user: @user
+          }
+        else
+          render json: {
+            status: 500,
+            errors: ['user not found']
+          }
+        end
+      end
+      
+    def create
+        @user = User.new(user_params)
+        if @user.save
+            login!
+            render json: {
+            status: :created,
+            user: @user
+            }
+        else 
+            render json: {
+            status: 500,
+            errors: @user.errors.full_messages
+            }
+        end
     end
-
+    
     private
-
+      
     def user_params
-        params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation)
     end
 end
