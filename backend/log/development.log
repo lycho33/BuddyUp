@@ -448,3 +448,20 @@ Filter chain halted as :authorize rendered or redirected
 Completed 401 Unauthorized in 5ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 2845)
 
 
+Started GET "/rails/info/routes" for ::1 at 2022-02-15 15:04:06 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /usr/share/rvm/gems/ruby-2.6.1/gems/railties-6.1.4.4/lib/rails/templates/layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-2.6.1/gems/railties-6.1.4.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/share/rvm/gems/ruby-2.6.1/gems/actionpack-6.1.4.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [30 times] (Duration: 3.8ms | Allocations: 3517)
+  Rendered /usr/share/rvm/gems/ruby-2.6.1/gems/actionpack-6.1.4.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 1.6ms | Allocations: 947)
+  Rendered /usr/share/rvm/gems/ruby-2.6.1/gems/railties-6.1.4.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 8.3ms | Allocations: 7412)
+  Rendered layout /usr/share/rvm/gems/ruby-2.6.1/gems/railties-6.1.4.4/lib/rails/templates/layouts/application.html.erb (Duration: 8.8ms | Allocations: 7658)
+Completed 200 OK in 22ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 10327)
+
+
+Started GET "/users" for ::1 at 2022-02-15 15:04:11 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
