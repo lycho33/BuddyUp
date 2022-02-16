@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react"
-import { useForm } from 'react-hook-form';
+import React, { useState} from "react"
+// import { useForm } from 'react-hook-form';
 import axios from 'axios'
 import {Link, useNavigate} from 'react-router-dom'
 
-function Login({handleLogin, handleLogout, user}) {
+function Login() {
 
     let navigate = useNavigate();
 
@@ -24,29 +24,29 @@ function Login({handleLogin, handleLogout, user}) {
         e.preventDefault()
         console.log(state)
 
-        let user = {
-            username: state.username,
-            email: state.email,
-            password: state.password,
-        }
+        // let user = {
+        //     username: state.username,
+        //     email: state.email,
+        //     password: state.password,
+        // }
 
-        axios.post('http://localhost:3001/login', {user}, {withCredentials: true})
-            .then(r => {
-                if(r.data.logged_in){
-                    handleLogin(r.data)
-                    redirect()
-                } else {
-                    setState({
-                        errors: r.data.errors
-                    })
-                }
-            })
-            .catch(error => console.log('api errors:', error))
+        // axios.post('http://localhost:3001/login', {user}, {withCredentials: true})
+        //     .then(r => {
+        //         if(r.data.logged_in){
+        //             // handleLogin(r.data)
+        //             redirect()
+        //         } else {
+        //             setState({
+        //                 errors: r.data.errors
+        //             })
+        //         }
+        //     })
+        //     .catch(error => console.log('api errors:', error))
     }
 
-    const redirect = () => {
-        navigate('/')
-    }
+    // const redirect = () => {
+    //     navigate('/')
+    // }
  
   return (
     <div>
