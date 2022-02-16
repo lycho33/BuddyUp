@@ -1,16 +1,19 @@
 import './App.css';
 import React, { useState, useEffect } from "react"
 import axios from 'axios'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import SignUp from './registrations/Signup'
+import { Route, Routes } from 'react-router-dom'
 import Home from './Home'
 import Login from './registrations/Login'
-import Signup from './registrations/Signup'
+import SignUp from './registrations/Signup'
 
 const App = () => {
   
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [user, setUser] = useState('')
+  const [state, setState] = useState({
+    isLoggedIn: false,
+    user: ''
+  })
+  // const [isLoggedIn, setIsLoggedIn] = useState(false)
+  // const [user, setUser] = useState('')
 
 
   useEffect(() => {
@@ -32,13 +35,19 @@ const App = () => {
   }
 
   const handleLogin = (data) => {
-    setIsLoggedIn(true)
-    setUser(data.user)
+    setState({
+      isLoggedIn: true,
+      user: data.state.user
+    })
+    // setIsLoggedIn(true)
+    // setUser(data.state.user)
   }
 
   const handleLogout = () => {
-    setIsLoggedIn(false)
-    setUser('')
+    setState({
+      isLoggedIn: false,
+      user: ''
+    })
   }
 
 
@@ -46,9 +55,9 @@ const App = () => {
     <div className="App">
       <h1>APP</h1>
       <Routes>
-        <Route exact path='/' element={<Home props={handleLogin, handleLogout, user} loggedInStatus={isLoggedIn} />} />
-        <Route exact path='/login' element={<Login props={handleLogin, handleLogout, user} loggedInStatus={isLoggedIn} />} />
-        <Route exact path='/signup' element={<SignUp props={isLoggedIn, user} loggedInStatus={isLoggedIn} />} />
+        <Route exact path='/' element={<Home props={state} loggedInStatus={state.isLoggedIn} />} />
+        <Route exact path='/login' element={<Login />} />
+        <Route exact path='/signup' element={<SignUp />} />
       </Routes>
     </div>
   );
