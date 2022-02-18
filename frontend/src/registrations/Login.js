@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react"
-import { useForm } from 'react-hook-form';
 import axios from 'axios'
 import {Link, useNavigate} from 'react-router-dom'
+import Form from '../Components/Form/Form'
 
-function Login({handleLogin, handleLogout, user}) {
+function Login({ handle }) {
+
 
     let navigate = useNavigate();
+
 
     const [state, setState] = useState({
         username: '',
@@ -18,7 +20,7 @@ function Login({handleLogin, handleLogout, user}) {
             ...prevProps,
             [e.target.name]: e.target.value
         }))
-    }
+      }
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -33,7 +35,7 @@ function Login({handleLogin, handleLogout, user}) {
         axios.post('http://localhost:3001/login', {user}, {withCredentials: true})
             .then(r => {
                 if(r.data.logged_in){
-                    handleLogin(r.data)
+                    handle(r.data)
                     redirect()
                 } else {
                     setState({
@@ -60,6 +62,10 @@ function Login({handleLogin, handleLogout, user}) {
                 <br />
             <Link to='/signup'>Sign Up</Link>
         </form>
+        
+        {/* <Form handler={handleSubmit} /> */}
+        
+        
     </div>
   )
 }

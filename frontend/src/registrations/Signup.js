@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
+import Form from '../Components/Form/Form';
+
 
 function Signup() {
-  const [username, setUsername] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [passwordConfirm, setPasswordConfirm] = useState('')
+  const [state, setState] = useState({
+    username: '',
+    email: '',
+    password: '',
+})
 
-  const handleChange = e => {
-    e.preventDefault()
-  }
 
   return (
     <div>
       <h1>Signup</h1>
 
-      <form onSubmit={handleChange}>
+      {/* <form onSubmit={handleChange}>
         <label>Username</label>
         <input type="text" value={username} onChange={e => setUsername(e.target.value)}/>
 
@@ -28,7 +28,21 @@ function Signup() {
         <input type="text" value={passwordConfirm} onChange={e => setPasswordConfirm(e.target.value)}/>
 
         <button type='submit'>Sign Up</button>
-      </form>
+      </form> */}
+
+{/* <Form  initialValues={state}>
+        <FormInput 
+          label="User Name" 
+          name="username" />
+        <FormInput 
+          label="Email Address" 
+          type="email" 
+          name="emailAddress" />
+        <FormInput 
+          label="Password" 
+          type="password" 
+          name="password" />
+      </Form> */}
     </div>
   )
 }
