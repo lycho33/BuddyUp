@@ -5,4 +5,9 @@ Rails.application.routes.draw do
   get '/logged_in', to: 'sessions#is_logged_in?'
   
   resources :users, only: [:create, :show, :index]
+  resources :conversations, only: [:index, :create]
+  resources :messages, only: [:create]
+
+  # our client will be using to instantiate the WebSockets connection with our server.
+  mount ActionCable.server => '/cable'
 end
