@@ -961,3 +961,15 @@ Processing by SessionsController#is_logged_in? as HTML
 Completed 200 OK in 1ms (Views: 0.4ms | Allocations: 277)
 
 
+Started GET "/logged_in" for ::1 at 2022-02-17 18:01:43 -0500
+Processing by SessionsController#is_logged_in? as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 2ms (Views: 0.5ms | Allocations: 274)
+
+
+Started GET "/logged_in" for ::1 at 2022-02-17 18:02:10 -0500
+Processing by SessionsController#is_logged_in? as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.74ms)
+Completed 200 OK in 1ms (Views: 1.1ms | Allocations: 274)
+
+
