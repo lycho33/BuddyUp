@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   resources :conversations, only: [:index, :create]
   resources :messages, only: [:create]
 
-  # our client will be using to instantiate the WebSockets connection with our server.
+  # the client will be using /cable endpoint to instantiate the WebSockets connection with our server.
   mount ActionCable.server => '/cable'
 end
