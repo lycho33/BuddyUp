@@ -1,5 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import ConversationsList from './components/ConversationList';
+
 
 function Home() {
   return (
@@ -8,6 +10,8 @@ function Home() {
         <Link to='/login'>Log In</Link>
             <br></br>
         <Link to='/signup'>Sign Up</Link>
+        <br />
+        <ConversationsList />
     </div>
   )
 }
