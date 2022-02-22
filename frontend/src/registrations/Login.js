@@ -36,6 +36,7 @@ function Login({ handle }) {
             .then(r => {
                 if(r.data.logged_in){
                     handle(r.data)
+                    console.log(r)
                     redirect()
                 } else {
                     setState({

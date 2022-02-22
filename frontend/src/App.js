@@ -16,7 +16,7 @@ const App = () => {
 
   useEffect(() => {
     loginStatus()
-  })
+  }, [])
 
   const loginStatus = () => {
     axios.get('http://localhost:3001/logged_in', 
@@ -36,6 +36,7 @@ const App = () => {
   const handleLogin = (data) => {
     setIsLoggedIn(true)
     setUser(data.user)
+    console.log(data)
   }
 
   const handleLogout = () => {
@@ -48,7 +49,7 @@ const App = () => {
     <div className="App">
       <h1>APP</h1>
       <Routes>
-        <Route exact path='/' element={<Home props={handleLogin, handleLogout, user} loggedInStatus={isLoggedIn} />} />
+        <Route exact path='/' element={<Home handle={handleLogout} loggedInStatus={isLoggedIn} />} />
         <Route exact path='/login' element={<Login handle={handleLogin} loggedInStatus={isLoggedIn} />} />
         <Route exact path='/signup' element={<SignUp props={isLoggedIn, user} loggedInStatus={isLoggedIn} />} />
       </Routes>

@@ -30,19 +30,7 @@ function Signup() {
         <button type='submit'>Sign Up</button>
       </form> */}
 
-{/* <Form  initialValues={state}>
-        <FormInput 
-          label="User Name" 
-          name="username" />
-        <FormInput 
-          label="Email Address" 
-          type="email" 
-          name="emailAddress" />
-        <FormInput 
-          label="Password" 
-          type="password" 
-          name="password" />
-      </Form> */}
+
     </div>
   )
 }
