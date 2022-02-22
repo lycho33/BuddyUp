@@ -58,7 +58,7 @@ function Login({ handle }) {
         <form onSubmit={handleSubmit}>
             <input type="text" placeholder="username" name="username" value={state.username} onChange={handleInputChange}/>
             <input type="text" placeholder="email" name="email" value={state.email} onChange={handleInputChange}/>
-            <input type="text" placeholder="password" name="password" value={state.password} onChange={handleInputChange}/>
+            <input type="password" placeholder="password" name="password" value={state.password} onChange={handleInputChange}/>
             <button placeholder="submit" type="submit">Log In</button>
                 <br />
             <Link to='/signup'>Sign Up</Link>

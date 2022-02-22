@@ -51,7 +51,7 @@ const App = () => {
       <Routes>
         <Route exact path='/' element={<Home handle={handleLogout} loggedInStatus={isLoggedIn} />} />
         <Route exact path='/login' element={<Login handle={handleLogin} loggedInStatus={isLoggedIn} />} />
-        <Route exact path='/signup' element={<SignUp props={isLoggedIn, user} loggedInStatus={isLoggedIn} />} />
+        <Route exact path='/signup' element={<SignUp handle={handleLogin} loggedInStatus={isLoggedIn} />} />
       </Routes>
       
     </div>
