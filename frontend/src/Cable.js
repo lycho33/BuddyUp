@@ -4,11 +4,13 @@ import { ActionCable } from 'react-actioncable-provider';
 function Cable({ conversations, handleReceivedMessage }) {
   return (
     <div>
+        {/* returns a group of children without adding extra nodes to the DOM */}
         <Fragment>
             {conversations.map(conversation => {
                 return (
                 <ActionCable
                     key={conversation.id}  
+                    //
                     channel={{ channel: 'MessagesChannel', conversation: conversation.id }}
                     onReceived={handleReceivedMessage}
                 />
