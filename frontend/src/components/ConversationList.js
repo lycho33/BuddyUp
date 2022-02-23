@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
 import { ActionCable } from 'react-actioncable-provider';
 import { API_ROOT } from '../constants';
 import NewConversationForm from "../NewConversationForm";
@@ -10,22 +10,26 @@ function ConversationList() {
 
     const [state, setState] = useState({
         conversations: [],
-        activeConversation: null
     })
+    const [activeConversation, setActiveConversation] = useState(null)
 
+    //---------------------FETCH Conversations-------------------------------
     useEffect(() => {
         axios.get(`${API_ROOT}/conversations`)
-            .then(res => {
-                console.log(res)
-                //fix this
-                setState(res)
-            })
+        .then(res => {
+            console.log(res)
+            handleState(res.data)
+        })
+        .catch(error => console.log('conversationsApi errors:', error))
     }, [])
 
-    const handleClick = id => {
-        setState({ activeConversation: id })
+    const handleState = (data) => {
+        setState({
+            conversations: data
+        })
     }
     
+    //-----------------CHANNEL---------------------------------------------------------
     const handleReceivedConversation = res => {
         const { conversation } = res;
         setState({
@@ -33,6 +37,23 @@ function ConversationList() {
         })
     }
 
+    //------------Renders Conversations & when clicked.... opens to the chatroom------------
+    const handleClick = id => {
+        // debugger
+        // setState({ activeConversation: id })
+        setActiveConversation(id)
+    }
+
+    const mapConversations = (conversations, handleClick) => {
+        return state.conversations.map(conversation => {
+            return (
+            <li key={conversation.id} onClick={() => handleClick(conversation.id)}>
+                {conversation.title}
+            </li>
+            );
+        });
+    };
+    //-----------------CABLE------------------------------------------------
     const handleReceivedMessage = res => {
         const { message } = res;
         const conversations = [...state.conversations];
@@ -40,25 +61,17 @@ function ConversationList() {
             conversation => conversation.id === message.conversation_id
         );
         conversation.messages = [...conversation.messages, message]
-        setState({ conversations })
+        setState({ conversations: conversations })
     }
 
-    //HELPER METHODS----------------------------------------------------------
+    //HELPER METHODS for Messages--------------------------------------------
     const findActiveConversation = (conversations, activeConversation) => {
         return conversations.find(
           conversation => conversation.id === activeConversation
         );
-      };
-      
-    const mapConversations = (conversations, handleClick) => {
-    return state.conversations.map(conversation => {
-        return (
-        <li key={conversation.id} onClick={() => handleClick(conversation.id)}>
-            {conversation.title}
-        </li>
-        );
-    });
     };
+      
+
     
   return (
     <div className="conversationsList">
@@ -71,13 +84,17 @@ function ConversationList() {
                     conversations={state.conversations}
                     handleReceivedMessage={handleReceivedMessage}
                 />) : null}
+
             <h2>Conversations</h2>
+
             <ul>{mapConversations(state.conversations, handleClick)}</ul>
             <NewConversationForm />
-            {state.activeConversation ? (
+            {console.log("hello", state.activeConversation)}
+            {activeConversation ? (
                 <MessagesArea
-                    conversation={findActiveConversation(state.conversations, state.activeConversation)}
+                    conversation={findActiveConversation(state.conversations, activeConversation)}
                 />) : null}
+                
         </ActionCable>
 
     </div>

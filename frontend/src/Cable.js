@@ -10,7 +10,6 @@ function Cable({ conversations, handleReceivedMessage }) {
                 return (
                 <ActionCable
                     key={conversation.id}  
-                    //
                     channel={{ channel: 'MessagesChannel', conversation: conversation.id }}
                     onReceived={handleReceivedMessage}
                 />

@@ -21,7 +21,8 @@ function NewConversationForm() {
         }
 
         axios.post(`${API_ROOT}/conversations`, {conversation})
-            .then(r => {
+            .then(res => {
+                console.log("conversation form", res)
                 setState({ title: '' })
             })
     }
