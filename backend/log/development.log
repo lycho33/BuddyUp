@@ -3060,3 +3060,88 @@ Processing by SessionsController#is_logged_in? as HTML
 Completed 200 OK in 1ms (Views: 0.6ms | Allocations: 258)
 
 
+Started GET "/logged_in" for ::1 at 2022-02-23 21:28:52 -0500
+Processing by SessionsController#is_logged_in? as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 200 OK in 1ms (Views: 0.3ms | Allocations: 258)
+
+
+Started GET "/logged_in" for ::1 at 2022-02-23 21:29:34 -0500
+Processing by SessionsController#is_logged_in? as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 200 OK in 1ms (Views: 0.3ms | Allocations: 258)
+
+
+Started GET "/logged_in" for ::1 at 2022-02-23 21:29:52 -0500
+Processing by SessionsController#is_logged_in? as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 1ms (Views: 0.7ms | Allocations: 258)
+
+
+Started GET "/logged_in" for ::1 at 2022-02-23 21:30:18 -0500
+Processing by SessionsController#is_logged_in? as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 200 OK in 2ms (Views: 1.6ms | Allocations: 258)
+
+
+Started GET "/logged_in" for ::1 at 2022-02-23 21:33:39 -0500
+Processing by SessionsController#is_logged_in? as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 2ms (Views: 0.7ms | Allocations: 258)
+
+
+Started POST "/login" for ::1 at 2022-02-23 21:34:06 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]"}}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 4966)
+
+
+Started POST "/login" for ::1 at 2022-02-23 21:34:08 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 532)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/sessions_controller.rb:45:in `session_params'
+app/controllers/sessions_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2022-02-23 21:34:09 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 564)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/sessions_controller.rb:45:in `session_params'
+app/controllers/sessions_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2022-02-23 21:34:13 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 525)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/sessions_controller.rb:45:in `session_params'
+app/controllers/sessions_controller.rb:4:in `create'
+Started POST "/login" for ::1 at 2022-02-23 21:34:15 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{}, "session"=>{"user"=>{}}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 525)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/sessions_controller.rb:45:in `session_params'
+app/controllers/sessions_controller.rb:4:in `create'

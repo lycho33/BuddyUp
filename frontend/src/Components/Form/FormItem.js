@@ -20,7 +20,7 @@ const FormItem = ({ type, placeholder, name }) => {
 
   return (
     <>
-      <input type={type} placeholder={placeholder} name={name} value={state.username} onChange={handleInputChange}/>
+      <input type={type} placeholder={placeholder} name={name} value={state.name} onChange={handleInputChange}/>
     </>
     
   )

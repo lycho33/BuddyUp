@@ -53,21 +53,22 @@ function Login({ handle }) {
 
     const inputArr = [
         {type:"text", placeholder:"username", name:"username"},
-        {type:"text", placeholder:"email", name:"email"}
+        {type:"text", placeholder:"email", name:"email"},
+        {type:'password', placeholder:"password", name:"password"}
     ]
  
   return (
     <div>
         <h1>Log In</h1>
 
-        <form onSubmit={handleSubmit}>
+        {/* <form onSubmit={handleSubmit}>
             <input type="text" placeholder="username" name="username" value={state.username} onChange={handleInputChange}/>
             <input type="text" placeholder="email" name="email" value={state.email} onChange={handleInputChange}/>
             <input type="password" placeholder="password" name="password" value={state.password} onChange={handleInputChange}/>
             <button placeholder="submit" type="submit">Log In</button>
                 <br />
             <Link to='/signup'>Sign Up</Link>
-        </form>
+        </form> */}
         
         <Form handler={handleSubmit} input={inputArr} />
         
