@@ -1,7 +1,12 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import FormItem from "./FormItem"
 
 
-const Form = ({ handler }) => {
+const Form = ({ handler, input }) => {
+
+  // useEffect(() => {
+  //   console.log(handler)
+  // }, [])
 
   const [state, setState] = useState({
     username: '',
@@ -16,12 +21,12 @@ const Form = ({ handler }) => {
     }))
   }
 
+  const render = input.map(i => <FormItem type={i.type} placeholder={i.placeholder} name={i.name} /> )
+
 
   return (
     <form  onSubmit={handler}>
-            <input type="text" placeholder="username" name="username" value={state.username} onChange={handleInputChange}/>
-            <input type="text" placeholder="email" name="email" value={state.email} onChange={handleInputChange}/>
-            <input type="text" placeholder="password" name="password" value={state.password} onChange={handleInputChange}/>
+            {render}
             <button placeholder="submit" type="submit">Log In</button>
     </form>
   )

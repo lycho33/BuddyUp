@@ -50,6 +50,11 @@ function Login({ handle }) {
     const redirect = () => {
         navigate('/')
     }
+
+    const inputArr = [
+        {type:"text", placeholder:"username", name:"username"},
+        {type:"text", placeholder:"email", name:"email"}
+    ]
  
   return (
     <div>
@@ -64,7 +69,7 @@ function Login({ handle }) {
             <Link to='/signup'>Sign Up</Link>
         </form>
         
-        {/* <Form handler={handleSubmit} /> */}
+        <Form handler={handleSubmit} input={inputArr} />
         
         
     </div>

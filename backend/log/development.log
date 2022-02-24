@@ -2963,3 +2963,100 @@ Processing by UsersController#create as HTML
 Completed 200 OK in 208ms (Views: 3.0ms | ActiveRecord: 9.6ms | Allocations: 14464)
 
 
+Started DELETE "/logout" for ::1 at 2022-02-21 20:34:22 -0500
+Processing by SessionsController#destroy as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 334)
+
+
+Started POST "/login" for ::1 at 2022-02-21 20:34:30 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Antrod", "email"=>"anthonyrod1895@gmail.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Antrod", "email"=>"anthonyrod1895@gmail.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Antrod"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 200 OK in 185ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 1802)
+
+
+Started GET "/logged_in" for ::1 at 2022-02-23 20:34:34 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#is_logged_in? as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 11ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 3719)
+
+
+Started GET "/logged_in" for ::1 at 2022-02-23 20:34:43 -0500
+Processing by SessionsController#is_logged_in? as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 260)
+
+
+Started GET "/logged_in" for ::1 at 2022-02-23 20:36:08 -0500
+Processing by SessionsController#is_logged_in? as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 260)
+
+
+Started GET "/logged_in" for ::1 at 2022-02-23 20:46:18 -0500
+Processing by SessionsController#is_logged_in? as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 2ms (Views: 1.7ms | Allocations: 259)
+
+
+Started GET "/logged_in" for ::1 at 2022-02-23 20:49:41 -0500
+Processing by SessionsController#is_logged_in? as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 1ms (Views: 0.4ms | Allocations: 260)
+
+
+Started GET "/logged_in" for ::1 at 2022-02-23 20:49:47 -0500
+Processing by SessionsController#is_logged_in? as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 1ms (Views: 0.4ms | Allocations: 258)
+
+
+Started GET "/logged_in" for ::1 at 2022-02-23 20:50:19 -0500
+Processing by SessionsController#is_logged_in? as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 1ms (Views: 0.6ms | Allocations: 258)
+
+
+Started GET "/logged_in" for ::1 at 2022-02-23 20:52:39 -0500
+Processing by SessionsController#is_logged_in? as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 1ms (Views: 0.5ms | Allocations: 258)
+
+
+Started GET "/logged_in" for ::1 at 2022-02-23 21:06:15 -0500
+Processing by SessionsController#is_logged_in? as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 2ms (Views: 1.3ms | Allocations: 260)
+
+
+Started GET "/logged_in" for ::1 at 2022-02-23 21:07:23 -0500
+Processing by SessionsController#is_logged_in? as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 200 OK in 1ms (Views: 0.8ms | Allocations: 258)
+
+
+Started GET "/logged_in" for ::1 at 2022-02-23 21:08:07 -0500
+Processing by SessionsController#is_logged_in? as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 1ms (Views: 0.5ms | Allocations: 258)
+
+
+Started GET "/logged_in" for ::1 at 2022-02-23 21:08:12 -0500
+Processing by SessionsController#is_logged_in? as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 200 OK in 1ms (Views: 0.8ms | Allocations: 258)
+
+
+Started GET "/logged_in" for ::1 at 2022-02-23 21:09:03 -0500
+Processing by SessionsController#is_logged_in? as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 1ms (Views: 0.6ms | Allocations: 258)
+
+
