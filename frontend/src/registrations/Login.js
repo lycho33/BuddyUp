@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react"
-import axios from 'axios'
+import React, { useState } from "react"
 import {Link, useNavigate} from 'react-router-dom'
 import Form from '../Components/Form/Form'
+import { login } from '../redux/actionCreators'
+import { connect } from 'react-redux'
 
-function Login({ handle }) {
+function Login({ handle, login }) {
 
 
     let navigate = useNavigate();
@@ -25,56 +26,59 @@ function Login({ handle }) {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(state)
+        login(state)
+        redirect()
+        // let user = {
+        //     username: state.username,
+        //     email: state.email,
+        //     password: state.password,
+        // }
 
-        let user = {
-            username: state.username,
-            email: state.email,
-            password: state.password,
-        }
+        
 
-        axios.post('http://localhost:3001/login', {user}, {withCredentials: true})
-            .then(r => {
-                if(r.data.logged_in){
-                    handle(r.data)
-                    console.log(r)
-                    redirect()
-                } else {
-                    setState({
-                        errors: r.data.errors
-                    })
-                }
-            })
-            .catch(error => console.log('api errors:', error))
+        // axios.post('http://localhost:3001/login', {user}, {withCredentials: true})
+        //     .then(r => {
+        //         if(r.data.logged_in){
+        //             handle(r.data)
+        //             console.log(r)
+        //             redirect()
+        //         } else {
+        //             setState({
+        //                 errors: r.data.errors
+        //             })
+        //         }
+        //     })
+        //     .catch(error => console.log('api errors:', error))
     }
 
     const redirect = () => {
         navigate('/')
     }
 
-    const inputArr = [
-        {type:"text", placeholder:"username", name:"username"},
-        {type:"text", placeholder:"email", name:"email"},
-        {type:'password', placeholder:"password", name:"password"}
-    ]
+    // const inputArr = [
+    //     {type:"text", placeholder:"username", name:"username"},
+    //     {type:"text", placeholder:"email", name:"email"},
+    //     {type:'password', placeholder:"password", name:"password"}
+    // ]
  
   return (
     <div>
         <h1>Log In</h1>
 
-        {/* <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <input type="text" placeholder="username" name="username" value={state.username} onChange={handleInputChange}/>
             <input type="text" placeholder="email" name="email" value={state.email} onChange={handleInputChange}/>
             <input type="password" placeholder="password" name="password" value={state.password} onChange={handleInputChange}/>
             <button placeholder="submit" type="submit">Log In</button>
                 <br />
             <Link to='/signup'>Sign Up</Link>
-        </form> */}
+        </form>
         
-        <Form handler={handleSubmit} input={inputArr} />
+        {/* <Form handler={handleSubmit} input={inputArr} /> */}
         
         
     </div>
   )
 }
 
-export default Login
+export default connect(null, { login }) (Login)
