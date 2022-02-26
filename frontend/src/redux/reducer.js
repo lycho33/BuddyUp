@@ -12,6 +12,7 @@ const initialState = {
               };
 
               case "LOGOUT":
+                // debugger
                 return {
                   isLoggedIn: false,
                   user: {}

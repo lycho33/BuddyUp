@@ -7,6 +7,7 @@ import Home from './Components/Home/Home'
 import Login from './registrations/Login'
 import { loginStatus } from './redux/actionCreators';
 import { connect, useSelector } from 'react-redux'
+import Logout from './registrations/Logout';
 
 
 
@@ -56,6 +57,7 @@ const App = () => {
         <Route exact path='/' element={<Home  loggedInStatus={isLoggedIn} />} />
         <Route exact path='/login' element={<Login  loggedInStatus={isLoggedIn} />} />
         <Route exact path='/signup' element={<SignUp  loggedInStatus={isLoggedIn} />} />
+        <Route exact path='/logout' element={<Logout />} />
       </Routes>
       
     </div>

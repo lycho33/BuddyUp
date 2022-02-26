@@ -1,8 +1,32 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import {Link , useNavigate} from 'react-router-dom'
 import axios from 'axios'
+import { logout } from '../../redux/actionCreators'
 
-function Home({ loggedInStatus, handle }) {
+function Home({ loggedInStatus, logout }) {
+
+  let navigate = useNavigate()
+
+  // const logout = () =>{
+  //   axios.delete('http://localhost:3001/logout', {withCredentials: true})
+  //   .then(response => {
+  //       console.log(response)
+  //       // dispatch({
+  //       //     type:"LOGOUT",
+  //       //     payload: response
+  //       // })
+        
+  //   })
+  //   .catch(error => console.log(error))
+  // }
+  
+
+
+  const handleLogout = (e) => {
+    e.preventDefault()
+    logout()
+  }
 
   { if(loggedInStatus){
     return(
@@ -26,4 +50,4 @@ function Home({ loggedInStatus, handle }) {
 
 }
 
-export default Home
+export default connect( null, { logout }) (Home)

@@ -40,10 +40,12 @@ export const logout = () => {
     return (dispatch) => {
         axios.delete('http://localhost:3001/logout', {withCredentials: true})
         .then(response => {
+            if(response.data.logged_out)
             dispatch({
-                type:login,
+                type:"LOGOUT",
                 payload: response
             })
+            
         })
         .catch(error => console.log(error))
     }

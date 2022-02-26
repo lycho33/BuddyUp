@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
 import { logout } from '../redux/actionCreators'
 import { useNavigate } from 'react-router-dom'
 
-const Logout = () => {
+const Logout = ({ logout }) => {
 
     let navigate = useNavigate();
 
@@ -20,4 +21,4 @@ const Logout = () => {
   )
 }
 
-export default Logout
+export default connect( null, { logout }) (Logout)

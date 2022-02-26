@@ -3470,3 +3470,351 @@ Processing by SessionsController#create as HTML
 Completed 200 OK in 196ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 1696)
 
 
+Started POST "/login" for ::1 at 2022-02-25 20:24:19 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.28ms)
+Completed 200 OK in 197ms (Views: 3.2ms | ActiveRecord: 1.0ms | Allocations: 9981)
+
+
+Started POST "/login" for ::1 at 2022-02-25 20:27:04 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 200 OK in 190ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1692)
+
+
+Started POST "/login" for ::1 at 2022-02-25 20:28:37 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 200 OK in 176ms (Views: 1.4ms | ActiveRecord: 0.2ms | Allocations: 1584)
+
+
+Started POST "/login" for ::1 at 2022-02-25 20:29:01 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 174ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 1686)
+
+
+Started POST "/login" for ::1 at 2022-02-25 20:36:49 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.29ms)
+Completed 200 OK in 181ms (Views: 2.0ms | ActiveRecord: 0.6ms | Allocations: 2306)
+
+
+Started POST "/login" for ::1 at 2022-02-25 20:40:52 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 176ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 1669)
+
+
+Started POST "/login" for ::1 at 2022-02-25 20:43:55 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.25ms)
+Completed 200 OK in 177ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1669)
+
+
+Started POST "/login" for ::1 at 2022-02-25 20:45:04 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 200 OK in 178ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1669)
+
+
+Started POST "/login" for ::1 at 2022-02-25 20:47:23 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.19ms)
+Completed 200 OK in 177ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1670)
+
+
+Started POST "/login" for ::1 at 2022-02-25 20:49:06 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.18ms)
+Completed 200 OK in 176ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 1669)
+
+
+Started POST "/login" for ::1 at 2022-02-25 20:49:51 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.31ms)
+Completed 200 OK in 178ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 1670)
+
+
+Started POST "/login" for ::1 at 2022-02-25 20:50:41 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.21ms)
+Completed 200 OK in 176ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1669)
+
+
+Started POST "/login" for ::1 at 2022-02-25 20:51:58 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.23ms)
+Completed 200 OK in 179ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 1669)
+
+
+Started POST "/login" for ::1 at 2022-02-25 20:52:39 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.17ms)
+Completed 200 OK in 181ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 1670)
+
+
+Started POST "/login" for ::1 at 2022-02-25 20:59:27 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.54ms)
+Completed 200 OK in 193ms (Views: 5.3ms | ActiveRecord: 4.0ms | Allocations: 2288)
+
+
+Started POST "/login" for ::1 at 2022-02-25 21:02:33 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.29ms)
+Completed 200 OK in 185ms (Views: 4.2ms | ActiveRecord: 0.2ms | Allocations: 1669)
+
+
+Started GET "/" for ::1 at 2022-02-25 21:03:30 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-2.6.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-2.6.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.4ms | Allocations: 348)
+Completed 200 OK in 26ms (Views: 15.6ms | ActiveRecord: 0.0ms | Allocations: 1746)
+
+
+Started GET "/rails/info/routes" for ::1 at 2022-02-25 21:03:43 -0500
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /usr/share/rvm/gems/ruby-2.6.1/gems/railties-6.1.4.4/lib/rails/templates/layouts/application.html.erb
+  Rendering /usr/share/rvm/gems/ruby-2.6.1/gems/railties-6.1.4.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /usr/share/rvm/gems/ruby-2.6.1/gems/actionpack-6.1.4.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb [30 times] (Duration: 12.5ms | Allocations: 3516)
+  Rendered /usr/share/rvm/gems/ruby-2.6.1/gems/actionpack-6.1.4.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 5.4ms | Allocations: 947)
+  Rendered /usr/share/rvm/gems/ruby-2.6.1/gems/railties-6.1.4.4/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 22.1ms | Allocations: 7305)
+  Rendered layout /usr/share/rvm/gems/ruby-2.6.1/gems/railties-6.1.4.4/lib/rails/templates/layouts/application.html.erb (Duration: 23.3ms | Allocations: 7548)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.0ms | Allocations: 8803)
+
+
+Started POST "/login" for ::1 at 2022-02-25 21:17:33 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.26ms)
+Completed 200 OK in 185ms (Views: 2.6ms | ActiveRecord: 1.5ms | Allocations: 2407)
+
+
+Started POST "/login" for ::1 at 2022-02-25 21:19:03 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.3ms)
+Completed 200 OK in 178ms (Views: 1.8ms | ActiveRecord: 0.4ms | Allocations: 1669)
+
+
+Started POST "/login" for ::1 at 2022-02-25 21:22:46 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 200 OK in 179ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 1669)
+
+
+Started POST "/login" for ::1 at 2022-02-25 21:25:37 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.29ms)
+Completed 200 OK in 179ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1670)
+
+
+Started DELETE "/logout" for ::1 at 2022-02-25 21:25:38 -0500
+Processing by SessionsController#destroy as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 326)
+
+
+Started POST "/login" for ::1 at 2022-02-25 21:30:52 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.35ms)
+Completed 200 OK in 180ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 1668)
+
+
+Started POST "/login" for ::1 at 2022-02-25 21:32:50 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.25ms)
+Completed 200 OK in 176ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1669)
+
+
+Started DELETE "/logout" for ::1 at 2022-02-25 21:32:52 -0500
+Processing by SessionsController#destroy as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 324)
+
+
+Started POST "/login" for ::1 at 2022-02-25 21:33:04 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 200 OK in 179ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1669)
+
+
+Started DELETE "/logout" for ::1 at 2022-02-25 21:33:05 -0500
+Processing by SessionsController#destroy as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 324)
+
+
+Started POST "/login" for ::1 at 2022-02-25 21:35:28 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 200 OK in 178ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 1668)
+
+
+Started DELETE "/logout" for ::1 at 2022-02-25 21:35:49 -0500
+Processing by SessionsController#destroy as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 324)
+
+
+Started POST "/login" for ::1 at 2022-02-25 21:36:38 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.19ms)
+Completed 200 OK in 176ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1668)
+
+
+Started DELETE "/logout" for ::1 at 2022-02-25 21:36:43 -0500
+Processing by SessionsController#destroy as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.17ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 324)
+
+
+Started POST "/login" for ::1 at 2022-02-25 21:37:02 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"test@example.com", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.24ms)
+Completed 200 OK in 179ms (Views: 1.9ms | ActiveRecord: 0.3ms | Allocations: 1670)
+
+
+Started DELETE "/logout" for ::1 at 2022-02-25 21:37:03 -0500
+Processing by SessionsController#destroy as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 325)
+
+
