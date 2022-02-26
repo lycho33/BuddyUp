@@ -18,6 +18,12 @@ export function reducer(state=initialState, action){
                 user: {}
               }
 
+              case "SIGNUP":
+                return {
+                  isLoggedIn: true,
+                  user: action.payload.data.user
+                };
+
           default:
               return {...state}
     }

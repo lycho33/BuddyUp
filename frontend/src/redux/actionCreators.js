@@ -51,3 +51,19 @@ export const logout = () => {
     }
 
   }
+
+  export const signup = (user) => {
+      return (dispatch) => {
+        axios.post('http://localhost:3001/users', {user}, {withCredentials: true})
+        .then(r => {
+            if(r.data.status === 'created'){
+                console.log(r)
+                dispatch({
+                    type:"SIGNUP",
+                    payload: r
+                })
+            } 
+        })
+        .catch(error => console.log('api errors:', error))
+      }
+  }

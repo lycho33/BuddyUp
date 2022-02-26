@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom'
+import { signup } from '../redux/actionCreators'
+import { connect } from 'react-redux'
 
 
-function Signup({ handle }) {
+function Signup({ handle, signup }) {
 
   let navigate = useNavigate();
 
@@ -24,27 +26,8 @@ const handleInputChange = (e) => {
 
 const handleSubmit = (e) => {
   e.preventDefault()
-  console.log(state)
-
-  let user = {
-      username: state.username,
-      email: state.email,
-      password: state.password,
-      password_confirmation: state.password_confirmation,
-  }
-
-  axios.post('http://localhost:3001/users', {user}, {withCredentials: true})
-      .then(r => {
-          if(r.data.status === 'created'){
-              handle(r.data)
-              redirect()
-          } else {
-              setState({
-                  errors: r.data.errors
-              })
-          }
-      })
-      .catch(error => console.log('api errors:', error))
+  signup(state)
+  redirect()
 }
 
 const redirect = () => {
@@ -71,4 +54,4 @@ const redirect = () => {
   )
 }
 
-export default Signup
+export default connect( null, { signup }) (Signup)
