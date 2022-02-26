@@ -1,9 +1,9 @@
 import React, { useState } from "react"
-import axios from 'axios'
 import {Link, useNavigate} from 'react-router-dom'
-// import Form from '../Components/Form/Form'
+import { login } from '../redux/actionCreators'
+import { connect } from 'react-redux'
 
-function Login({ handle }) {
+function Login({ handle, login }) {
 
 
     let navigate = useNavigate();
@@ -25,31 +25,16 @@ function Login({ handle }) {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(state)
-
-        let user = {
-            username: state.username,
-            email: state.email,
-            password: state.password,
-        }
-
-        axios.post('http://localhost:3001/login', {user}, {withCredentials: true})
-            .then(r => {
-                if(r.data.logged_in){
-                    handle(r.data)
-                    console.log(r)
-                    redirect()
-                } else {
-                    setState({
-                        errors: r.data.errors
-                    })
-                }
-            })
-            .catch(error => console.log('api errors:', error))
+        login(state)
+        redirect()
+        
     }
 
     const redirect = () => {
         navigate('/')
     }
+
+
  
   return (
     <div>
@@ -64,11 +49,10 @@ function Login({ handle }) {
             <Link to='/signup'>Sign Up</Link>
         </form>
         
-        {/* <Form handler={handleSubmit} /> */}
         
         
     </div>
   )
 }
 
-export default Login
+export default connect(null, { login }) (Login)

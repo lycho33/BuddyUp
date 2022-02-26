@@ -1,22 +1,24 @@
 const initialState = {
-    isLoggedIn: false,
-    id: null,
-    username: '',
+  isLoggedIn: false,
+  user: {},
 }
 
-  export function reducer(state=initialState, action){
-      switch(action.type){
-            case "LOGIN_USER":
+export function reducer(state=initialState, action){
+    switch(action.type){
+          case "LOGIN":
+            return {
+              isLoggedIn: true,
+              user: action.payload.data.user
+            };
+
+            case "LOGOUT":
+              // debugger
               return {
-                isLoggedIn: true,
-                id: action.user.id,
-                username: action.user.username,
-              };
-            case 'ADD_ERROR':
-                return [action.error]
-            case 'CLEAR_ERROR':
-                return []
-            default:
-                return {...state}
-      }
-  }
+                isLoggedIn: false,
+                user: {}
+              }
+
+          default:
+              return {...state}
+    }
+}

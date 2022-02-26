@@ -19,9 +19,12 @@ const store = createStore(reducer,
 
 ReactDOM.render(
   <ActionCableProvider url={API_WS_ROOT}>
-    <Router>
-      <App />
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
+
   </ActionCableProvider>,
   document.getElementById('root')
 );
