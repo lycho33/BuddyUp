@@ -11926,3 +11926,53 @@ Unsubscribing from channel: {"channel":"ConversationsChannel"}
 Unsubscribing from channel: {"channel":"MessagesChannel","conversation":1}
 ConversationsChannel stopped streaming from conversations_channel
 Could not execute command from ({"command"=>"unsubscribe", "identifier"=>"{\"channel\":\"MessagesChannel\",\"conversation\":1}"}) [RuntimeError - Unable to find subscription with identifier: {"channel":"MessagesChannel","conversation":1}]: /usr/share/rvm/gems/ruby-2.6.1/gems/actioncable-6.1.4.4/lib/action_cable/connection/subscriptions.rb:75:in `find' | /usr/share/rvm/gems/ruby-2.6.1/gems/actioncable-6.1.4.4/lib/action_cable/connection/subscriptions.rb:47:in `remove' | /usr/share/rvm/gems/ruby-2.6.1/gems/actioncable-6.1.4.4/lib/action_cable/connection/subscriptions.rb:18:in `execute_command' | /usr/share/rvm/gems/ruby-2.6.1/gems/actioncable-6.1.4.4/lib/action_cable/connection/base.rb:89:in `dispatch_websocket_message' | /usr/share/rvm/gems/ruby-2.6.1/gems/actioncable-6.1.4.4/lib/action_cable/server/worker.rb:60:in `block in invoke'
+Started GET "/logged_in" for ::1 at 2022-02-25 21:09:53 -0500
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#is_logged_in? as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 200 OK in 12ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 3915)
+
+
+Started POST "/login" for ::1 at 2022-02-25 21:10:20 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"user"=>{"username"=>"Lyz", "email"=>"joshua@bernier.info", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"username"=>"Lyz", "email"=>"joshua@bernier.info", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "joshua@bernier.info"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:4:in `create'
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.33ms)
+Completed 200 OK in 246ms (Views: 3.1ms | ActiveRecord: 2.9ms | Allocations: 9428)
+
+
+Started GET "/cable" for ::1 at 2022-02-25 21:10:20 -0500
+Started GET "/conversations" for ::1 at 2022-02-25 21:10:20 -0500
+Processing by ConversationsController#index as HTML
+Started GET "/cable/" [WebSocket] for ::1 at 2022-02-25 21:10:20 -0500
+  [1m[36mConversation Load (0.5ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations"[0m
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  ↳ app/controllers/conversations_controller.rb:6:in `index'
+[active_model_serializers]   [1m[36mMessage Load (0.9ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."conversation_id" = ?[0m  [["conversation_id", 1]]
+[active_model_serializers]   ↳ app/controllers/conversations_controller.rb:6:in `index'
+ConversationsChannel is transmitting the subscription confirmation
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (38.25ms)
+ConversationsChannel is streaming from conversations_channel
+Completed 200 OK in 76ms (Views: 68.4ms | ActiveRecord: 4.4ms | Allocations: 17171)
+
+
+Unsubscribing from channel: {"channel":"ConversationsChannel"}
+  [1m[36mConversation Load (0.7ms)[0m  [1m[34mSELECT "conversations".* FROM "conversations" WHERE "conversations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+ConversationsChannel stopped streaming from conversations_channel
+  ↳ app/channels/messages_channel.rb:5:in `subscribed'
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages:Z2lkOi8vYmFja2VuZC9Db252ZXJzYXRpb24vMQ
+Started DELETE "/logout" for ::1 at 2022-02-25 21:10:28 -0500
+Processing by SessionsController#destroy as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 320)
+
+
+Unsubscribing from channel: {"channel":"ConversationsChannel"}
+Unsubscribing from channel: {"channel":"MessagesChannel","conversation":1}
+Could not execute command from ({"command"=>"unsubscribe", "identifier"=>"{\"channel\":\"ConversationsChannel\"}"}) [RuntimeError - Unable to find subscription with identifier: {"channel":"ConversationsChannel"}]: /usr/share/rvm/gems/ruby-2.6.1/gems/actioncable-6.1.4.4/lib/action_cable/connection/subscriptions.rb:75:in `find' | /usr/share/rvm/gems/ruby-2.6.1/gems/actioncable-6.1.4.4/lib/action_cable/connection/subscriptions.rb:47:in `remove' | /usr/share/rvm/gems/ruby-2.6.1/gems/actioncable-6.1.4.4/lib/action_cable/connection/subscriptions.rb:18:in `execute_command' | /usr/share/rvm/gems/ruby-2.6.1/gems/actioncable-6.1.4.4/lib/action_cable/connection/base.rb:89:in `dispatch_websocket_message' | /usr/share/rvm/gems/ruby-2.6.1/gems/actioncable-6.1.4.4/lib/action_cable/server/worker.rb:60:in `block in invoke'
+MessagesChannel stopped streaming from messages:Z2lkOi8vYmFja2VuZC9Db252ZXJzYXRpb24vMQ
