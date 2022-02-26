@@ -66,9 +66,10 @@ function ConversationList() {
 
     //HELPER METHODS for Messages--------------------------------------------
     const findActiveConversation = (conversations, activeConversation) => {
-        return conversations.find(
+        const clickedConversation = conversations.find(
           conversation => conversation.id === activeConversation
         );
+        return clickedConversation
     };
       
 
@@ -89,7 +90,7 @@ function ConversationList() {
 
             <ul>{mapConversations(state.conversations, handleClick)}</ul>
             <NewConversationForm />
-            {console.log("hello", state.activeConversation)}
+
             {activeConversation ? (
                 <MessagesArea
                     conversation={findActiveConversation(state.conversations, activeConversation)}

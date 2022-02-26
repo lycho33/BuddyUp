@@ -17,7 +17,7 @@ const MessagesArea = ({conversation: { id, title, messages },}) => {
     <div className="messagesArea">
       <h2>{title}</h2>
       <ul>{orderedMessages(messages)}</ul>
-      <NewMessageForm conversation_id={id} />
+      <NewMessageForm conversationId={id} />
     </div>
   );
 };

@@ -1,4 +1,8 @@
 class MessagesController < ApplicationController
+    def index
+      message = Message.all
+      render json: message
+    end
 
     def create
         message = Message.new(message_params)
@@ -15,6 +19,6 @@ class MessagesController < ApplicationController
     private
   
     def message_params
-      params.require(:message).permit(:text, :conversation_id, :user_id)
+      params.require(:message).permit(:text, :conversation_id)
     end
 end
