@@ -8,6 +8,8 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import { reducer } from './redux/reducer'
+import { API_WS_ROOT } from './constants';
+import { ActionCableProvider } from 'react-actioncable-provider';
 
 const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : (null || compose);
 
@@ -16,9 +18,11 @@ const store = createStore(reducer,
 );
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
+  <ActionCableProvider url={API_WS_ROOT}>
+    <Router>
+      <App />
+    </Router>
+  </ActionCableProvider>,
   document.getElementById('root')
 );
 
