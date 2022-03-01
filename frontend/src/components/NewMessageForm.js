@@ -3,16 +3,15 @@ import { API_ROOT } from '../constants';
 import { useSelector } from 'react-redux'
 import axios from 'axios'
 
-function NewMessageForm({conversationId}) {
+function NewMessageForm({ conversationId }) {
 
     const [text, setText] = useState('')
-    // const [conversation_id, setConversation_id] = useState(conversationId)
     const user = useSelector(state => state.user)
     
 
-    useEffect(() => {
-        console.log("convo", conversationId, "user", user.id)
-    }, [])
+    // useEffect(() => {
+    //     console.log("convo", conversationId, "user", user.id)
+    // }, [])
 
     const handleChange = e => {
         setText(e.target.value)

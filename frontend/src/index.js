@@ -24,7 +24,6 @@ ReactDOM.render(
         <App />
       </Router>
     </Provider>
-
   </ActionCableProvider>,
   document.getElementById('root')
 );
