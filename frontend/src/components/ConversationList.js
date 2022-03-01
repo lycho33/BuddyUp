@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { ActionCable } from 'react-actioncable-provider';
 import { API_ROOT } from '../constants';
-import NewConversationForm from "../NewConversationForm";
-import MessagesArea from '../MessagesArea';
+import NewConversationForm from "./NewConversationForm";
+import MessagesArea from './MessagesArea';
 import Cable from '../Cable';
 import axios from 'axios'
 
@@ -103,4 +103,3 @@ function ConversationList() {
 }
 
 export default ConversationList
-

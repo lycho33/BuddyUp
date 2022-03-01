@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
-import { API_ROOT, HEADERS } from './constants';
+import { API_ROOT, HEADERS } from '../constants';
+import { useSelector } from 'react-redux'
 import axios from 'axios'
 
 function NewMessageForm({conversationId}) {
@@ -11,6 +12,8 @@ function NewMessageForm({conversationId}) {
 
     const [text, setText] = useState('')
     const [conversation_id, setConversation_id] = useState(conversationId)
+    const user = useSelector(state => state.user)
+    
 
     useEffect(() => {
 
@@ -28,7 +31,8 @@ function NewMessageForm({conversationId}) {
 
         let message = {
             text: text,
-            conversation_id: conversation_id
+            conversation_id: conversation_id,
+            user_id: user.id
         }
 
         axios.post(`${API_ROOT}/messages`, {message})
@@ -36,13 +40,6 @@ function NewMessageForm({conversationId}) {
                 console.log("message form", res)
                 setText('')
             })
-
-        // fetch(`${API_ROOT}/messages`, {
-        //     method: 'POST',
-        //     headers: HEADERS,
-        //     body: JSON.stringify(state)
-        //   });
-        //   setState({ text: '' });
     }
 
   return (
