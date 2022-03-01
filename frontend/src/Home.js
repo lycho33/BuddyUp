@@ -1,15 +1,30 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link , useNavigate} from 'react-router-dom'
 
-function Home() {
-  return (
-    <div>
-        <h1>HOME</h1>
+
+function Home({ loggedInStatus }) {
+
+
+  { if(loggedInStatus){
+    return(
+      <div>
+        <Link to="/logout">Logout</Link>
+      </div>
+    )
+  } else {
+    return(
+      <div>
+        <h1>Home</h1>
         <Link to='/login'>Log In</Link>
-            <br></br>
+        <br></br>
         <Link to='/signup'>Sign Up</Link>
-    </div>
-  )
+      </div>
+
+    )
+  }
+
+}
+
 }
 
 export default Home

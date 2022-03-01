@@ -1,36 +1,57 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate, Link } from 'react-router-dom'
+import { signup } from '../redux/actionCreators'
+import { connect } from 'react-redux'
 
-function Signup() {
-  const [username, setUsername] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [passwordConfirm, setPasswordConfirm] = useState('')
 
-  const handleChange = e => {
-    e.preventDefault()
-  }
+function Signup({ handle, signup }) {
+
+  let navigate = useNavigate();
+
+  const [state, setState] = useState({
+    username: '',
+    email: '',
+    password: '',
+    password_confirmation:'',
+    errors:''
+})
+
+const handleInputChange = (e) => {
+  setState((prevProps) => ({
+      ...prevProps,
+      [e.target.name]: e.target.value
+  }))
+}
+
+const handleSubmit = (e) => {
+  e.preventDefault()
+  signup(state)
+  redirect()
+}
+
+const redirect = () => {
+  navigate('/')
+}
+
 
   return (
     <div>
       <h1>Signup</h1>
 
-      <form onSubmit={handleChange}>
-        <label>Username</label>
-        <input type="text" value={username} onChange={e => setUsername(e.target.value)}/>
+      <form onSubmit={handleSubmit}>
+            <input type="text" placeholder="username" name="username" value={state.username} onChange={handleInputChange}/>
+            <input type="text" placeholder="email" name="email" value={state.email} onChange={handleInputChange}/>
+            <input type="password" placeholder="password" name="password" value={state.password} onChange={handleInputChange}/>
+            <input type="password" placeholder="password_confirmation" name="password_confirmation" value={state.password_confirmation} onChange={handleInputChange}/>
+            <button placeholder="submit" type="submit">SignUp</button>
+                <br />
+            <Link to='/login'>Log In</Link>
+        </form>
 
-        <label>Email</label>
-        <input type="text" value={email} onChange={e => setEmail(e.target.value)}/>
-        
-        <label>Password</label>
-        <input type="text" value={password} onChange={e => setPassword(e.target.value)}/>
 
-        <label>Password Confirmation</label>
-        <input type="text" value={passwordConfirm} onChange={e => setPasswordConfirm(e.target.value)}/>
-
-        <button type='submit'>Sign Up</button>
-      </form>
     </div>
   )
 }
 
-export default Signup
+export default connect( null, { signup }) (Signup)
