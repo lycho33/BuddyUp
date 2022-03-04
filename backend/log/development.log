@@ -32304,3 +32304,208 @@ Filter chain halted as :authorize rendered or redirected
 Completed 401 Unauthorized in 671ms (Views: 202.6ms | ActiveRecord: 9.0ms | Allocations: 4945061)
 
 
+Unsubscribing from channel: {"channel":"ConversationsChannel"}
+ConversationsChannel stopped streaming from conversations_channel
+ConversationsChannel is transmitting the subscription confirmation
+ConversationsChannel is streaming from conversations_channel
+Started DELETE "/logout" for ::1 at 2022-03-03 21:46:26 -0500
+Started GET "/conversations" for ::1 at 2022-03-03 21:46:26 -0500
+Processing by SessionsController#destroy as HTML
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ConversationsController#index as HTML
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user?'
+  [1m[35m (10.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user?'
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user?'
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user?'
+  ↳ app/helpers/sessions_helper.rb:26:in `current_user'
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:26:in `current_user'
+  ↳ app/helpers/sessions_helper.rb:26:in `current_user'
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 204 No Content in 525ms (ActiveRecord: 6.5ms | Allocations: 4526989)
+
+
+  ↳ app/helpers/sessions_helper.rb:26:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.35ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 550ms (Views: 175.1ms | ActiveRecord: 15.0ms | Allocations: 4685245)
+
+
+Unsubscribing from channel: {"channel":"ConversationsChannel"}
+Started DELETE "/logout" for ::1 at 2022-03-03 21:46:26 -0500
+ConversationsChannel is transmitting the subscription confirmation
+Unsubscribing from channel: {"channel":"ConversationsChannel"}
+ConversationsChannel stopped streaming from conversations_channel
+ConversationsChannel is streaming from conversations_channel
+ConversationsChannel stopped streaming from conversations_channel
+Processing by SessionsController#destroy as HTML
+Started GET "/conversations" for ::1 at 2022-03-03 21:46:27 -0500
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user?'
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:26:in `current_user'
+  [1m[36mCACHE User Load (9.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:26:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.29ms)
+Filter chain halted as :authorize rendered or redirected
+Processing by ConversationsController#index as HTML
+Completed 401 Unauthorized in 295ms (Views: 78.9ms | ActiveRecord: 11.5ms | Allocations: 2477269)
+
+
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:12:in `current_user?'
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:26:in `current_user'
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:26:in `current_user'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (1.17ms)
+Filter chain halted as :authorize rendered or redirected
+Completed 401 Unauthorized in 328ms (Views: 119.4ms | ActiveRecord: 2.7ms | Allocations: 2508762)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateInvites (20220304030933)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "invites" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "conversation_id" integer NOT NULL, "join_request" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_ff69dbb2ac"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_b48ac05dc2"
+FOREIGN KEY ("conversation_id")
+  REFERENCES "conversations" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_invites_on_user_id" ON "invites" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_invites_on_conversation_id" ON "invites" ("conversation_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220304030933"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToConversations (20220304031436)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aconversations" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aconversations" ("id","title","created_at","updated_at")
+                     SELECT "id","title","created_at","updated_at" FROM "conversations"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE "conversations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "conversations" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "conversations" ("id","title","created_at","updated_at")
+                     SELECT "id","title","created_at","updated_at" FROM "aconversations"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToConversations (20220304031436)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aconversations" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aconversations" ("id","title","created_at","updated_at")
+                     SELECT "id","title","created_at","updated_at" FROM "conversations"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "conversations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "conversations" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "conversations" ("id","title","created_at","updated_at")
+                     SELECT "id","title","created_at","updated_at" FROM "aconversations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUserToConversations (20220304031436)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aconversations" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aconversations" ("id","title","created_at","updated_at")
+                     SELECT "id","title","created_at","updated_at" FROM "conversations"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "conversations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "conversations" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "conversations" ("id","title","created_at","updated_at")
+                     SELECT "id","title","created_at","updated_at" FROM "aconversations"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20220211000923)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220211000923"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateConversations (20220221200057)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "conversations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_7c15d62a0a"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_conversations_on_user_id" ON "conversations" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220221200057"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateMessages (20220221200118)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "messages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar, "conversation_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_7f927086d2"
+FOREIGN KEY ("conversation_id")
+  REFERENCES "conversations" ("id")
+, CONSTRAINT "fk_rails_273a25a7a6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_messages_on_conversation_id" ON "messages" ("conversation_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_messages_on_user_id" ON "messages" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220221200118"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddRememberDigestToUsers (20220303211406)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_digest" varchar[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220303211406"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateInvites (20220304030933)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "invites" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "conversation_id" integer NOT NULL, "join_request" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_ff69dbb2ac"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_b48ac05dc2"
+FOREIGN KEY ("conversation_id")
+  REFERENCES "conversations" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_invites_on_user_id" ON "invites" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_invites_on_conversation_id" ON "invites" ("conversation_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220304030933"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-03-04 03:21:47.026603"], ["updated_at", "2022-03-04 03:21:47.026603"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "Lyz"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Lyz"], ["email", "macy_grady@bartoletti.name"], ["password_digest", "$2a$12$G28mOtj6FARBI/VmWAA6JOwvRyYpn3i27XyE5puEBMKI0an3JEtIu"], ["created_at", "2022-03-04 03:21:53.539401"], ["updated_at", "2022-03-04 03:21:53.539401"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m

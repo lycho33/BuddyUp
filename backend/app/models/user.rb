@@ -1,6 +1,9 @@
 class User < ApplicationRecord
-    has_many :conversations
     has_many :messages
+
+    has_many :created_convsersations, foreign_key: "user_id", class_name: "Conversation"
+    has_many :invites
+    has_many :conversations, through: :invites
 
     attr_accessor :remember_token
     has_secure_password
