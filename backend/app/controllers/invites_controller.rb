@@ -8,7 +8,7 @@ class InvitesController < ApplicationController
     def create 
         invite = @current_user.invites.new(invite_params)
         invite.join_request = null
-
+        test test
     end
 
     private
