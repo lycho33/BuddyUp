@@ -1,9 +1,9 @@
 class User < ApplicationRecord
     has_many :messages
+    has_many :conversations, through: :messages
+    
+    # has_many :invites
 
-    has_many :created_convsersations, foreign_key: "user_id", class_name: "Conversation"
-    has_many :invites
-    has_many :conversations, through: :invites
 
     attr_accessor :remember_token
     has_secure_password
@@ -43,5 +43,15 @@ class User < ApplicationRecord
 
     def forget
         update_attribute(:remember_digest, nil)
+    end
+
+
+    #-------------------------------------------------------------------------------------
+    def accepted_conversations
+        Conversation.joins(:invites).where("invites.user_id = ? and invites.join_request = true", self.id)
+    end
+
+    def not_our_notes
+        Invite.joins(:conversation).where("conversations.user_id = ? and (invites.join_request IS NULL or invites.join_request = false) and invites.user_id != ?", self.id, self.id).select(:conversation_id, :user_id, :join_request).distinct
     end
 end
