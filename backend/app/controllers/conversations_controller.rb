@@ -8,7 +8,7 @@ class ConversationsController < ApplicationController
 
     #used to save received data & broadcast the data to the appropriate channels 
     def create
-        conversation = Conversation.new(conversation_params)
+      conversation = conversations.create(conversation_params)
         if conversation.save
           serialized_data = ActiveModelSerializers::Adapter::Json.new(
             ConversationSerializer.new(conversation)
@@ -21,6 +21,6 @@ class ConversationsController < ApplicationController
     private
   
     def conversation_params
-        params.require(:conversation).permit(:title)
+        params.require(:conversation).permit(:title, :user_id)
     end
 end
