@@ -1,18 +1,23 @@
-import React, { Fragment } from 'react';
-import { ActionCable } from 'react-actioncable-provider';
+// import ActionCable from 'actioncable';
+// const cable = ActionCable.createConsumer('ws://test.example.com/cable');
 
-function Cable({ conversations, handleReceivedMessage }) {
+import React, { Fragment, useState } from 'react';
+import { ActionCableConsumer } from 'react-actioncable-provider';
+
+function Cable({ conversations, handleReceivedMessage, user }) {
+  const [message, setMessage] = useState('')
+
   return (
     <div>
         {/* returns a group of children without adding extra nodes to the DOM */}
         <Fragment>
             {conversations.map(conversation => {
                 return (
-                <ActionCable
+                <ActionCableConsumer
                     key={conversation.id}  
-                    channel={{ channel: 'MessagesChannel', conversation: conversation.id }}
+                    channel={{ channel: 'MessagesChannel', conversation: conversation.id, user: user.id }}
                     onReceived={handleReceivedMessage}
-                />
+                ></ActionCableConsumer>
                 );
             })}
         </Fragment>

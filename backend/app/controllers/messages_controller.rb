@@ -1,12 +1,14 @@
 class MessagesController < ApplicationController
+  before_action :find_user
+
     def index
-      message = Message.all
-      render json: message
+      messages = @current_user.messages.all
+      render json: messages
     end
 
     def create
-        message = Message.new(message_params)
-        conversation = Conversation.find(message_params[:conversation_id])
+      message = @current_user.messages.create(message_params)
+      conversation = Conversation.find(message_params[:conversation_id])
         if message.save
           serialized_data = ActiveModelSerializers::Adapter::Json.new(
             MessageSerializer.new(message)
@@ -19,6 +21,10 @@ class MessagesController < ApplicationController
     private
   
     def message_params
-      params.require(:message).permit(:text, :conversation_id)
+      params.require(:message).permit(:text, :conversation_id, :user_id)
+    end
+
+    def find_user
+      user = User.find_by_id(params[:user_id])
     end
 end

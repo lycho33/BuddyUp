@@ -8,11 +8,10 @@ export function reducer(state=initialState, action){
           case "LOGIN":
             return {
               isLoggedIn: true,
-              user: action.payload.data.user
+              user: action.payload.data
             };
 
             case "LOGOUT":
-              // debugger
               return {
                 isLoggedIn: false,
                 user: {}
