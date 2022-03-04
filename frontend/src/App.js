@@ -16,9 +16,9 @@ const App = () => {
   const user = useSelector(state => state.user)
 
 
-  useEffect(() => {
-    loginStatus()
-  }, [])
+  // useEffect(() => {
+  //   loginStatus()
+  // }, [])
 
   return (
     <div className="App">

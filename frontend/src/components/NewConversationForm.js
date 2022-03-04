@@ -1,11 +1,11 @@
 import React, { useState} from "react"
 import axios from 'axios'
 import { API_ROOT } from '../constants'
+import { useSelector } from 'react-redux'
 
 function NewConversationForm() {
-    const [state, setState] = useState({
-        title: ''
-    })
+    const [state, setState] = useState({title: ''})
+    const user = useSelector(state => state.user)
 
     const handleChange = e => {
         setState({
@@ -17,7 +17,8 @@ function NewConversationForm() {
         e.preventDefault()
 
         let conversation = {
-            title: state.title
+            title: state.title,
+            user_id: user.id
         }
 
         axios.post(`${API_ROOT}/conversations`, {conversation})
@@ -26,6 +27,8 @@ function NewConversationForm() {
                 setState({ title: '' })
             })
     }
+
+    
 
   return (
     <div className='newConversationForm'>

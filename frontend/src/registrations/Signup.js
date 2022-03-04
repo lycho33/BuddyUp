@@ -27,12 +27,12 @@ const handleInputChange = (e) => {
 const handleSubmit = (e) => {
   e.preventDefault()
   signup(state)
-  redirect()
-}
-
-const redirect = () => {
   navigate('/')
 }
+
+// const redirect = () => {
+//   navigate('/')
+// }
 
 
   return (
