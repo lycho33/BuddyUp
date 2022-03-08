@@ -21,15 +21,13 @@ ActiveRecord::Schema.define(version: 2022_03_04_030933) do
   end
 
   create_table "invites", force: :cascade do |t|
-    t.integer "recipient_id", null: false
-    t.integer "sender_id", null: false
+    t.integer "user_id", null: false
     t.integer "conversation_id", null: false
     t.boolean "join_request"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["conversation_id"], name: "index_invites_on_conversation_id"
-    t.index ["recipient_id"], name: "index_invites_on_recipient_id"
-    t.index ["sender_id"], name: "index_invites_on_sender_id"
+    t.index ["user_id"], name: "index_invites_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -53,8 +51,7 @@ ActiveRecord::Schema.define(version: 2022_03_04_030933) do
 
   add_foreign_key "conversations", "users"
   add_foreign_key "invites", "conversations"
-  add_foreign_key "invites", "recipients"
-  add_foreign_key "invites", "senders"
+  add_foreign_key "invites", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
 end

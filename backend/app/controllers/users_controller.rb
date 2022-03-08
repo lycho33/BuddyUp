@@ -7,14 +7,17 @@ class UsersController < ApplicationController
   end
 
   def create
+    byebug
     user = User.create!(user_params)
     session[:user_id] = user.id
     # log_in user
+    # session[:user_id] = user.id
+    log_in(user)
     render json: user, status: :created
   end
 
   def show
-    render json: @current_user
+    render json: @current_user, status: :created
   end
 
   private

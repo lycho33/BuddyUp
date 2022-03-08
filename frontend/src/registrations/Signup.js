@@ -5,7 +5,7 @@ import { signup } from '../redux/actionCreators'
 import { connect } from 'react-redux'
 
 
-function Signup({ handle, signup }) {
+function Signup({ signup }) {
 
   let navigate = useNavigate();
 
@@ -13,7 +13,7 @@ function Signup({ handle, signup }) {
     username: '',
     email: '',
     password: '',
-    password_confirmation:'', 
+    // password_confirmation:'', 
 })
 
 const handleInputChange = (e) => {
@@ -42,7 +42,7 @@ const handleSubmit = (e) => {
             <input type="text" placeholder="username" name="username" value={state.username} onChange={handleInputChange}/>
             <input type="text" placeholder="email" name="email" value={state.email} onChange={handleInputChange}/>
             <input type="password" placeholder="password" name="password" value={state.password} onChange={handleInputChange}/>
-            <input type="password" placeholder="password_confirmation" name="password_confirmation" value={state.password_confirmation} onChange={handleInputChange}/>
+            {/* <input type="password" placeholder="password_confirmation" name="password_confirmation" value={state.password_confirmation} onChange={handleInputChange}/> */}
             <button placeholder="submit" type="submit">SignUp</button>
                 <br />
             <Link to='/login'>Log In</Link>
