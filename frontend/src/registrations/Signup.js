@@ -13,8 +13,7 @@ function Signup({ handle, signup }) {
     username: '',
     email: '',
     password: '',
-    password_confirmation:'',
-    errors:''
+    password_confirmation:'', 
 })
 
 const handleInputChange = (e) => {
