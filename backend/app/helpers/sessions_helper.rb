@@ -23,7 +23,6 @@ module SessionsHelper
                 @current_user = user
             end
         end
-        @current_user = User.find_by(id: session[:user_id])
     end
 
     # Make the user's session permanent

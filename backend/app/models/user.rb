@@ -1,9 +1,7 @@
 class User < ApplicationRecord
     has_many :messages
-    has_many :conversations, through: :invites
-    has_many :invitations, :class_name =>"Invite", :foreign_key =>"recipient_id"
-    has_many :sent_invites, :class_name =>"Invite", :foreign_key =>"sender_id"
-    has_many :created_conversations, :class_name =>"Conversation", :foreign_key =>"user_id"
+    has_many :invites
+    has_many :conversations
 
     
     # has_many :invites

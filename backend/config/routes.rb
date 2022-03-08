@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :conversations, only: [:index, :create] 
   resources :messages, only: [:index, :create] 
+  resources :invites
 
 
   # the client will be using /cable endpoint to instantiate the WebSockets connection with our server.

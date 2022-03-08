@@ -1,14 +1,16 @@
 class InvitesController < ApplicationController
     
     def index 
-        invites = @current_user.invites.all
+        invites = @current_user.sent_invite_ids
         render json: invites
     end
 
     def create 
-        invite = @current_user.invites.new(invite_params)
+        invite = Invite.new(invite_params)
         invite.join_request = null
-        test test
+        if invite.save
+            render json: invite, status: :created
+        end
     end
 
     private

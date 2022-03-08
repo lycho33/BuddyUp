@@ -14,7 +14,6 @@ function Signup({ handle, signup }) {
     email: '',
     password: '',
     password_confirmation:'',
-    errors:''
 })
 
 const handleInputChange = (e) => {

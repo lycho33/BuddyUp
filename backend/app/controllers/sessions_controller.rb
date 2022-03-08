@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(username: params[:user][:username])
     if user && user.authenticate(params[:user][:password])
-      log_in user
+      log_in(user)
       current_user?
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       render json: user

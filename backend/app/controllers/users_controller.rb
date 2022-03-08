@@ -9,12 +9,12 @@ class UsersController < ApplicationController
   def create
     user = User.create!(user_params)
     # session[:user_id] = user.id
-    log_in user
+    log_in(user)
     render json: user, status: :created
   end
 
   def show
-    render json: @current_user
+    render json: @current_user, status: :created
   end
 
   private
