@@ -2,8 +2,7 @@ class UsersController < ApplicationController
     skip_before_action :require_login, only: [:create, :index]
 		
     def create
-        byebug
-        user = User.create(params[:user])
+        user = User.create(user_params)
         if user.valid?
             payload = {user_id: user.id}
             token = encode_token(payload)
