@@ -1,13 +1,18 @@
 import './App.css';
+import { useEffect } from 'react'
+import { connect } from 'react-redux';
 import { Route, Routes } from 'react-router-dom'
 import Home from './Components/Home/Home'
 import Login from './Components/Login/Login'
 import Signup from './Components/Signup/Signup';
 import Navbar from './Components/Navbar/Navbar';
+import { autoLogin } from './redux/action'
 
-function App() {
+function App({ autoLogin }) {
 
-
+  useEffect(() => {
+    autoLogin()
+  }, [])
   return (
     <div>
       <Navbar />
@@ -21,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default connect(null, { autoLogin })(App);

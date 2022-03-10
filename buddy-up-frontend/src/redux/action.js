@@ -85,3 +85,39 @@ export const login = (user) => {
 export const logoutUser = () => {
     return { type: 'LOGOUT_USER' };
 }
+
+export const autoLogin = () => {
+  return (dispatch) => {
+    const token = localStorage.token
+    axios.get('http://localhost:3001/auto_login',
+    {headers: {
+      'Authorization': `Bearer ${token}`
+    }})
+    .then(r => {
+      debugger
+      if(r.data.message) {
+        localStorage.removeItem('token')
+      } else {
+        dispatch(loginUser(r.data.user))
+      }
+    })
+     
+
+      //     const token = localStorage.token;
+      //     if (token) {
+      //         const data = await fetch(`${DOMAIN}/api/v1/auto_login`, getProfileConfig(token))
+      //             .then(resp => resp.json());
+      //         if (data.message) {
+      //             localStorage.removeItem('token')
+
+      //         } else {
+      //             dispatch(loginUser(data.user))
+      //         };
+
+      //     }
+      // } catch (e) {
+      //     error(e)
+      //     throw e
+      // }
+  };
+};
