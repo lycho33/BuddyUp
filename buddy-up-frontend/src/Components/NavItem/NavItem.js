@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const NavItem = () => {
+const NavItem = ({ path, name, handle }) => {
   return (
     <div>
-      <Link to=""
+      <Link to={path} onClick={handle}>{name}</Link>
     </div>
   )
 }
