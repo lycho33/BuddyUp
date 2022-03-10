@@ -17,16 +17,13 @@ const initialState = {
           const newUser = state.all.find(user => user.id === action.payload.id)
           // debugger
           if (newUser) {
-              return {...state, currentUser: action.payload, errors: [] }
+              return {...state, user: action.payload, errors: [] }
           } else {
-              return {...state, all: state.all.concat(action.payload), currentUser: action.payload, errors: [] }
+              return {...state, all: state.all.concat(action.payload), user: action.payload, errors: [] }
           };
   
-        case "LOGOUT":
-          return {
-            isLoggedIn: false,
-            user: {}
-          }
+          case 'LOGOUT_USER':
+            return {...state, user: {} }
 
           case 'CREATING_OR_GETTING_USER':
             return {...state, errors: [] }

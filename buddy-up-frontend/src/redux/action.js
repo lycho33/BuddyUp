@@ -13,25 +13,25 @@ const authFailed = error => ({
     payload: error
 })
 
-export const login = (user) => {
+// export const login = (user) => {
 
-    return async dispatch => {
-        try {
-            dispatch({ type: 'CREATING_OR_GETTING_USER' })
-            const data = await fetch(`${DOMAIN}/login`, postConfig(user)).then(resp => resp.json())
-            if (data.failure) {
-                dispatch(authFailed(data.failure))
-            } else {
-                localStorage.setItem('token', data.jwt)
-                dispatch(loginUser(data.user))
-                // success(`Welcome back ${data.user.username}`)
-            };
-        } catch (e) {
-            // error(e)
-            throw e
-        }
-    };
-};
+//     return async dispatch => {
+//         try {
+//             dispatch({ type: 'CREATING_OR_GETTING_USER' })
+//             const data = await fetch(`${DOMAIN}/login`, postConfig(user)).then(resp => resp.json())
+//             if (data.failure) {
+//                 dispatch(authFailed(data.failure))
+//             } else {
+//                 localStorage.setItem('token', data.jwt)
+//                 dispatch(loginUser(data.user))
+//                 // success(`Welcome back ${data.user.username}`)
+//             };
+//         } catch (e) {
+//             // error(e)
+//             throw e
+//         }
+//     };
+// };
 
 // export const register = (user) => {
 //     return async dispatch => {
@@ -66,4 +66,22 @@ export const register = (user) => {
       })
       .catch(error => console.log('api errors:', error))
     }
+}
+
+export const login = (user) => {
+    return (dispatch) => {
+        dispatch({ type: 'CREATING_OR_GETTING_USER' })
+      axios.post('http://localhost:3001/users', {user})
+      .then(r => {
+          if(r.statusText === 'Created'){
+            localStorage.setItem('token', r.data.jwt)
+            dispatch(loginUser(r.data.user))
+          } 
+      })
+      .catch(error => console.log('api errors:', error))
+    }
+}
+
+export const logoutUser = () => {
+    return { type: 'LOGOUT_USER' };
 }
