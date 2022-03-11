@@ -21,7 +21,6 @@ class ApplicationController < ActionController::API
     end
 
     def current_user
-        
         if decoded_token
             puts decoded_token.class
             user_id = decoded_token[0]['user_id']
