@@ -13,7 +13,6 @@ function App({ autoLogin, allUsers }) {
 
   useEffect(() => {
     autoLogin()
-    allUsers()
   }, [])
   
   return (

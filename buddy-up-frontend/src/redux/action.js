@@ -80,3 +80,18 @@ export const allUsers = () => {
         })
     }
 }
+
+export const allConversations = () => {
+  return (dispatch) => {
+      axios.get('http://localhost:3001/conversations')
+      .then(r => {
+          if(r.statusText === 'Created'){
+            dispatch({
+              type: 'FETCH_ALL_CONVERSATIONS',
+              payload: r.data
+            })
+          }
+      })
+  }
+}
+

@@ -1,6 +1,7 @@
 const initialState = {
     all: [],
     user: {},
+    conversations: [],
     errors: []
 }
   
@@ -24,6 +25,8 @@ const initialState = {
             return {...state, errors: [] }
           case 'FETCH_USERS_FULFILLED': 
             return {...state, all: state.all.concat(action.payload)}
+          case 'FETCH_ALL_CONVERSATIONS':
+            return {...state, conversations: state.conversations.concat(action.payload)}
           default:
             return {...state}
       }
