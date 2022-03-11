@@ -1,5 +1,6 @@
 class ConversationsController < ApplicationController
     before_action :find_Conversations, only: [:delete]
+    skip_before_action :require_login, only: [:index]
 
     def index
         @conversations = Conversation.all
@@ -9,9 +10,9 @@ class ConversationsController < ApplicationController
     def create
         conversation = current_user.create(conversation_params)
         if conversation.valid?
-            render json: conversation status: :created
+            render json: conversation, status: :created
         else
-            render json: status: :not_acceptable
+            render json: {errors: conversation.errors.full_messages}, status: :not_acceptable
         end
     end
 
@@ -22,7 +23,7 @@ class ConversationsController < ApplicationController
     private 
 
     def conversation_params
-        params.require(:conversation).permit(:title, :joins_request, :user_id)
+        params.require(:conversation).permit(:title, :user_id)
     end
     
     def find_Conversations

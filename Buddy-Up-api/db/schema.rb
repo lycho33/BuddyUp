@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 2022_03_11_025317) do
 
   create_table "conversations", force: :cascade do |t|
     t.string "title"
-    t.boolean "joins_request"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
