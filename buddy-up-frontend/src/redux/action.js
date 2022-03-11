@@ -85,13 +85,25 @@ export const allConversations = () => {
   return (dispatch) => {
       axios.get('http://localhost:3001/conversations')
       .then(r => {
-          if(r.statusText === 'Created'){
             dispatch({
               type: 'FETCH_ALL_CONVERSATIONS',
               payload: r.data
             })
-          }
       })
+  }
+}
+
+export const createConvo = (data) => {
+  return (dispatch) => {
+    axios.post('http://localhost:3001/conversations', {data})
+    .then(r => {
+      if(r.statusText === 'Created'){
+        dispatch({
+          type: 'CREATE_CONVERSATIONS',
+          payload: r.data
+        })
+      }
+    })
   }
 }
 
