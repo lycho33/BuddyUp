@@ -15,7 +15,7 @@ const Login = ( { login }) => {
     username: '',
     email: '',
     password: '',
-})
+  })
 
 const handleInputChange = (e) => {
     setState((prevProps) => ({

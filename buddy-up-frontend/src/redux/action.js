@@ -13,46 +13,10 @@ const authFailed = error => ({
     payload: error
 })
 
-// export const login = (user) => {
-
-//     return async dispatch => {
-//         try {
-//             dispatch({ type: 'CREATING_OR_GETTING_USER' })
-//             const data = await fetch(`${DOMAIN}/login`, postConfig(user)).then(resp => resp.json())
-//             if (data.failure) {
-//                 dispatch(authFailed(data.failure))
-//             } else {
-//                 localStorage.setItem('token', data.jwt)
-//                 dispatch(loginUser(data.user))
-//                 // success(`Welcome back ${data.user.username}`)
-//             };
-//         } catch (e) {
-//             // error(e)
-//             throw e
-//         }
-//     };
-// };
-
-// export const register = (user) => {
-//     return async dispatch => {
-//         try {
-//             dispatch({ type: 'CREATING_OR_GETTING_USER' })
-//             const data = await fetch(`${DOMAIN}/users`, postConfig(user)).then(resp => resp.json())
-            
-//             if (data.errors) {
-//                 dispatch(authFailed(data.errors))
-//             } else {
-//                 localStorage.setItem('token', data.jwt)
-//                 dispatch(loginUser(data.user))
-//                 // success(`Welcome ${data.user.username}, your account has been created!`)
-
-//             };
-//         } catch (e) {
-//             // error(e)
-//             throw e
-//         }
-//     };
-// };
+const fetchUsersFulfilled = (users) => ({
+    type: 'FETCH_USERS_FULFILLED',
+    payload: users
+})
 
 export const register = (user) => {
     return (dispatch) => {
@@ -71,9 +35,9 @@ export const register = (user) => {
 export const login = (user) => {
     return (dispatch) => {
         dispatch({ type: 'CREATING_OR_GETTING_USER' })
-      axios.post('http://localhost:3001/users', {user})
+      axios.post('http://localhost:3001/login', {user})
       .then(r => {
-          if(r.statusText === 'Created'){
+          if(r.statusText === 'Accepted'){
             localStorage.setItem('token', r.data.jwt)
             dispatch(loginUser(r.data.user))
           } 
@@ -94,30 +58,25 @@ export const autoLogin = () => {
       'Authorization': `Bearer ${token}`
     }})
     .then(r => {
-      debugger
       if(r.data.message) {
         localStorage.removeItem('token')
       } else {
         dispatch(loginUser(r.data.user))
       }
     })
-     
-
-      //     const token = localStorage.token;
-      //     if (token) {
-      //         const data = await fetch(`${DOMAIN}/api/v1/auto_login`, getProfileConfig(token))
-      //             .then(resp => resp.json());
-      //         if (data.message) {
-      //             localStorage.removeItem('token')
-
-      //         } else {
-      //             dispatch(loginUser(data.user))
-      //         };
-
-      //     }
-      // } catch (e) {
-      //     error(e)
-      //     throw e
-      // }
   };
 };
+
+export const allUsers = () => {
+    return (dispatch) => {
+        const token = localStorage.token
+        axios.get('http://localhost:3001/users', {headers: {'Authorization': `Bearer ${token}`}})
+        .then(r => {
+            if(r.data.message){
+                localStorage.removeItem('token')
+            } else {
+                dispatch(fetchUsersFulfilled(r.data))
+            }
+        })
+    }
+}

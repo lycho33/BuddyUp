@@ -7,12 +7,15 @@ import Login from './Components/Login/Login'
 import Signup from './Components/Signup/Signup';
 import Navbar from './Components/Navbar/Navbar';
 import { autoLogin } from './redux/action'
+import { allUsers } from './redux/action'
 
-function App({ autoLogin }) {
+function App({ autoLogin, allUsers }) {
 
   useEffect(() => {
     autoLogin()
+    allUsers()
   }, [])
+  
   return (
     <div>
       <Navbar />
@@ -26,4 +29,4 @@ function App({ autoLogin }) {
   );
 }
 
-export default connect(null, { autoLogin })(App);
+export default connect(null, { autoLogin, allUsers })(App);

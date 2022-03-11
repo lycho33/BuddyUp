@@ -1,13 +1,19 @@
 import React from 'react'
-import Signup from '../Signup/Signup'
-import Navbar from '../Navbar/Navbar'
+import { connect, useSelector } from 'react-redux'
+import { allUsers } from '../../redux/action'
 
-const Home = () => {
+const Home = ({ allUsers }) => {
+
+  const users = useSelector(state => state.all)
+  
+  const usernames = users.map(user => <h3>{user.username}</h3>)
   return (
     <div>
-      Home
+      <br />
+      Home <br /><br />
+      {usernames}
       </div>
   )
 }
 
-export default Home
+export default connect(null, { allUsers })(Home)

@@ -3,7 +3,7 @@ import NavItem from '../NavItem/NavItem'
 import { logoutUser } from '../../redux/action'
 import { connect, useSelector } from 'react-redux'
 
-const Navbar = ( { logoutUser }) => {
+const Navbar = ({ logoutUser }) => {
 
   const user = useSelector(state => state.user)
 
