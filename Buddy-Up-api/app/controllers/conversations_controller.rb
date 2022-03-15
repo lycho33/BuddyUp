@@ -1,6 +1,6 @@
 class ConversationsController < ApplicationController
     before_action :find_Conversations, only: [:delete]
-    skip_before_action :require_login, only: [:index]
+    skip_before_action :require_login, only: [:index, :show]
 
     def index
         @conversations = Conversation.all
@@ -9,12 +9,16 @@ class ConversationsController < ApplicationController
     
     def create
         conversation = current_user.conversations.create(conversation_params)
-        conversation.user_id = current_user.id
         if conversation.save
             render json: conversation, status: :created
         else
             render json: {errors: conversation.errors.full_messages}, status: :not_acceptable
         end
+    end
+
+    def show
+        conversation = Conversation.find(params[:id])
+        render json: conversation
     end
 
     def delete
