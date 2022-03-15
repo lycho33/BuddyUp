@@ -8,6 +8,11 @@ import { reducer } from  './redux/reducer'
 import { createStore, applyMiddleware, compose } from 'redux';
 import { BrowserRouter as Router } from 'react-router-dom'
 import thunk from 'redux-thunk';
+import actionCable from 'actioncable';
+
+const CableApp = {}
+
+CableApp.cable = actionCable.createConsumer('ws://localhost:3001/cable')
 
 const composeEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : (null || compose);
 
@@ -19,7 +24,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store = { store }>
       <Router>
-        <App />
+        <App cableApp={CableApp} />
       </Router>
     </Provider>
     

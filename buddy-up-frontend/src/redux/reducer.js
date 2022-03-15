@@ -37,6 +37,11 @@ const initialState = {
             return {...state, 
               user: [updatedUser]
             }
+          case 'GET_CONVERSATION':
+            return {
+              ...state,
+              
+            }
           default:
             return {...state}
       }

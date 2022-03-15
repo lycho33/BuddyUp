@@ -110,3 +110,17 @@ export const createConvo = (conversation) => {
   }
 }
 
+export const getConvoData = id => {
+  
+  return dispatch => {
+    const token = localStorage.token
+    axios.get(`http://localhost:3001/conversations/${id}`)
+      .then(r => {
+        dispatch({
+          type: 'GET_CONVERSATION',
+          payload: r.data
+        })
+      })
+  }
+}
+
