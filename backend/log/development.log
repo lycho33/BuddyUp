@@ -35143,3 +35143,12 @@ SystemExit (exit):
 (byebug):1:in `exit'
 (byebug):1:in `create'
 app/controllers/users_controller.rb:11:in `create'
+Started GET "/" for ::1 at 2022-03-10 20:43:50 -0500
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-2.6.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-2.6.1/gems/railties-6.1.4.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 7.8ms | Allocations: 350)
+Completed 200 OK in 31ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 2757)
+
+
