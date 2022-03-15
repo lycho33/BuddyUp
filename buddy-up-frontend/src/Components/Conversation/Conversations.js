@@ -1,33 +1,23 @@
-import React, { useState} from "react"
+import React, { useEffect } from 'react'
+import { useSelector, connect } from 'react-redux'
+import { getConversations } from '../../redux/action'
 
+const Conversations = ({ getConversations }) => {
 
-function Conversations() {
-    const [state, setState] = useState({title: ''})
+  useEffect(() => {
+    getConversations()
+  }, [])
 
-    const handleChange = e => {
-        setState({
-            title: e.target.value
-        })
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-
-    }
+  const convos = useSelector(state => state.conversations)
+  const all = convos.map(c => <h1>{c.title}</h1>)
 
   return (
     <div>
-        <form onSubmit={handleSubmit}>
-            <label>New Conversation:</label><br />
-            <input 
-                type="text"
-                value={state.title}
-                onChange={handleChange} 
-            />
-            <input type="submit" />
-        </form>
+      Conversations
+      {all}
     </div>
+    
   )
 }
 
-export default Conversations
+export default connect( null, { getConversations })(Conversations)

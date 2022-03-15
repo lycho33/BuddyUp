@@ -15,7 +15,9 @@ const Navbar = ({ logoutUser }) => {
   if(user.id){
     return(
       <div>
-        <NavItem path='/' name='logout' handle={logout} />
+        <NavItem path='/' name='Logout' handle={logout} />
+        <NavItem path='/conversations' name='All Convos' />
+        <NavItem path='/conversations/new' name='Create Convos' />
       </div>
     )
   } else {

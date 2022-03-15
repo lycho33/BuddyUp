@@ -8,6 +8,8 @@ import Signup from './Components/Signup/Signup';
 import Navbar from './Components/Navbar/Navbar';
 import { autoLogin } from './redux/action'
 import { allUsers } from './redux/action'
+import ConvoForm from './Components/Conversation/ConvoForm'
+import Conversations from './Components/Conversation/Conversations';
 
 function App({ autoLogin, allUsers }) {
 
@@ -22,7 +24,8 @@ function App({ autoLogin, allUsers }) {
         <Route exact path='/' element={<Home />} />
         <Route exact path='/login' element={<Login />} />
         <Route exact path='/signup' element={<Signup />} />
-        {/* <Route exact path='/logout' element={<Logout />} /> */}
+        <Route exact path='/conversations' element={<Conversations />} />
+        <Route exact path='/conversations/new' element={<ConvoForm />} />
       </Routes>
     </div>
   );

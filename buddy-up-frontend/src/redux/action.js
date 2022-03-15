@@ -81,7 +81,7 @@ export const allUsers = () => {
     }
 }
 
-export const allConversations = () => {
+export const getConversations = () => {
   return (dispatch) => {
       axios.get('http://localhost:3001/conversations')
       .then(r => {
@@ -93,9 +93,12 @@ export const allConversations = () => {
   }
 }
 
-export const createConvo = (data) => {
+export const createConvo = (conversation) => {
+
   return (dispatch) => {
-    axios.post('http://localhost:3001/conversations', {data})
+    const token = localStorage.token
+    axios.post('http://localhost:3001/conversations', {conversation}, {headers: {'Authorization': `Bearer ${token}`}}
+     )
     .then(r => {
       if(r.statusText === 'Created'){
         dispatch({

@@ -26,12 +26,13 @@ const initialState = {
           case 'FETCH_USERS_FULFILLED': 
             return {...state, all: state.all.concat(action.payload)}
           case 'FETCH_ALL_CONVERSATIONS':
-            return {...state, conversations: state.conversations.concat(action.payload)}
+            return {...state,
+               conversations: [...action.payload]}
           case 'CREATE_CONVERSATIONS':
             const index = state.user.findIndex(user => user.id === action.payload.user_id)
             const updatedUser = {
-              ...state.user[index],
-              conversations: [...state.user[index].conversations, action.payload]
+              ...state.user[0],
+              conversations: [...state.user[0].conversations, action.payload]
             }
             return {...state, 
               user: [updatedUser]

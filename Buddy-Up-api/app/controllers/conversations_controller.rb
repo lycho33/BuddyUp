@@ -8,8 +8,9 @@ class ConversationsController < ApplicationController
     end
     
     def create
-        conversation = current_user.create(conversation_params)
-        if conversation.valid?
+        conversation = current_user.conversations.create(conversation_params)
+        conversation.user_id = current_user.id
+        if conversation.save
             render json: conversation, status: :created
         else
             render json: {errors: conversation.errors.full_messages}, status: :not_acceptable
@@ -23,7 +24,7 @@ class ConversationsController < ApplicationController
     private 
 
     def conversation_params
-        params.require(:conversation).permit(:title, :user_id)
+        params.require(:conversation).permit!
     end
     
     def find_Conversations
