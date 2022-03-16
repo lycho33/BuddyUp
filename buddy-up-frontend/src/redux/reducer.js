@@ -40,7 +40,7 @@ const initialState = {
           case 'GET_CONVERSATION':
             return {
               ...state,
-              conversations: [...state.user]
+              conversations: [action.payload]
             }
           default:
             return {...state}

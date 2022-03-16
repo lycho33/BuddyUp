@@ -9,7 +9,6 @@ const Conversations = ({ getConversations }) => {
     getConversations()
   }, [])
 
-  const users = useSelector(state => state.all)
   const convos = useSelector(state => state.conversations)
   const all = convos.map(c => <Link to={`/conversations/${c.id}`}><h3>{c.title}</h3></Link>)
 

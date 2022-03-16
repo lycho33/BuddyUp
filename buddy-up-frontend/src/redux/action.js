@@ -115,7 +115,6 @@ export const getConvoData = id => {
   return dispatch => {
     axios.get(`http://localhost:3001/conversations/${id}`)
       .then(r => {
-        debugger
         dispatch({
           type: 'GET_CONVERSATION',
           payload: r.data
