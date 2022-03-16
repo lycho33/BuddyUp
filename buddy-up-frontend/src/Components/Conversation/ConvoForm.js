@@ -8,8 +8,7 @@ function Conversations({ createConvo }) {
 
     const handleChange = e => {
         setState({
-            title: e.target.value
-            
+            title: e.target.value 
         })
     }
 

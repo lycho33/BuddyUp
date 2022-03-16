@@ -97,8 +97,7 @@ export const createConvo = (conversation) => {
 
   return (dispatch) => {
     const token = localStorage.token
-    axios.post('http://localhost:3001/conversations', {conversation}, {headers: {'Authorization': `Bearer ${token}`}}
-     )
+    axios.post('http://localhost:3001/conversations', {conversation}, {headers: {'Authorization': `Bearer ${token}`}})
     .then(r => {
       if(r.statusText === 'Created'){
         dispatch({
@@ -120,6 +119,19 @@ export const getConvoData = id => {
           payload: r.data
         })
       })
+  }
+}
+
+export const createMessage = message => {
+  return (dispatch) => {
+    const token = localStorage.token
+    axios.post('http://localhost:3001/messages', {message}, {headers: {'Authorization': `Bearer ${token}`}})
+    .then(r => {
+      dispatch({
+        type: 'CREATE_MESSAGES',
+        payload: r.data
+      })
+    })
   }
 }
 

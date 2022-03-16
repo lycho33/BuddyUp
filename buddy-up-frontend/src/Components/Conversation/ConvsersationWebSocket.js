@@ -13,8 +13,7 @@ function ConvsersationWebSocket({ cableApp, updateApp, convoId, convoData}) {
             received: (updatedConvo) => {
                 updateApp(updatedConvo)
             }
-        }
-        )
+        })
     }, [])
 
     return (

@@ -42,6 +42,11 @@ const initialState = {
               ...state,
               conversations: [action.payload]
             }
+          case 'CREATE_MESSAGES':
+            debugger
+            return {
+
+            }
           default:
             return {...state}
       }
