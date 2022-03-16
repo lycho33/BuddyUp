@@ -1,9 +1,16 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import { connect } from 'react-redux'
+import { getConvoData } from '../../redux/action'
 
-function ConversationRoom() {
+function ConversationRoom({ getConvoData }) {
+
+  useEffect(() => {
+    getConvoData()
+  }, [])
+
   return (
     <div>ConversationRoom</div>
   )
 }
 
-export default ConversationRoom
+export default connect(null, { getConvoData })(ConversationRoom)
