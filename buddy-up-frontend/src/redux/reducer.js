@@ -29,7 +29,7 @@ const initialState = {
             return {...state,
                conversations: [...action.payload]}
           case 'CREATE_CONVERSATIONS':
-            const index = state.user.findIndex(user => user.id === action.payload.user_id)
+            
             const updatedUser = {
               ...state.user[0],
               conversations: [...state.user[0].conversations, action.payload]
@@ -43,9 +43,15 @@ const initialState = {
               conversations: [action.payload]
             }
           case 'CREATE_MESSAGES':
-            debugger
-            return {
-
+            
+            const index = state.conversations.findIndex(c => c.id === action.payload.conversation.id)
+            const updatedConvo = {
+              ...state.conversations[index],
+              messages: [...state.conversations[index].messages, action.payload]
+            }
+            // debugger
+            return {...state,
+              conversations: [...state.conversations.slice(0,index), updatedConvo, state.conversations.slice(index+1)]
             }
           default:
             return {...state}
