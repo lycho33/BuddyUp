@@ -8,7 +8,7 @@ class ConversationsController < ApplicationController
     end
     
     def create
-        conversation = current_user.conversations.create(conversation_params)
+        conversation = Conversation.create(conversation_params)
         if conversation.save
             render json: conversation, status: :created
         else

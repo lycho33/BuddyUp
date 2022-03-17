@@ -33,8 +33,7 @@ function MessageForm({ createMessage, conversation_id }) {
         <button type='submit'>Submit</button>
       </form>
 
-      {renderMessages}
-      {console.log(messages)}
+      {/* {renderMessages} */}
       
     </div>
   )

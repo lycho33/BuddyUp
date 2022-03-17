@@ -14,8 +14,8 @@ function ConversationRoom({ getConvoData, cableApp, updateApp, convoData, setCon
     updateCurrentConvoState()
   }, [])
 
-  const convo = useSelector(state => state.conversations)
-  const renderConvo = convo.map(c => <h3 key={c.id}>Title: {c.title}</h3>)
+  const convo = useSelector(state => state.conversations[0])
+  // const renderMessages = convo.messages.map(c => <h3 key={c.id}>{c.text}</h3>)
 
   const updateCurrentConvoState = () => {
     setConvoData({
@@ -30,8 +30,9 @@ function ConversationRoom({ getConvoData, cableApp, updateApp, convoData, setCon
   return (
     <div>
       <br />
-      ConversationRoom
-      {renderConvo}
+      ConversationRoom<br />
+      <h1>Title:{convo.title}</h1>
+      {/* {renderMessages} */}
       <MessageForm conversation_id={params.id} /><br />
       <ConvsersationWebSocket 
         cableApp={cableApp}
