@@ -5,15 +5,29 @@ import React, {useEffect} from 'react'
 function ConvsersationWebSocket({ cableApp, updateApp, convoId, convoData}) {
   
     useEffect(() => {
-        cableApp.room = cableApp.cable.subscriptions.create({
+        const paramsToSend = {
             channel: 'ConversationChannel',
             conversation: `${convoId}`
-        },
-        {
-            received: (updatedConvo) => {
-                updateApp(updatedConvo)
+        }
+        const handlers = {
+            received(){
+                
+            },
+            connected(){
+                console.log("connected to the conversation!")
+            },
+            disconnected(){
+                console.log("disconnected to the conversation!")
             }
-        })
+        }
+        // const subscription = cableApp.room = cableApp.cable.subscriptions.create(paramsToSend, handlers)
+        
+        const subscription = cableApp.cable.subscriptions.create(paramsToSend, handlers)
+
+        return function cleanup(){
+            console.log("unsubbing from ", convoId)
+            subscription.unsubscribe()
+        }
     }, [])
 
     return (
