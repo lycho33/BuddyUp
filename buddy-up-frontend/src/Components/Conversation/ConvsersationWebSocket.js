@@ -1,17 +1,21 @@
 import React, {useEffect} from 'react'
 // import { connect } from 'react-redux'
 // import { getConvoData } from '../../redux/action'
+import { useSelector } from 'react-redux'
 
 function ConvsersationWebSocket({ cableApp, updateApp, convoId, convoData}) {
+
+    const conversation = useSelector(state => state.conversations[0])
   
     useEffect(() => {
+        console.log(conversation)
         const paramsToSend = {
             channel: 'ConversationChannel',
             conversation: `${convoId}`
         }
         const handlers = {
-            received(){
-                
+            received(conversation){
+                updateApp(conversation)
             },
             connected(){
                 console.log("connected to the conversation!")
