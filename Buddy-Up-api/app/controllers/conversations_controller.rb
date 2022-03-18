@@ -4,11 +4,13 @@ class ConversationsController < ApplicationController
 
     def index
         @conversations = Conversation.all
-        render json: @conversations
+        render json: @conversations.to_json(
+            :include => {:messages => {:include => :user}}
+        )
     end
     
     def create
-        conversation = current_user.conversations.create(conversation_params)
+        conversation = Conversation.create(conversation_params)
         if conversation.save
             render json: conversation, status: :created
         else
@@ -18,7 +20,9 @@ class ConversationsController < ApplicationController
 
     def show
         conversation = Conversation.find(params[:id])
-        render json: conversation
+        render json: conversation.to_json(
+            :include => {:messages => {:include => :user}}
+        )
     end
 
     def delete

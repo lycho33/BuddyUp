@@ -109,7 +109,7 @@ export const createConvo = (conversation) => {
   }
 }
 
-export const getConvoData = id => {
+export const getConvoData = (id) => {
   
   return dispatch => {
     axios.get(`http://localhost:3001/conversations/${id}`)
@@ -122,15 +122,19 @@ export const getConvoData = id => {
   }
 }
 
-export const createMessage = message => {
+export const createMessage = (message) => {
   return (dispatch) => {
+    
     const token = localStorage.token
     axios.post('http://localhost:3001/messages', {message}, {headers: {'Authorization': `Bearer ${token}`}})
     .then(r => {
-      dispatch({
-        type: 'CREATE_MESSAGES',
-        payload: r.data
-      })
+      if(r.statusText === "OK"){
+        dispatch({
+          type: 'CREATE_MESSAGES',
+          payload: r.data
+        })
+      }
+      // debugger
     })
   }
 }

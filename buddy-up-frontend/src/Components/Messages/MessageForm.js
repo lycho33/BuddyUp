@@ -4,6 +4,7 @@ import { createMessage } from '../../redux/action'
 
 function MessageForm({ createMessage, conversation_id }) {
   const currentUser = useSelector(state => state.user)
+  const messages = useSelector(state => state.conversations[0].messages)
   const [state, setState] = useState({text: ''})
 
   const handleChange = e => {
@@ -22,6 +23,8 @@ function MessageForm({ createMessage, conversation_id }) {
     createMessage(message)
   }
 
+  const renderMessages = messages.map(m => <h3>{m.text}</h3>)
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -29,6 +32,9 @@ function MessageForm({ createMessage, conversation_id }) {
         <input type="text" placeholder='your message' value={state.text} onChange={handleChange} />
         <button type='submit'>Submit</button>
       </form>
+
+      {/* {renderMessages} */}
+      
     </div>
   )
 }
