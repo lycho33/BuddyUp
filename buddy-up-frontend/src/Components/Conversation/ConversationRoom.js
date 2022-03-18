@@ -5,28 +5,16 @@ import { getConvoData } from '../../redux/action'
 import ConvsersationWebSocket from './ConvsersationWebSocket'
 import MessageForm from '../Messages/MessageForm'
 
-function ConversationRoom({ getConvoData, cableApp, updateApp, convoData, setConvoData }) {
+function ConversationRoom({ getConvoData, cableApp }) {
   const params = useParams()
 
   useEffect(() => {
     getConvoData(params.id)
-    //when refreshing page, it can't recognize info on update function
-    updateCurrentConvoState()
   }, [])
 
   const convo = useSelector(state => state.conversations[0])
   const currentUser = useSelector(state => state.user.username)
   const renderMessages = convo.messages.map(m => <h3 key={m.id}>{m.user.username}: {m.text}</h3>)
-
-  const updateCurrentConvoState = () => {
-    setConvoData({
-      currentConvo: {
-        convo: convo[0],
-        users: convo[0],
-        messages: convo[0]
-      }
-    })
-  }
 
   return (
     <div>
@@ -35,12 +23,7 @@ function ConversationRoom({ getConvoData, cableApp, updateApp, convoData, setCon
       <h1>Title:{convo.title}</h1>
       {renderMessages}
       <MessageForm conversation_id={params.id} /><br />
-      <ConvsersationWebSocket 
-        cableApp={cableApp}
-        updateApp={updateApp}
-        convoId={params.id}
-        convoData={convoData}
-      />
+      <ConvsersationWebSocket cableApp={cableApp} convoId={params.id} />
     </div>
   )
 }

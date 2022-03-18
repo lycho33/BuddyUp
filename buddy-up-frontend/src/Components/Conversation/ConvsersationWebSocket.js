@@ -3,19 +3,21 @@ import React, {useEffect} from 'react'
 // import { getConvoData } from '../../redux/action'
 import { useSelector } from 'react-redux'
 
-function ConvsersationWebSocket({ cableApp, updateApp, convoId, convoData}) {
+function ConvsersationWebSocket({ cableApp, convoId}) {
 
     const conversation = useSelector(state => state.conversations[0])
+    const message = conversation.messages[1]
   
     useEffect(() => {
-        console.log(conversation)
+        // console.log(conversation.messages)
         const paramsToSend = {
             channel: 'ConversationChannel',
             conversation: `${convoId}`
         }
         const handlers = {
-            received(conversation){
-                updateApp(conversation)
+            received: (data) => {
+                console.log("received", data)
+                // updateApp(conversation)
             },
             connected(){
                 console.log("connected to the conversation!")
@@ -26,7 +28,17 @@ function ConvsersationWebSocket({ cableApp, updateApp, convoId, convoData}) {
         }
         // const subscription = cableApp.room = cableApp.cable.subscriptions.create(paramsToSend, handlers)
         
-        const subscription = cableApp.cable.subscriptions.create(paramsToSend, handlers)
+        const subscription = cableApp.cable.subscriptions.create(paramsToSend, {
+            connected(){
+                console.log("connected to the conversation!")
+            },
+            disconnected(){
+                console.log("disconnected from the conversation!")
+            }, 
+            received: (data) => {
+                console.log("received", data)
+            }
+        })
 
         return function cleanup(){
             console.log("unsubbing from ", convoId)
@@ -35,8 +47,8 @@ function ConvsersationWebSocket({ cableApp, updateApp, convoId, convoData}) {
     }, [])
 
     return (
-    <div>ConvsersationWebSocket</div>
-  )
+        <div>ConvsersationWebSocket</div>
+    )
 }
 
 export default ConvsersationWebSocket

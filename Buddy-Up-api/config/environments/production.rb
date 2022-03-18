@@ -2,7 +2,7 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  config.cache_store = :redis_store, "redis://localhost:6379/1/cache", { expires_in: 90.minutes }
   # Code is not reloaded between requests.
   config.cache_classes = true
 

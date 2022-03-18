@@ -17,28 +17,10 @@ import { getConvoData } from './redux/action'
 function App({ autoLogin, allUsers, cableApp, getConvoData }) {
 
   const currentUser = useSelector(state => state.user)
-  const [state, setState] = useState({
-    currentConvo: {
-      currentUser: currentUser,
-      convo: {},
-      users: [],
-      messages: []
-    }
-  })
 
   useEffect(() => {
     autoLogin()
   }, [])
-
-  const updateAppStateRoom = (newConvo) => {
-    setState({
-      currentConvo: {
-        convo: newConvo.convo.data,
-        users: newConvo.users,
-        messages: newConvo.messages
-      }
-    })
-  }
   
   return (
     <div>
@@ -49,12 +31,7 @@ function App({ autoLogin, allUsers, cableApp, getConvoData }) {
         <Route exact path='/signup' element={<Signup />} />
         <Route exact path='/conversations' element={<Conversations />} />
         <Route exact path='/conversations/new' element={<ConvoForm />} />
-        <Route exact path='/conversations/:id' element={<ConversationRoom 
-                                                            cableApp={cableApp} 
-                                                            updateApp={updateAppStateRoom}
-                                                            convoData={state}
-                                                            setConvoData={setState}
-                                                        />} />
+        <Route exact path='/conversations/:id' element={<ConversationRoom cableApp={cableApp} />} />
       </Routes>
     </div>
   );
