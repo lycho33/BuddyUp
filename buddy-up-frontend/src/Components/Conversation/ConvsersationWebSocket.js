@@ -9,22 +9,9 @@ function ConvsersationWebSocket({ cableApp, convoId}) {
     const message = conversation.messages[1]
   
     useEffect(() => {
-        // console.log(conversation.messages)
         const paramsToSend = {
             channel: 'ConversationChannel',
             conversation: `${convoId}`
-        }
-        const handlers = {
-            received: (data) => {
-                console.log("received", data)
-                // updateApp(conversation)
-            },
-            connected(){
-                console.log("connected to the conversation!")
-            },
-            disconnected(){
-                console.log("disconnected to the conversation!")
-            }
         }
         // const subscription = cableApp.room = cableApp.cable.subscriptions.create(paramsToSend, handlers)
         
