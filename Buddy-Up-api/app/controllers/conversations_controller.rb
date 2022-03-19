@@ -12,8 +12,6 @@ class ConversationsController < ApplicationController
     def create
         conversation = Conversation.create(conversation_params)
         if conversation.save
-            ActionCable.server.broadcast 'conversation_channel', conversation
-            head :ok
             render json: conversation, status: :created
         else
             render json: {errors: conversation.errors.full_messages}, status: :not_acceptable
