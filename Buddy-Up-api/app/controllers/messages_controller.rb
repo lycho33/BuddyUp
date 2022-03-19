@@ -13,12 +13,8 @@ class MessagesController < ApplicationController
             serialized_data = ActiveModelSerializers::Adapter::Json.new(
                 MessageSerializer.new(message)
             ).serializable_hash
-            ConversationChannel.broadcast_to(conversation, message)
-            # ConversationChannel.broadcast_to(conversation, {
-            #     conversation: conversation,
-            #     users: conversation.users,
-            #     messages: conversation.messages
-            # })
+            ConversationChannel.broadcast_to(conversation, serialized_data)
+            ActionCable.server.broadcast(conversation, { messages: conversation.messages.last})
         end
         render json: message
     end
