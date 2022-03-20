@@ -16,7 +16,7 @@ function ConvsersationWebSocket({ cableApp, convoId}) {
             channel: 'ConversationChannel',
             conversation: `${convoId}`
         }
-                
+
         const subscription = cableApp.cable.subscriptions.create(paramsToSend, {
             connected(){
                 console.log("connected to the conversation!")
