@@ -1,0 +1,54 @@
+.nav-container {
+    display: flex;
+    position: relative;
+    width: 100vw;
+    background-color: whitesmoke;
+}
+
+.conversation-nav-container{
+    display: inline-flex;
+    border-radius: 25px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, .4);
+	-webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    align-items: center;
+    padding: 0 10px;
+    margin: 20px 20px 20px 40vw;
+}
+
+.convo-link{
+    color: blue;
+    padding: 12px 16px;
+    margin: 0 8px;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.convo-link:hover{
+    background: linear-gradient(to bottom, #e8edec, #d2d1d3);
+    box-shadow: 0px 3px 20px 0px black;
+    border-radius: 25px;
+    transform: scale(1.2);
+}
+
+.registrations{
+    margin-left: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    left: auto;
+    z-index: 100;
+}
+
+.registrations-login{
+    display: flex;
+    margin-left: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    left: auto;
+    z-index: 100;
+}

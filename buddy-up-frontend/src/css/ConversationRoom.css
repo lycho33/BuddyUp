@@ -1,0 +1,35 @@
+.conversation-container{
+    display: block;
+    text-align: center;
+    position: relative;
+}
+
+.messages-box{
+    background-color: azure;
+    height: 60vh;
+    width: 70vw;
+    position: absolute;
+    top: 330%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: scroll;
+}
+
+.currentUser-message{
+    color: pink;
+    position: relative;
+    margin: 0px 0px 0px 190px
+}
+
+.buddys-message{
+    color: blue;
+    position: relative;
+    margin: 0px 200px 0px 0px
+}
+
+.message-form-container{
+    position: absolute;
+    top: 600%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

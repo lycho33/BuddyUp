@@ -1,0 +1,21 @@
+.conversations-container{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    background-color: antiquewhite;
+    width: 70vw;
+    height: auto;
+}
+
+.conversation h3{
+    color: blueviolet;
+    text-decoration: none;
+}
+
+.conversation h3:hover{
+    color: blue;
+}

@@ -1,0 +1,19 @@
+.conversation-form{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.conversation-form input {
+    border: none;
+    background: hsl(0 0% 93%);
+    border-radius: .25rem;
+    padding: .75rem 1rem;
+    margin-left: 1rem;
+}
+
+.conversation-form input[type="submit"]{
+    background: rgb(133, 105, 255);
+    color: white;
+    box-shadow: 0 .75rem .5rem -.5rem hsl(0 50% 80%);
+    cursor: pointer;
+}
