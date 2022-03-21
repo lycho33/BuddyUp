@@ -2,25 +2,48 @@
     display: flex;
     position: relative;
     width: 100vw;
-    background-color: whitesmoke;
+    height: 11vh;
+    background-color: #2F4454;
+}
+
+.icon {
+    margin-left: 30px;
+    margin-top: 28px;
+    display: flex;
+}
+
+.icon h1 {
+    color: #09fdfd;
+    margin-left: 20px;
+    position: relative;
+    top: -10px;
+    font-family: 'Mina', sans-serif;
+    font-weight: bold;
+}
+
+.home-icon{
+    color: #FA95E4;
 }
 
 .conversation-nav-container{
     display: inline-flex;
+    font-family: 'Mina', sans-serif;
     border-radius: 25px;
     height: 30px;
     background-color: rgba(0, 0, 0, .4);
 	-webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     align-items: center;
-    padding: 0 10px;
-    margin: 20px 20px 20px 40vw;
+    padding: 10px 10px;
+    margin: 40px 20px 20px 12vw;
 }
 
 .convo-link{
-    color: blue;
-    padding: 12px 16px;
-    margin: 0 8px;
+    color: #FA95E4;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 18px 19px;
+    margin: 0 6px;
     position: relative;
     cursor: pointer;
     white-space: nowrap;
@@ -28,27 +51,49 @@
 }
 
 .convo-link:hover{
-    background: linear-gradient(to bottom, #e8edec, #d2d1d3);
-    box-shadow: 0px 3px 20px 0px black;
+    background: linear-gradient(to bottom, #DA7B93, #376E6F);
+    box-shadow: 0px 3px 15px 0px black;
     border-radius: 25px;
     transform: scale(1.2);
 }
 
-.registrations{
+.registration{
     margin-left: 20px;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 43px;
+    right: 40px;
     left: auto;
     z-index: 100;
 }
 
-.registrations-login{
+.resgistrations-logout{
+    text-decoration: none;
+    color: #FA95E4;
+    font-family: 'Mina', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+.resgistrations-logout:hover{
+    color: pink;
+}
+
+.registrations {
     display: flex;
-    margin-left: 20px;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 43px;
+    right: 40px;
     left: auto;
     z-index: 100;
 }
+
+.registrations-login {
+    margin-left: 35px;
+    text-decoration: none;
+    color: #FA95E4;
+    font-family: 'Mina', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Mina:wght@400;700&display=swap')

@@ -1,4 +1,4 @@
-.conversation-form-container{
+.registrations-container{
     position: absolute;
     width: 85vw;
     top: 50%;
@@ -9,22 +9,19 @@
     height: 30vh;
 }
 
-.conversation-form{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin-top: 70px;
-}
-
-.conversation-form label{
+.registrations-container h1 {
     font-family: 'Mina', sans-serif;
-    font-size: 30px;
+    font-size: 50px;
     font-weight: bold;
     color: #37e6e9;
+    text-align: center;
 }
 
-.conversation-form input {
+.registrations-form {
+    margin-left: 3.5em;
+}
+
+.registrations-form input {
     border: none;
     background: hsl(0 0% 93%);
     border-radius: .25rem;
@@ -32,11 +29,16 @@
     margin-left: 1rem;
 }
 
-.conversation-form input[type="submit"]{
-    background: rgb(133, 105, 255);
-    color: white;
+.registrations-form button {
+    font-family: 'Mina', sans-serif;
+    background-color: rgb(133, 105, 255);
     box-shadow: 0 .75rem .5rem -.5rem hsl(0 50% 80%);
+    color: white;
     cursor: pointer;
+    border: none;
+    border-radius: .25rem;
+    padding: .75rem 1rem;
+    margin-left: 1rem;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Mina:wght@400;700&display=swap')

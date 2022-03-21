@@ -2,14 +2,16 @@
     display: block;
     text-align: center;
     position: relative;
+    top: 3em;
 }
 
 .messages-box{
     background-color: azure;
-    height: 60vh;
+    border-radius: 20px;
+    height: 50vh;
     width: 70vw;
     position: absolute;
-    top: 330%;
+    top: 590%;
     left: 50%;
     transform: translate(-50%, -50%);
     overflow: scroll;
@@ -29,7 +31,7 @@
 
 .message-form-container{
     position: absolute;
-    top: 600%;
+    top: 1200%;
     left: 50%;
     transform: translate(-50%, -50%);
 }

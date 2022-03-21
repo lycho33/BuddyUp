@@ -22,14 +22,12 @@ function ConversationRoom({ getConvoData, cableApp }) {
 
   return (
     <div className='conversation-container'>
-      <br />
-      ConversationRoom
       <h1>Title:{convo.title}</h1>
       <div className='messages-box'>
-        {renderMessages}
+        {/* {renderMessages} */}
+        <ConvsersationWebSocket cableApp={cableApp} convoId={params.id} />
       </div>
       <div className='message-form-container'>
-        <ConvsersationWebSocket cableApp={cableApp} convoId={params.id} />
         <MessageForm conversation_id={params.id} /><br />
       </div>
     </div>
