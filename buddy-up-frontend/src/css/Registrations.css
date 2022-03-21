@@ -21,6 +21,13 @@
     margin-left: 3.5em;
 }
 
+.registrations-form label{
+    font-family: 'Mina', sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: #37e6e9;
+}
+
 .registrations-form input {
     border: none;
     background: hsl(0 0% 93%);
