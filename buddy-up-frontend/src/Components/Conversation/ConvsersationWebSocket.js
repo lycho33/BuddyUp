@@ -1,12 +1,9 @@
 import React, {useEffect, useState} from 'react'
-import { useSelector } from 'react-redux'
 import Message from '../Messages/Message'
 
 
 function ConvsersationWebSocket({ cableApp, convoId, currentUser, state }) {
     const [conversation, setConversation] = useState([])
-    const [user, setUser] = useState('')
-    const [message, setMessage] = useState('')
 
     useEffect(() => {
         const paramsToSend = {
@@ -23,13 +20,9 @@ function ConvsersationWebSocket({ cableApp, convoId, currentUser, state }) {
             }, 
             received(data) {
                 console.log("received websocket data", data)
-                // setUser(data.message.user.username)
-                // setMessage(data)
                 setConversation (conversation => [...conversation, data])
             }
         })
-
-        // renderMessages()
         
 
         return function cleanup(){
@@ -38,7 +31,7 @@ function ConvsersationWebSocket({ cableApp, convoId, currentUser, state }) {
             subscription.unsubscribe()
         }
         
-    }, [])
+    }, [convoId, cableApp])
 
     
     
@@ -47,15 +40,13 @@ function ConvsersationWebSocket({ cableApp, convoId, currentUser, state }) {
         return(
             <div>
                 <h3>no messages yet</h3>
-                
             </div>
         )
     } else{
-        const renderMessages = conversation.map(m => <h3>{m.message.user.username}: {m.message.text}</h3>)
+        const renderMessages = conversation.map(m => <Message id={m.id} username={m.message.user.username} text={m.message.text} currentUser={currentUser} />)
+        // const renderMessages = conversation.map(m => <h3>{m.message.user.username}: {m.message.text}</h3>)
         return(
             <div>
-                
-                {console.log(conversation)}
                 {renderMessages}
             </div>
         )

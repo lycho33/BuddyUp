@@ -1,4 +1,3 @@
-import { postConfig } from "../helpers/configOption";
 import axios from 'axios';
 
 const DOMAIN = "http://localhost:3001"
@@ -8,10 +7,10 @@ const loginUser = userObj => ({
     payload: userObj
 })
 
-const authFailed = error => ({
-    type: 'AUTH_FAILED',
-    payload: error
-})
+// const authFailed = error => ({
+//     type: 'AUTH_FAILED',
+//     payload: error
+// })
 
 const fetchUsersFulfilled = (users) => ({
     type: 'FETCH_USERS_FULFILLED',
@@ -21,7 +20,7 @@ const fetchUsersFulfilled = (users) => ({
 export const register = (user) => {
     return (dispatch) => {
         dispatch({ type: 'CREATING_OR_GETTING_USER' })
-      axios.post('http://localhost:3001/users', {user})
+      axios.post(`${DOMAIN}/users`, {user})
       .then(r => {
           if(r.statusText === 'Created'){
             localStorage.setItem('token', r.data.jwt)
@@ -35,7 +34,7 @@ export const register = (user) => {
 export const login = (user) => {
     return (dispatch) => {
         dispatch({ type: 'CREATING_OR_GETTING_USER' })
-      axios.post('http://localhost:3001/login', {user})
+      axios.post(`${DOMAIN}/login`, {user})
       .then(r => {
           if(r.statusText === 'Accepted'){
             localStorage.setItem('token', r.data.jwt)
@@ -53,7 +52,7 @@ export const logoutUser = () => {
 export const autoLogin = () => {
   return (dispatch) => {
     const token = localStorage.token
-    axios.get('http://localhost:3001/auto_login',
+    axios.get(`${DOMAIN}/auto_login`,
     {headers: {
       'Authorization': `Bearer ${token}`
     }})
@@ -70,7 +69,7 @@ export const autoLogin = () => {
 export const allUsers = () => {
     return (dispatch) => {
         const token = localStorage.token
-        axios.get('http://localhost:3001/users', {headers: {'Authorization': `Bearer ${token}`}})
+        axios.get(`${DOMAIN}/users`, {headers: {'Authorization': `Bearer ${token}`}})
         .then(r => {
             if(r.data.message){
                 localStorage.removeItem('token')
@@ -83,7 +82,7 @@ export const allUsers = () => {
 
 export const getConversations = () => {
   return (dispatch) => {
-      axios.get('http://localhost:3001/conversations')
+      axios.get(`${DOMAIN}/conversations`)
       .then(r => {
             dispatch({
               type: 'FETCH_ALL_CONVERSATIONS',
@@ -97,7 +96,7 @@ export const createConvo = (conversation) => {
 
   return (dispatch) => {
     const token = localStorage.token
-    axios.post('http://localhost:3001/conversations', {conversation}, {headers: {'Authorization': `Bearer ${token}`}})
+    axios.post(`${DOMAIN}/conversations`, {conversation}, {headers: {'Authorization': `Bearer ${token}`}})
     .then(r => {
       if(r.statusText === 'Created'){
         dispatch({
@@ -112,7 +111,7 @@ export const createConvo = (conversation) => {
 export const getConvoData = (id) => {
   
   return dispatch => {
-    axios.get(`http://localhost:3001/conversations/${id}`)
+    axios.get(`${DOMAIN}/conversations/${id}`)
       .then(r => {
         dispatch({
           type: 'GET_CONVERSATION',
@@ -126,7 +125,7 @@ export const createMessage = (message) => {
   return (dispatch) => {
     
     const token = localStorage.token
-    axios.post('http://localhost:3001/messages', {message}, {headers: {'Authorization': `Bearer ${token}`}})
+    axios.post(`${DOMAIN}/messages`, {message}, {headers: {'Authorization': `Bearer ${token}`}})
     .then(r => {
       if(r.statusText === "OK"){
         // console.log('message created')

@@ -9,7 +9,7 @@ const Conversations = ({ getConversations }) => {
 
   useEffect(() => {
     getConversations()
-  }, [])
+  })
 
   const convos = useSelector(state => state.conversations)
   const all = convos.map(c => 

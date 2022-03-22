@@ -5,7 +5,7 @@ import '../../css/Registrations.css'
 
 function MessageForm({ createMessage, conversation_id }) {
   const currentUser = useSelector(state => state.user)
-  const messages = useSelector(state => state.conversations[0].messages)
+  // const messages = useSelector(state => state.conversations[0].messages)
   const [state, setState] = useState({text: ''})
 
   const handleChange = e => {
