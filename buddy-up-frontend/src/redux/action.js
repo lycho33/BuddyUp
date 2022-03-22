@@ -129,10 +129,11 @@ export const createMessage = (message) => {
     axios.post('http://localhost:3001/messages', {message}, {headers: {'Authorization': `Bearer ${token}`}})
     .then(r => {
       if(r.statusText === "OK"){
-        dispatch({
-          type: 'CREATE_MESSAGES',
-          payload: r.data
-        })
+        // console.log('message created')
+        // dispatch({
+        //   type: 'CREATE_MESSAGES',
+        //   payload: r.data
+        // })
       }
       // debugger
     })

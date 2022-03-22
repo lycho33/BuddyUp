@@ -26,7 +26,7 @@ function ConversationRoom({ getConvoData, cableApp }) {
     <div className='conversation-container'>
       <h1>Conversation's Title: <span style={{color: '#DA7B93'}}>{convo.title}</span></h1>
       <div className='messages-box'>
-        {renderMessages} 
+        {/* {renderMessages}  */}
         <ConvsersationWebSocket 
           cableApp={cableApp} 
           convoId={params.id} 

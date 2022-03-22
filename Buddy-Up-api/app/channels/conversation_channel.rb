@@ -2,7 +2,7 @@ class ConversationChannel < ApplicationCable::Channel
   def subscribed
     @conversation = Conversation.find_by(id: params[:conversation])
     stream_for @conversation    
-    # ActionCable.server.broadcast(@conversation, { messages: @conversation.messages.last})
+    ActionCable.server.broadcast(@conversation, { messages: @conversation.messages.all})
   end
 
   # Called when there's incoming data on the websocket for this channel
