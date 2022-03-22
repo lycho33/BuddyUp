@@ -5,11 +5,6 @@ class ConversationChannel < ApplicationCable::Channel
     ActionCable.server.broadcast(@conversation, { messages: @conversation.messages.all})
   end
 
-  # Called when there's incoming data on the websocket for this channel
-  # def received(conversation)
-  #   ConversationChannel.broadcast_to(@conversation, {conversation: @conversation, users: @conversation.users, messages: @conversation.messages})
-  # end
-
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
   end
