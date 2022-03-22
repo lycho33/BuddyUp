@@ -1,0 +1,47 @@
+.home-container {
+    display: flex;
+    position: absolute;
+    width: 80vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 3px 15px 0px black;
+}
+
+.home-container img {
+    height: 23rem;
+    width: 26rem;
+}
+
+.description {
+    padding-top: 70px;
+    padding-left: 5em;
+    color: #09fdfd;
+    font-family: 'Mina', sans-serif;
+    font-weight: bold;
+}
+
+.users-list{
+    padding-top: 10px;
+    padding-left: 3em;
+    color: #09fdfd;
+    font-family: 'Mina', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.users-list h4{
+    color: #09fdfd;
+    font-family: 'Mina', sans-serif;
+    font-weight: bold;
+    font-size: 40px;
+    padding-left: 80px;
+    margin-top: -40px;
+}
+
+.user-list-icon{
+    position: relative;
+    margin-top: 15px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Mina:wght@400;700&display=swap')

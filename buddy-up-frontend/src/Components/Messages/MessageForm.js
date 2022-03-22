@@ -1,6 +1,7 @@
 import React, { useState} from "react"
 import { connect, useSelector } from 'react-redux'
 import { createMessage } from '../../redux/action'
+import '../../css/Registrations.css'
 
 function MessageForm({ createMessage, conversation_id }) {
   const currentUser = useSelector(state => state.user)
@@ -21,20 +22,16 @@ function MessageForm({ createMessage, conversation_id }) {
       user_id: currentUser.id
     }
     createMessage(message)
+    setState({text: ''})
   }
-
-  const renderMessages = messages.map(m => <h3>{m.text}</h3>)
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='registrations-form'>
         <label>Message</label>
         <input type="text" placeholder='your message' value={state.text} onChange={handleChange} />
         <button type='submit'>Submit</button>
       </form>
-
-      {/* {renderMessages} */}
-      
     </div>
   )
 }

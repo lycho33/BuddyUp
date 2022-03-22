@@ -1,0 +1,58 @@
+.conversation-container{
+    display: block;
+    text-align: center;
+    position: relative;
+    top: 3em;
+}
+
+.conversation-container h1{
+    font-family: 'Mina', sans-serif;   
+    color:#37e6e9;
+}
+
+.messages-box{
+    background-color: pink;
+    border-radius: 20px;
+    height: 50vh;
+    width: 50vw;
+    position: absolute;
+    top: 520%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+
+.messages-box::-webkit-scrollbar {
+    width: 0.5em;
+}
+ .messages-box::-webkit-scrollbar-thumb {
+    background-color: #1C3334;
+    outline: 1px solid #376E6F;
+}
+.messages-box::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.currentUser-message{
+    text-align: left;
+    font-family: 'Mina', sans-serif;  
+    color: #376E6F;
+    position: relative;
+    margin: 0px 0px 0px 420px
+}
+
+.buddys-message{
+    text-align: left;
+    font-family: 'Mina', sans-serif;  
+    color: #1C3334;
+    position: relative;
+    margin: 0px 300px 0px 20px
+}
+
+.message-form-container{
+    position: absolute;
+    top: 1000%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

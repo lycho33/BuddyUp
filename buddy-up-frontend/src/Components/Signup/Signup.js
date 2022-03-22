@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { register } from '../../redux/action'
 import { connect } from 'react-redux'
+import '../../css/Registrations.css'
 
 const Signup = ( { register } ) => {
 
@@ -25,15 +26,15 @@ const handleSubmit = (e) => {
 }
 
   return (
-    <div>
+    <div className='registrations-container'>
       <h1>Signup</h1>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='registrations-form'>
         <input type="text" placeholder="username" name="username" value={state.username} onChange={handleInputChange}/>
         <input type="text" placeholder="email" name="email" value={state.email} onChange={handleInputChange}/>
         <input type="password" placeholder="password" name="password" value={state.password} onChange={handleInputChange}/>
         {/* <input type="password" placeholder="password_confirmation" name="password_confirmation" value={state.password_confirmation} onChange={handleInputChange}/> */}
-        <button placeholder="submit" type="submit">SignUp</button>
+        <button placeholder="submit" type="submit">Sign Up</button>
   </form>
     </div>
   )

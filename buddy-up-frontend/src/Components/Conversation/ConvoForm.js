@@ -1,7 +1,7 @@
 import React, { useState} from "react"
 import { createConvo } from '../../redux/action'
 import { connect } from 'react-redux'
-
+import '../../css/CreateConversation.css'
 
 function Conversations({ createConvo }) {
     const [state, setState] = useState({title: ''})
@@ -18,15 +18,15 @@ function Conversations({ createConvo }) {
     }
 
   return (
-    <div>
-        <form onSubmit={handleSubmit}>
+    <div className="conversation-form-container">
+        <form onSubmit={handleSubmit} className="conversation-form">
             <label>New Conversation:</label><br />
             <input 
                 type="text"
                 value={state.title}
                 onChange={handleChange} 
             />
-            <input type="submit" />
+            <input type="submit" className="conv-submit" />
         </form>
     </div>
   )

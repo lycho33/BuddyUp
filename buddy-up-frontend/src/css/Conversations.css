@@ -1,0 +1,45 @@
+.conversations-container{
+    position: absolute;
+    width: 85vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 3px 15px 0px black;
+    width: 70vw;
+    height: auto;
+}
+
+.conversations-container h2 {
+    color: #09fdfd;
+    font-family: 'Mina', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+}
+
+.conversation{
+    display: flex;
+    width: 60vw;
+    margin-left: 220px;
+    margin-top: -20px;
+}
+
+.conversation h3{
+    color: #DA7B93;
+    font-family: 'Mina', sans-serif;
+    font-size: 35px;
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+.conversation h3:hover{
+    color:#37e6e9;
+}
+
+.conversation-list-icon{
+    color: #DA7B93;
+    position: relative;
+    top: 35px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Mina:wght@400;700&display=swap')

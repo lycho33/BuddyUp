@@ -14,7 +14,7 @@ class MessagesController < ApplicationController
                 MessageSerializer.new(message)
             ).serializable_hash
             ConversationChannel.broadcast_to(conversation, serialized_data)
-            ActionCable.server.broadcast(conversation, { messages: conversation.messages })
+            # ActionCable.server.broadcast(conversation, { messages: conversation.messages })
         end
         render json: message
     end
