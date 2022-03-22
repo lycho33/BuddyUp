@@ -5,6 +5,8 @@ import Message from '../Messages/Message'
 
 function ConvsersationWebSocket({ cableApp, convoId, currentUser, state }) {
 
+    const [user, setUser] = useState('')
+    const [message, setMessage] = useState('')
 
     useEffect(() => {
         const paramsToSend = {
@@ -21,6 +23,8 @@ function ConvsersationWebSocket({ cableApp, convoId, currentUser, state }) {
             }, 
             received(data) {
                 console.log("received websocket data", data)
+                setUser(data.message.user.username)
+                setMessage(data.message.text)
             }
         })
 
@@ -47,7 +51,7 @@ function ConvsersationWebSocket({ cableApp, convoId, currentUser, state }) {
         <div>
             {/* <Message id={id} text={messages} username={username} currentUser={currentUser}/> */}
             {/* <h3>-----------------------------</h3> */}
-            {/* <h3>{user}: {message}</h3> */}
+            <h3>{user}: {message}</h3>
         </div>
     )
 }

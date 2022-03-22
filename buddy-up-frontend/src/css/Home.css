@@ -1,7 +1,7 @@
 .home-container {
     display: flex;
     position: absolute;
-    width: 85vw;
+    width: 80vw;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -15,6 +15,7 @@
 
 .description {
     padding-top: 70px;
+    padding-left: 5em;
     color: #09fdfd;
     font-family: 'Mina', sans-serif;
     font-weight: bold;
@@ -22,7 +23,7 @@
 
 .users-list{
     padding-top: 10px;
-    padding-left: 30px;
+    padding-left: 3em;
     color: #09fdfd;
     font-family: 'Mina', sans-serif;
     font-weight: bold;
