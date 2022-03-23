@@ -2,10 +2,10 @@ import React, { useState} from "react"
 import { connect, useSelector } from 'react-redux'
 import { createMessage } from '../../redux/action'
 import '../../css/Registrations.css'
+import '../../css/ConversationRoom.css'
 
 function MessageForm({ createMessage, conversation_id }) {
   const currentUser = useSelector(state => state.user)
-  // const messages = useSelector(state => state.conversations[0].messages)
   const [state, setState] = useState({text: ''})
 
   const handleChange = e => {
