@@ -42,8 +42,7 @@ const initialState = {
               ...state,
               conversations: [action.payload]
             }
-          case 'CREATE_MESSAGES':
-            
+          case 'SaveMessage':
             const index = state.conversations.findIndex(c => c.id === action.payload.conversation.id)
             const updatedConvo = {
               ...state.conversations[index],

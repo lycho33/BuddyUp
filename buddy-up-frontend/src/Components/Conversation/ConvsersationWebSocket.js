@@ -1,11 +1,16 @@
 import React, {useEffect, useState} from 'react'
 import Message from '../Messages/Message'
+import { saveMessage } from '../../redux/action'
+import { connect, useSelector } from 'react-redux'
 
 
-function ConvsersationWebSocket({ cableApp, convoId, currentUser, state }) {
-    const [conversation, setConversation] = useState([])
+function ConvsersationWebSocket({ cableApp, convoId, currentUser, state, saveMessage }) {
+    const conversations = useSelector(state => state.conversations)
+    const conversation = conversations.find(c => c.id == convoId)
 
     useEffect(() => {
+
+        // save(message)
         const paramsToSend = {
             channel: 'ConversationChannel',
             conversation: `${convoId}`
@@ -20,33 +25,39 @@ function ConvsersationWebSocket({ cableApp, convoId, currentUser, state }) {
             }, 
             received(data) {
                 console.log("received websocket data", data)
-                setConversation (conversation => [...conversation, data])
+                saveMessage(data.message)
+                // setConversation (conversation => [...conversation, data])
             }
         })
+
+        
         
 
         return function cleanup(){
-            cableApp.cable.subscriptions.disconnect()
+            // cableApp.cable.subscriptions.disconnect()
             console.log("unsubbing from ", convoId)
             subscription.unsubscribe()
         }
         
     }, [convoId, cableApp])
 
+
+
     
     
 
-    if(conversation.length === 0){
+    if(!conversations){
         return(
             <div>
+                
                 <h3>no messages yet</h3>
             </div>
         )
     } else{
-        const renderMessages = conversation.map(m => <Message id={m.id} username={m.message.user.username} text={m.message.text} currentUser={currentUser} />)
-        // const renderMessages = conversation.map(m => <h3>{m.message.user.username}: {m.message.text}</h3>)
+        const renderMessages = conversation.messages.map(m => <Message id={m.id} username={m.user.username} text={m.text} currentUser={currentUser} />)
         return(
             <div>
+                {/* <Message message={message}/> */}
                 {renderMessages}
             </div>
         )
@@ -63,4 +74,4 @@ function ConvsersationWebSocket({ cableApp, convoId, currentUser, state }) {
 //     )
 }
 
-export default ConvsersationWebSocket
+export default connect( null, { saveMessage })(ConvsersationWebSocket)

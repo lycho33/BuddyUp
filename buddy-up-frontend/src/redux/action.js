@@ -139,3 +139,8 @@ export const createMessage = (message) => {
   }
 }
 
+export const saveMessage = message => ({
+  type: 'SaveMessage',
+  payload: message
+})
+
