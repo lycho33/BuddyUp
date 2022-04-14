@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :word_banks
   resources :messages
   resources :conversations
   resources :users
