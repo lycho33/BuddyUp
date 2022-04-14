@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_14_034213) do
+ActiveRecord::Schema.define(version: 2022_04_14_170803) do
 
   create_table "conversations", force: :cascade do |t|
     t.string "title"
@@ -22,12 +22,10 @@ ActiveRecord::Schema.define(version: 2022_04_14_034213) do
     t.string "text"
     t.integer "conversation_id", null: false
     t.integer "user_id", null: false
-    t.integer "word_bank_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
-    t.index ["word_bank_id"], name: "index_messages_on_word_bank_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,17 +36,19 @@ ActiveRecord::Schema.define(version: 2022_04_14_034213) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "word_banks", force: :cascade do |t|
+  create_table "wordbanks", force: :cascade do |t|
     t.string "word"
     t.string "definition"
     t.string "synonyms"
-    t.string "image"
-    t.string "sampleSentence"
+    t.string "image_url"
+    t.string "sentence"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_wordbanks_on_user_id"
   end
 
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
-  add_foreign_key "messages", "word_banks"
+  add_foreign_key "wordbanks", "users"
 end

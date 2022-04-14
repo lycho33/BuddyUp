@@ -4,14 +4,14 @@ one:
   word: MyString
   definition: MyString
   synonyms: MyString
-  image: MyString
-  sampleSentence: MyString
+  image_url: MyString
+  sentence: MyString
   user: one
 
 two:
   word: MyString
   definition: MyString
   synonyms: MyString
-  image: MyString
-  sampleSentence: MyString
+  image_url: MyString
+  sentence: MyString
   user: two

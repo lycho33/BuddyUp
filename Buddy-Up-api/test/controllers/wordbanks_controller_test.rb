@@ -1,6 +1,6 @@
 require "test_helper"
 
-class WordBankTest < ActiveSupport::TestCase
+class WordbanksControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
