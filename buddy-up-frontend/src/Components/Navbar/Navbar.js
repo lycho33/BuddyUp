@@ -23,7 +23,7 @@ const Navbar = ({ logoutUser }) => {
         </div>
         <div className='conversation-nav-container'>
           <NavItem path='/conversations' name='All Convos' className='convo-link' />
-          <NavItem path='/conversations/new' name='Create Convos'  className='convo-link' />
+          <NavItem path='/wordbank' name='WordBank'  className='convo-link' />
         </div>
         <div className='registration'>
           <NavItem path='/' name='Logout' handle={logout} className='resgistrations-logout' />
