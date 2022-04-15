@@ -42,7 +42,14 @@ function ConvsersationWebSocket({ cableApp, convoId, currentUser, state, saveMes
             </div>
         )
     } else{
-        const renderMessages = conversation.messages.map(m => <Message id={m.id} username={m.user.username} text={m.text} currentUser={currentUser} />)
+        const renderMessages = conversation.messages.map(m => 
+            <Message 
+                id={m.id} 
+                username={m.user.username} 
+                text={m.text} 
+                currentUser={currentUser}
+            />
+        )
         return(
             <div>
                 {renderMessages}
