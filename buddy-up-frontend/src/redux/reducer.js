@@ -29,7 +29,6 @@ const initialState = {
             return {...state,
                conversations: [...action.payload]}
           case 'CREATE_CONVERSATIONS':
-            
             const updatedUser = {
               ...state.user[0],
               conversations: [...state.user[0].conversations, action.payload]
@@ -42,13 +41,13 @@ const initialState = {
               ...state,
               conversations: [action.payload]
             }
-          case 'SaveMessage':
+          case 'saveMessage':
             const index = state.conversations.findIndex(c => c.id === action.payload.conversation.id)
+
             const updatedConvo = {
               ...state.conversations[index],
-              messages: [...state.conversations[index].messages, action.payload]
-            }
-            // debugger
+              messages: [...state.conversations[index].messages, action.payload.text]
+          }
             return {...state,
               conversations: [...state.conversations.slice(0,index), updatedConvo, state.conversations.slice(index+1)]
             }

@@ -123,18 +123,9 @@ export const getConvoData = (id) => {
 
 export const createMessage = (message) => {
   return (dispatch) => {
-    
     const token = localStorage.token
-    axios.post(`${DOMAIN}/messages`, {message}, {headers: {'Authorization': `Bearer ${token}`}})
+    axios.post(`${DOMAIN}/conversations/${parseInt(message.conversation_id)}/messages`, {message}, {headers: {'Authorization': `Bearer ${token}`}})
     .then(r => {
-      if(r.statusText === "OK"){
-        // console.log('message created')
-        // dispatch({
-        //   type: 'CREATE_MESSAGES',
-        //   payload: r.data
-        // })
-      }
-      // debugger
     })
   }
 }
