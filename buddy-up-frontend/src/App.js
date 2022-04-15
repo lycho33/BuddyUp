@@ -1,6 +1,6 @@
 import './App.css';
-import { useEffect, useState } from 'react'
-import { connect, useSelector } from 'react-redux';
+import { useEffect } from 'react'
+import { connect } from 'react-redux';
 import { Route, Routes } from 'react-router-dom'
 import Home from './Components/Home/Home'
 import Login from './Components/Login/Login'
@@ -15,9 +15,9 @@ import WordBank from './Components/WordBank/WordBank';
 import { getConvoData } from './redux/action'
 
 
-function App({ autoLogin, allUsers, cableApp, getConvoData }) {
+function App({ autoLogin, allUsers, cableApp }) {
 
-  const currentUser = useSelector(state => state.user)
+  // const currentUser = useSelector(state => state.user)
 
   useEffect(() => {
     autoLogin()

@@ -1,12 +1,11 @@
 .conversation-form-container{
     position: absolute;
     width: 85vw;
-    top: 50%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0px 3px 15px 0px black;
     width: 70vw;
-    height: 30vh;
+    height: 17vh;
 }
 
 .conversation-form{
