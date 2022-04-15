@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    skip_before_action :require_login, only: [:create, :index]
+    skip_before_action :require_login, only: [:create, :index, :show]
 	
     def index
         @users = User.all
@@ -16,6 +16,19 @@ class UsersController < ApplicationController
             render json: {errors: user.errors.full_messages}, status: :not_acceptable
         end
     end
+
+    def show
+        user = User.find(params[:id])
+        render json: user.wordbank
+    end
+
+    # def show
+    #     conversation = Conversation.find(params[:id])
+    #     ActionCable.server.broadcast 'conversation_channel', conversation
+    #     render json: conversation.to_json(
+    #         :include => {:messages => {:include => :user}}
+    #     )
+    # end
 
     private
 
