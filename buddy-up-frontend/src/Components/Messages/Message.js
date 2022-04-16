@@ -18,7 +18,7 @@ function Message({id, username, text, currentUser, createVocab}) {
       word: word.toString(),
       user_id: user.id
     }
-    createVocab(wordInfo)
+    createVocab(wordInfo.word, wordInfo.user_id)
   }
 
   const renderText = (text) => {

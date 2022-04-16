@@ -2,6 +2,7 @@ const initialState = {
     all: [],
     user: {},
     conversations: [],
+    wordbank: {},
     errors: []
 }
   
@@ -43,7 +44,7 @@ const initialState = {
             }
           case 'saveMessage':
             const index = state.conversations.findIndex(c => c.id === action.payload.conversation.id)
-
+            
             const updatedConvo = {
               ...state.conversations[index],
               messages: [...state.conversations[index].messages, action.payload.text]
@@ -51,6 +52,20 @@ const initialState = {
             return {...state,
               conversations: [...state.conversations.slice(0,index), updatedConvo, state.conversations.slice(index+1)]
             }
+          case 'CREATE_VOCAB':
+            let user = state.user
+            debugger
+            const userIndex = state.user.findIndex(u => u.id === action.payload.user.id)
+            debugger
+            const updatedWordBank = {
+              ...state.user[userIndex],
+              wordbank: [...state.user[userIndex].wordbank, action.payload]
+            }
+            debugger
+            // return {
+            //   ...state,
+            //   user: 
+            // }
           default:
             return {...state}
       }

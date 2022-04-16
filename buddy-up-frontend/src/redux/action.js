@@ -135,12 +135,15 @@ export const saveMessage = message => ({
   payload: message
 })
 
-export const createVocab = (wordInfo) => {
+export const createVocab = (word, user_id) => {
   return dispatch => {
     const token = localStorage.token
-    axios.post(`${DOMAIN}/users/${wordInfo.user_id}/wordbanks`, {wordInfo}, {headers: {'Authorization': `Bearer ${token}`}})
+    axios.post(`${DOMAIN}/users/${user_id}/wordbanks`, {word, user_id}, {headers: {'Authorization': `Bearer ${token}`}})
     .then(r => {
-      debugger
+      dispatch({
+        type: 'CREATE_VOCAB',
+        payload: r.data
+      })
     })
   }
 }
