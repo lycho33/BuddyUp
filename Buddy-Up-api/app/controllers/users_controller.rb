@@ -22,14 +22,6 @@ class UsersController < ApplicationController
         render json: user.wordbank
     end
 
-    # def show
-    #     conversation = Conversation.find(params[:id])
-    #     ActionCable.server.broadcast 'conversation_channel', conversation
-    #     render json: conversation.to_json(
-    #         :include => {:messages => {:include => :user}}
-    #     )
-    # end
-
     private
 
     def user_params
