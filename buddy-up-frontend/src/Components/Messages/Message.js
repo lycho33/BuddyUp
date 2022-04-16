@@ -1,16 +1,24 @@
 import React from 'react'
 import '../../css/ConversationRoom.css'
+import { useSelector, connect } from 'react-redux'
+import { createVocab } from '../../redux/action'
 
-function Message({id, username, text, currentUser}) {
+function Message({id, username, text, currentUser, createVocab}) {
+
+  const user = useSelector(state => state.user)
   
   const clickWord = (e) => {
-    let hello = e.target.innerHTML
-    let arr = hello.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?]/g," ")
+    let sentence = e.target.innerHTML
+    let word = sentence.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?]/g," ")
                    .split(' ')
                    .filter(letter => {
                      if(letter !== "nbsp" && letter !== " ") return letter
                     })
-    console.log(arr)
+    let wordInfo = {
+      word: word.toString(),
+      user_id: user.id
+    }
+    createVocab(wordInfo)
   }
 
   const renderText = (text) => {
@@ -29,4 +37,4 @@ function Message({id, username, text, currentUser}) {
   )
 }
 
-export default Message
+export default connect(null, { createVocab })(Message)
