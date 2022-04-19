@@ -1,8 +1,25 @@
-import React from 'react'
+import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
 function WordBank() {
+
+  const user = useSelector(state => state.user)
+  
+  
+  console.log(user)
+  
+  // const renderWord = () => {
+  //   word.map(w => {
+  //     return(
+  //       <h3>{w.word}</h3>
+  //     )
+  //   })
+  // }
   return (
-    <div>WordBank</div>
+    <div>
+      <h1>WordBank</h1>
+
+    </div>
   )
 }
 
