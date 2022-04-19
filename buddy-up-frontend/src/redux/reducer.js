@@ -53,13 +53,18 @@ const initialState = {
               conversations: [...state.conversations.slice(0,index), updatedConvo, state.conversations.slice(index+1)]
             }
           case 'CREATE_VOCAB':
-            // const updatedWordBank = {
-            //   ...state.user[0],
-            //   wordbank: [...state.user[0].wordbank, action.payload]
-            // }
+            const updatedWordBank = {
+              ...state.user,
+              wordbank: [...state.user.wordbank, action.payload]
+            }
             return {
               ...state,
-              wordbank: [...state.wordbank, action.payload]
+              user: [updatedWordBank]
+            }
+          case 'GET_VOCABS':
+            return {
+              ...state,
+              wordbank: [action.payload]
             }
           default:
             return {...state}

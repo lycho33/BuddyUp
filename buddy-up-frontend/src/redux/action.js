@@ -148,12 +148,12 @@ export const createVocab = (word, user_id) => {
   }
 }
 
-export const getWords = () => {
+export const getWords = (id) => {
   return (dispatch) => {
-      axios.get(`${DOMAIN}/conversations`)
+      axios.get(`${DOMAIN}/users/${id}/wordbanks`)
       .then(r => {
             dispatch({
-              type: 'FETCH_ALL_CONVERSATIONS',
+              type: 'GET_VOCABS',
               payload: r.data
             })
       })
