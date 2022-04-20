@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const DOMAIN = "http://localhost:3001"
+const DOMAIN = "http://localhost:4000"
 
 const loginUser = userObj => ({
     type: 'LOGIN_USER',
