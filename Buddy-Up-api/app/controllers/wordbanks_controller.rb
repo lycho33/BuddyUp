@@ -7,7 +7,7 @@ class WordbanksController < ApplicationController
     end
 
     def create
-        wordbank = Wordbank.create(wordbank_params)
+        wordbank = current_user.wordbank.new(wordbank_params)
         if wordbank.save
             render json: wordbank, status: :created
         else
