@@ -2,7 +2,8 @@ class WordbanksController < ApplicationController
     skip_before_action :require_login, only: [:index]
     
     def index
-        wordbank = Wordbank.all
+        user = User.find(params[:user_id])
+        wordbank = user.wordbank
         render json: wordbank
     end
 
