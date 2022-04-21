@@ -93,7 +93,6 @@ export const getConversations = () => {
 }
 
 export const createConvo = (conversation) => {
-
   return (dispatch) => {
     const token = localStorage.token
     axios.post(`${DOMAIN}/conversations`, {conversation}, {headers: {'Authorization': `Bearer ${token}`}})
@@ -109,7 +108,6 @@ export const createConvo = (conversation) => {
 }
 
 export const getConvoData = (id) => {
-  
   return dispatch => {
     axios.get(`${DOMAIN}/conversations/${id}`)
       .then(r => {
@@ -125,8 +123,6 @@ export const createMessage = (message) => {
   return (dispatch) => {
     const token = localStorage.token
     axios.post(`${DOMAIN}/conversations/${parseInt(message.conversation_id)}/messages`, {message}, {headers: {'Authorization': `Bearer ${token}`}})
-    .then(r => {
-    })
   }
 }
 
@@ -158,5 +154,15 @@ export const getWords = (id) => {
               payload: r.data
             })
       })
+  }
+}
+
+export const getDictionary = word => {
+  console.log(word)
+  return dispatch => {
+    axios.get(`https://dictionaryapi.com/api/v3/references/learners/json/${word}?key=1bd6a14b-8916-4989-acaa-d5d715d7d259`)
+    .then(r => {
+      console.log(r)
+    })
   }
 }
