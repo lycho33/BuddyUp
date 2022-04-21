@@ -149,6 +149,7 @@ export const createVocab = (word, user_id) => {
 }
 
 export const getWords = (id) => {
+  console.log("fetch id", id)
   return (dispatch) => {
       axios.get(`${DOMAIN}/users/${id}/wordbanks`)
       .then(r => {
