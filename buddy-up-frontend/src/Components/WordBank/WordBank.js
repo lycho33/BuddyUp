@@ -5,18 +5,22 @@ import { getWords} from '../../redux/action'
 function WordBank({ getWords }) {
 
   const user = useSelector(state => state.user)
-  const state = useSelector(state => state)
+  const words = useSelector(state => state.wordbank)
 
   useEffect(() => {
     getWords(user.id)
   }, [])
 
-  console.log(state)
+  const renderWords = words[0].map(w => 
+        <div key={w.id}>
+          <h3>Word: {w.word}</h3>
+        </div>
+  )
   
   return (
     <div>
       <h1>WordBank</h1>
-
+      {renderWords}
     </div>
   )
 }
