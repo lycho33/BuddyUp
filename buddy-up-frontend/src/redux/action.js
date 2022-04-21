@@ -163,6 +163,10 @@ export const getDictionary = word => {
     axios.get(`https://dictionaryapi.com/api/v3/references/learners/json/${word}?key=1bd6a14b-8916-4989-acaa-d5d715d7d259`)
     .then(r => {
       console.log(r)
+      //Def: r.data.shortdef
+      //Sample Sentence: r.data.uros[1].utxt[1].map(sent => sent)
+      //Image
+      //Synonym
     })
   }
 }
