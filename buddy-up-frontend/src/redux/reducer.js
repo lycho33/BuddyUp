@@ -62,9 +62,16 @@ const initialState = {
           //     user: [updatedWordBank]
           //   }
           case 'GET_VOCABS':
+            // debugger
             return {
               ...state,
               wordbank: [action.payload]
+            }
+          case 'GET_VOCAB_INFO':
+            debugger
+            
+            return {
+              ...state,
             }
           default:
             return {...state}

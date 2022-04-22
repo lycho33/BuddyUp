@@ -7,6 +7,7 @@ function WordBank({ getWords, getDictionary }) {
 
   const user = useSelector(state => state.user)
   const words = useSelector(state => state.wordbank)
+  // console.log(words[0])
 
   useEffect(() => {
     getWords(user.id)
@@ -20,17 +21,14 @@ function WordBank({ getWords, getDictionary }) {
   }
 
   const renderWords = words[0].map(w => 
-        <div key={w.id}>
-          <h3>Word: <span>{w.word}</span></h3>
-          <h3>Definition: <span 
-                            value={w.word} 
-                            onClick={clickDefChallenges}
-                          >
-                            Guess?
-                          </span>
-          </h3>
-          <br />
-        </div>
+    <div key={w.id}>
+      <h3>Word: <span>{w.word}</span></h3>
+      <h3>Definition: <span value={w.word} onClick={clickDefChallenges}>
+                        Guess?
+                      </span>
+      </h3>
+      <br />
+    </div>
   )
 
   return (

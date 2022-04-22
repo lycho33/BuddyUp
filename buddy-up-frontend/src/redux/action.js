@@ -145,7 +145,6 @@ export const createVocab = (word, user_id) => {
 }
 
 export const getWords = (id) => {
-  console.log("fetch id", id)
   return (dispatch) => {
       axios.get(`${DOMAIN}/users/${id}/wordbanks`)
       .then(r => {
@@ -158,15 +157,20 @@ export const getWords = (id) => {
 }
 
 export const getDictionary = word => {
-  console.log(word)
   return dispatch => {
     axios.get(`https://dictionaryapi.com/api/v3/references/learners/json/${word}?key=1bd6a14b-8916-4989-acaa-d5d715d7d259`)
     .then(r => {
-      console.log(r)
-      //Def: r.data.shortdef
-      //Sample Sentence: r.data.uros[1].utxt[1].map(sent => sent)
-      //Image
-      //Synonym
+      dispatch({
+        type: 'GET_VOCAB_INFO',
+        payload: {
+          definition: r.data[0].shortdef, 
+          sentence: r.data[0].uros[1].utxt[0]
+        }
+      })
     })
+      //Def: r.data[0].shortdef
+      //Sample Sentence: r.data.uros[1].utxt[0][1]
+      //Image -- need to get Google image and transfer it from text-image
+      //Synonym - thesaurus API
   }
 }
