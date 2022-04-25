@@ -8,7 +8,7 @@ function WordBank({ getWords, getDictionary }) {
 
   const user = useSelector(state => state.user)
   const words = useSelector(state => state.wordbank)
-  console.log(user.id, words)
+  // console.log(user.id, words)
 
   useEffect(() => {
     getWords(user.id)

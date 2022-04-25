@@ -48,7 +48,7 @@ const initialState = {
             const updatedConvo = {
               ...state.conversations[index],
               messages: [...state.conversations[index].messages, action.payload.text]
-          }
+            }
             return {...state,
               conversations: [...state.conversations.slice(0,index), updatedConvo, state.conversations.slice(index+1)]
             }
@@ -64,10 +64,12 @@ const initialState = {
           case 'GET_VOCABS':
             return {...state, wordbank: [...action.payload]}
           case 'GET_VOCAB_INFO':
-            let word = state.wordbank.filter(w => w.word === action.payload.word)
-            debugger
+            let wordIndex = state.wordbank.findIndex(wb => wb.word === action.payload.word)
+            state.wordbank[wordIndex].definition = action.payload.definition
+            state.wordbank[wordIndex].sentence = action.payload.sentence
             return {
-              ...state,
+              ...state, 
+              wordbank: [...state.wordbank]
             }
           default:
             return {...state}
