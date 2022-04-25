@@ -64,7 +64,7 @@ const initialState = {
           case 'GET_VOCABS':
             return {...state, wordbank: [...action.payload]}
           case 'GET_VOCAB_INFO':
-            let word = state.wordbank[0].filter(w => w.word === action.payload.word)
+            let word = state.wordbank.filter(w => w.word === action.payload.word)
             debugger
             return {
               ...state,
