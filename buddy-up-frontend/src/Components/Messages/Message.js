@@ -1,7 +1,9 @@
 import React from 'react'
 import '../../css/ConversationRoom.css'
+import '../../css/Message.css'
 import { useSelector, connect } from 'react-redux'
 import { createVocab } from '../../redux/action'
+
 
 function Message({id, username, text, currentUser, createVocab}) {
 
@@ -22,7 +24,7 @@ function Message({id, username, text, currentUser, createVocab}) {
   }
 
   const renderText = (text) => {
-    return text.split(' ').map(t => <span onClick={clickWord}>{t}&nbsp;</span>)
+    return text.split(' ').map(t => <span className='vocab' onClick={clickWord}>{t}&nbsp;</span>)
   }
 
   return (

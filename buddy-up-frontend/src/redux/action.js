@@ -170,8 +170,6 @@ export const getDictionary = word => {
         }
       })
     })
-      //Def: r.data[0].shortdef
-      //Sample Sentence: r.data.uros[1].utxt[0][1]
       //Image -- need to get Google image and transfer it from text-image
       //Synonym - thesaurus API
   }

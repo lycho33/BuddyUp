@@ -1,0 +1,5 @@
+.vocab:hover {
+    background-color: yellow;
+    border-radius: 30%;
+    cursor: pointer;
+}

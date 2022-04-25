@@ -66,7 +66,7 @@ const initialState = {
           case 'GET_VOCAB_INFO':
             let wordIndex = state.wordbank.findIndex(wb => wb.word === action.payload.word)
             state.wordbank[wordIndex].definition = action.payload.definition
-            state.wordbank[wordIndex].sentence = action.payload.sentence
+            state.wordbank[wordIndex].sentence = action.payload.sentence[1]
             return {
               ...state, 
               wordbank: [...state.wordbank]
