@@ -6,7 +6,7 @@ import Word from './Word'
 import ModalWordChallenges from './ModalWordChallenges'
 
 function WordBank({ getWords, getDictionary }) {
-  const [clicked, setClicked] = useState('none')
+  const [openModal, setOpenModal] = useState(false)
   const user = useSelector(state => state.user)
   const words = useSelector(state => state.wordbank)
   // console.log(user.id, words)
@@ -19,8 +19,7 @@ function WordBank({ getWords, getDictionary }) {
     let word = e.target.parentElement.previousElementSibling.firstElementChild.innerHTML
     console.log(word)
     getDictionary(word)
-    console.log(e.target)
-    setClicked('block')
+    setOpenModal(true)
   }
 
   const renderWords = words.map(w => 
@@ -44,7 +43,7 @@ function WordBank({ getWords, getDictionary }) {
       <h1>WordBank</h1>
       <br />
       {renderWords}
-      <ModalWordChallenges style={clicked}/>
+      {openModal && <ModalWordChallenges closeModal={setOpenModal} />}
     </div>
   )
 }
