@@ -34,21 +34,16 @@ const initialState = {
               ...state.user[0],
               conversations: [...state.user[0].conversations, action.payload]
             }
-            return {...state, 
-              user: [updatedUser]
-            }
+            return {...state, user: [updatedUser]}
           case 'GET_CONVERSATION':
-            return {
-              ...state,
-              conversations: [action.payload]
-            }
+            return {...state, conversations: [action.payload]}
           case 'saveMessage':
-            const index = state.conversations.findIndex(c => c.id === action.payload.conversation.id)
-            
-            const updatedConvo = {
-              ...state.conversations[index],
-              messages: [...state.conversations[index].messages, action.payload.text]
-            }
+              const index = state.conversations.findIndex(c => c.id === action.payload.conversation.id)
+              
+              const updatedConvo = {
+                ...state.conversations[index],
+                messages: [...state.conversations[index].messages, action.payload.text]
+              }
             return {...state,
               conversations: [...state.conversations.slice(0,index), updatedConvo, state.conversations.slice(index+1)]
             }
@@ -64,13 +59,10 @@ const initialState = {
           case 'GET_VOCABS':
             return {...state, wordbank: [...action.payload]}
           case 'GET_VOCAB_INFO':
-            let wordIndex = state.wordbank.findIndex(wb => wb.word === action.payload.word)
-            state.wordbank[wordIndex].definition = action.payload.definition
-            state.wordbank[wordIndex].synonyms = action.payload.synonyms
-            return {
-              ...state, 
-              wordbank: [...state.wordbank]
-            }
+              let wordIndex = state.wordbank.findIndex(wb => wb.word === action.payload.word)
+              state.wordbank[wordIndex].definition = action.payload.definition
+              state.wordbank[wordIndex].synonyms = action.payload.synonyms
+            return {...state, wordbank: [...state.wordbank, action.payload]}
           default:
             return {...state}
       }

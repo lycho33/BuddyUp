@@ -40,7 +40,7 @@ function WordBank({ getWords, getDictionary }) {
 
 
   return (
-    <div>
+    <div key={1}>
       <h1>WordBank</h1>
       <br />
       {renderWords}

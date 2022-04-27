@@ -167,11 +167,10 @@ export const getDictionary = word => {
           word: r.data[0].word,
           definition: r.data[0].meanings[0].definitions, 
           // sentence: r.data[0].uros[1].utxt[0],
+          // IMAGE
           synonyms: r.data[0].meanings[0].synonyms
         }
       })
     })
-      //Image -- need to get Google image and transfer it from text-image
-      //Synonym - thesaurus API
   }
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import '../../css/Modal.css'
 import Sentences from './Sentences'
 import Synonyms from './Synonyms'
+import Definition from './Definition'
 
 function ModalWordChallenges({closeModal, word}) {
 
@@ -11,6 +12,7 @@ function ModalWordChallenges({closeModal, word}) {
         <button onClick={() => closeModal(false)}> X </button>
         <Sentences word={word} />
         <Synonyms word={word} />
+        <Definition word={word} />
     </div>
   )
 }
