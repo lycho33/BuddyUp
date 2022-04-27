@@ -159,14 +159,15 @@ export const getWords = (id) => {
 
 export const getDictionary = word => {
   return dispatch => {
-    axios.get(`https://dictionaryapi.com/api/v3/references/learners/json/${word}?key=1bd6a14b-8916-4989-acaa-d5d715d7d259`)
+    axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
     .then(r => {
       dispatch({
         type: 'GET_VOCAB_INFO',
         payload: {
-          word: r.data[0].meta.id,
-          definition: r.data[0].shortdef, 
-          sentence: r.data[0].uros[1].utxt[0]
+          word: r.data[0].word,
+          definition: r.data[0].meanings[0].definitions, 
+          // sentence: r.data[0].uros[1].utxt[0],
+          synonyms: r.data[0].meanings[0].synonyms
         }
       })
     })
