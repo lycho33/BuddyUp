@@ -2,12 +2,12 @@ class MessagesController < ApplicationController
     skip_before_action :require_login, only: [:index]
 
     def index
+        conversation = Conversation.find(params[:conversation_id])
         @messages = Message.all
         render json: @messages
     end
 
     def create
-        byebug
         message = current_user.messages.new(message_params)
         conversation = Conversation.find(message_params["conversation_id"])
         if message.save
