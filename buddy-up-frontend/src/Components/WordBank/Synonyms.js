@@ -5,14 +5,18 @@ function Synonyms({word}) {
     const wordbank = useSelector(state => state.wordbank)
     const wordInfo = wordbank.filter(w => w.word === word)
     const synonyms = wordInfo[0].synonyms
-    // console.log(wordInfo, synonyms.map(sy => <li>{sy}</li>))
-    console.log(synonyms)
-  // debugger
+    // console.log("synonyms", synonyms)
+
+  const renderSynonyms = () => {
+    if(synonyms){
+      return synonyms.map((sy, i) => <li key={i}>{sy}</li> )
+    }
+  }
 
   return (
     <div>
-        <h1>Synonyms</h1>
-        {/* {synonyms.map((sy, i) => <li key={i}>{sy}</li> )} */}
+        <h3>Synonyms</h3>
+        {renderSynonyms()}
         <br />
     </div>
   )

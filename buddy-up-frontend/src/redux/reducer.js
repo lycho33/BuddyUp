@@ -62,7 +62,7 @@ const initialState = {
               let wordIndex = state.wordbank.findIndex(wb => wb.word === action.payload.word)
               state.wordbank[wordIndex].definition = action.payload.definition
               state.wordbank[wordIndex].synonyms = action.payload.synonyms
-            return {...state, wordbank: [...state.wordbank, action.payload]}
+            return {...state, wordbank: [...state.wordbank]}
           default:
             return {...state}
       }
