@@ -8,9 +8,12 @@ function ModalWordChallenges({closeModal, word}) {
 
   return (
     <div className='modal'>
+      <div className='modal-header'>
         <h1>ModalWordChallenges</h1>
         <button onClick={() => closeModal(false)}> X </button>
-        <Sentences word={word} />
+      </div>
+        <h3>Word: {word}</h3>
+        {/* <Sentences word={word} /> */}
         <Synonyms word={word} />
         <Definition word={word} />
     </div>

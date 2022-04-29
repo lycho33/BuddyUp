@@ -17,7 +17,7 @@ function WordBank({ getWords, getDictionary }) {
   }, [])
 
   const clickDefChallenges = (e) => {
-    let word = e.target.parentElement.previousElementSibling.firstElementChild.innerHTML
+    let word = e.target.parentElement.previousElementSibling.innerHTML
     // console.log(word)
     getDictionary(word)
     setOpenModal(true)
