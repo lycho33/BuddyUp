@@ -45,7 +45,7 @@ function WordBank({ getWords, getDictionary }) {
       <h1>WordBank</h1>
       <br />
       <table>
-        <tr>
+        <tr className='header'>
           <th>Word</th>
           <th>Definition</th>
         </tr>
