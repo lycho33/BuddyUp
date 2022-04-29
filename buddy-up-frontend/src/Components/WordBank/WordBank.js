@@ -4,6 +4,7 @@ import { getWords } from '../../redux/action'
 import { getDictionary } from '../../redux/action'
 import Word from './Word'
 import ModalWordChallenges from './ModalWordChallenges'
+import '../../css/Wordbank.css'
 
 function WordBank({ getWords, getDictionary }) {
   const [openModal, setOpenModal] = useState(false)
@@ -40,9 +41,15 @@ function WordBank({ getWords, getDictionary }) {
 
 
   return (
-    <div key={1}>
+    <div className='wordbank-container'>
       <h1>WordBank</h1>
       <br />
+      <table>
+        <tr>
+          <th>Word</th>
+          <th>Definition</th>
+        </tr>
+      </table>
       {renderWords}
       {openModal && <ModalWordChallenges closeModal={setOpenModal} word={word} />}
     </div>
