@@ -158,9 +158,25 @@ export const getWords = (id) => {
 }
 
 export const getDictionary = word => {
+
+  const options = {
+    method: 'GET',
+    url: 'https://twinword-word-graph-dictionary.p.rapidapi.com/example/',
+    params: {entry: `${word}`},
+    headers: {
+      'X-RapidAPI-Host': 'twinword-word-graph-dictionary.p.rapidapi.com',
+      'X-RapidAPI-Key': '012669e6b7msha9b4a82f0d67a82p1a54ebjsn82847504c19b'
+    }
+  };
+  
+
+  const dictionary = axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+  const sentences = axios.request(options)
+
   return dispatch => {
-    axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
+    Promise.all([sentences])
     .then(r => {
+      debugger
       dispatch({
         type: 'GET_VOCAB_INFO',
         payload: {

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useSelector, connect } from 'react-redux'
 import { getWords } from '../../redux/action'
 import { getDictionary } from '../../redux/action'
+import { getSentences } from '../../redux/action'
 import Word from './Word'
 import ModalWordChallenges from './ModalWordChallenges'
 import '../../css/Wordbank.css'
@@ -18,10 +19,10 @@ function WordBank({ getWords, getDictionary }) {
 
   const clickDefChallenges = (e) => {
     let word = e.target.parentElement.previousElementSibling.innerHTML
-    // console.log(word)
     getDictionary(word)
     setOpenModal(true)
     setWord(word)
+    getSentences(word)
   }
 
   const renderWords = words.map(w => 

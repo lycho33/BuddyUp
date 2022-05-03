@@ -5,7 +5,7 @@ function Definition({word}) {
     const wordbank = useSelector(state => state.wordbank)
     const wordInfo = wordbank.filter(w => w.word === word)
     const definition = wordInfo[0].definition
-    console.log("definition", definition)
+    // console.log("definition", definition)
 
     const renderDef = () => {
       if(definition){
