@@ -1,11 +1,11 @@
-import React from 'react'
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
 
 function Synonyms({word}) {
     const wordbank = useSelector(state => state.wordbank)
     const wordInfo = wordbank.filter(w => w.word === word)
     const synonyms = wordInfo[0].synonyms
-    // console.log("synonyms", synonyms)
+    const [show, setShow] = useState(false)
 
   const renderSynonyms = () => {
     if(synonyms){

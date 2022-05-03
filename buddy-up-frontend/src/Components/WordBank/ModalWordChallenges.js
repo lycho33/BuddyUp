@@ -3,6 +3,7 @@ import '../../css/Modal.css'
 import Sentences from './Sentences'
 import Synonyms from './Synonyms'
 import Definition from './Definition'
+import Greeting from './Greeting'
 
 function ModalWordChallenges({closeModal, word}) {
 
@@ -13,6 +14,8 @@ function ModalWordChallenges({closeModal, word}) {
         <button onClick={() => closeModal(false)}> X </button>
       </div>
         <h3>Word: {word}</h3>
+        < Greeting />
+
         {/* <Sentences word={word} /> */}
         <Synonyms word={word} />
         <Definition word={word} />
