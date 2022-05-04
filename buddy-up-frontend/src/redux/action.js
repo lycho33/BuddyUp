@@ -166,8 +166,7 @@ export const getDictionary = word => {
         payload: {
           word: r.data[0].word,
           definition: r.data[0].meanings[0].definitions, 
-          sentence: r.data[0].meanings[0].definitions,
-            //map through for sentences
+          sentence: r.data[0].meanings,
           // IMAGE
           synonyms: r.data[0].meanings[0].synonyms
         }

@@ -60,8 +60,13 @@ const initialState = {
             return {...state, wordbank: [...action.payload]}
           case 'GET_VOCAB_INFO':
               let wordIndex = state.wordbank.findIndex(wb => wb.word === action.payload.word)
+              let sentence = action.payload.sentence.map(info => info.definitions.map(sent => sent.example))
+
+              //save all wordInfo into the right word
               state.wordbank[wordIndex].definition = action.payload.definition
               state.wordbank[wordIndex].synonyms = action.payload.synonyms
+              state.wordbank[wordIndex].sentence = sentence
+
             return {...state, wordbank: [...state.wordbank]}
           default:
             return {...state}
