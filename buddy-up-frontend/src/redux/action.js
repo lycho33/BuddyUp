@@ -158,31 +158,16 @@ export const getWords = (id) => {
 }
 
 export const getDictionary = word => {
-
-  const options = {
-    method: 'GET',
-    url: 'https://twinword-word-graph-dictionary.p.rapidapi.com/example/',
-    params: {entry: `${word}`},
-    headers: {
-      'X-RapidAPI-Host': 'twinword-word-graph-dictionary.p.rapidapi.com',
-      'X-RapidAPI-Key': '012669e6b7msha9b4a82f0d67a82p1a54ebjsn82847504c19b'
-    }
-  };
-  
-
-  const dictionary = axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
-  const sentences = axios.request(options)
-
   return dispatch => {
-    Promise.all([sentences])
+    axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
     .then(r => {
-      debugger
       dispatch({
         type: 'GET_VOCAB_INFO',
         payload: {
           word: r.data[0].word,
           definition: r.data[0].meanings[0].definitions, 
-          // sentence: r.data[0].uros[1].utxt[0],
+          sentence: r.data[0].meanings[0].definitions,
+            //map through for sentences
           // IMAGE
           synonyms: r.data[0].meanings[0].synonyms
         }

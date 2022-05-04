@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { useSelector, connect } from 'react-redux'
 import { getWords } from '../../redux/action'
 import { getDictionary } from '../../redux/action'
-import { getSentences } from '../../redux/action'
 import Word from './Word'
 import ModalWordChallenges from './ModalWordChallenges'
 import '../../css/Wordbank.css'
@@ -22,7 +21,6 @@ function WordBank({ getWords, getDictionary }) {
     getDictionary(word)
     setOpenModal(true)
     setWord(word)
-    getSentences(word)
   }
 
   const renderWords = words.map(w => 
