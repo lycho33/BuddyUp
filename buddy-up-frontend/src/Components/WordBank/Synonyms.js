@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
+import Sentences from './Sentences'
 
 function Synonyms({word, display}) {
     const wordbank = useSelector(state => state.wordbank)
@@ -17,6 +18,7 @@ function Synonyms({word, display}) {
         <h3>Synonyms</h3>
         {renderSynonyms()}
         <br />
+        <Sentences word={word} />
     </div>
   )
 }
