@@ -5,21 +5,22 @@ function Sentences({word}) {
     const wordbank = useSelector(state => state.wordbank)
     const wordInfo = wordbank.filter(w => w.word === word)
     const sentences = wordInfo[0].sentence
-  console.log(wordInfo, sentences)
 
-    // const renderSentences = sentences.map(s => <div>
-    //   <h3>{s.t}</h3>
-    // </div>)
+    // const renderSentences = 
+    //   sentences.map(arr => arr.filter(sents => sents !== undefined))
+    //   .filter(s => s.length > 0)
 
-    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        //word: TEST
-    //filter OUT if one of the elements have all UNDEFINED
-    //.filter(arr => arr.length > 1)[0].filter(s => s !== undefined).map
+    console.log(sentences)
+
 
   return (
     <div>
         <h2>Sample Sentences</h2>
-        {/* {renderSentences} */}
+        {sentences && 
+        sentences.map(arr => arr.filter(sents => sents !== undefined))
+        .filter(s => s.length > 0)
+        .map(s => <li>{s}</li>)
+        }
     </div>
   )
 }

@@ -12,6 +12,7 @@ function Definition({word}) {
         return definition.map((d, i) => <li key={i}>{d.definition}</li>)
       }
     }
+    
   return (
     <div>
         <h3>Definition</h3>
