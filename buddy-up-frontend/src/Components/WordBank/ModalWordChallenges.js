@@ -1,6 +1,5 @@
 import React from 'react'
 import '../../css/Modal.css'
-import Sentences from './Sentences'
 import Definition from './Definition'
 import Greeting from './Greeting'
 
@@ -15,7 +14,6 @@ function ModalWordChallenges({closeModal, word}) {
         <h3>Word: {word}</h3>
         < Greeting word={word}/>
 
-        {/* <Sentences word={word} /> */}
         <Definition word={word} />
     </div>
   )

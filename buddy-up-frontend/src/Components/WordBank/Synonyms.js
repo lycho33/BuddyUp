@@ -1,11 +1,7 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import { useState } from 'react'
 import Sentences from './Sentences'
 
-function Synonyms({word, display}) {
-    const wordbank = useSelector(state => state.wordbank)
-    const wordInfo = wordbank.filter(w => w.word === word)
-    const synonyms = wordInfo[0].synonyms
+function Synonyms({word, display, setDisplay, synonyms}) {
 
   const renderSynonyms = () => {
     if(synonyms){
@@ -13,13 +9,22 @@ function Synonyms({word, display}) {
     }
   }
 
+  const [nextChallenge, setNextChallenge] = useState('none')
+  const clickNext = () => {
+    setDisplay('none')
+    setNextChallenge('block')
+  }
+
   return (
-    <div style={{ display: `${display}`}}>
-        <h3>Synonyms</h3>
-        {renderSynonyms()}
-        <br />
-        <Sentences word={word} />
-    </div>
+    <>
+      <div style={{ display: `${display}`}}>
+          <h3>Synonyms</h3>
+          {renderSynonyms()}
+          <button onClick={clickNext}>Next</button>
+          <br />
+      </div>
+      <Sentences word={word} display={nextChallenge} />
+    </>
   )
 }
 
