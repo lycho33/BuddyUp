@@ -53,7 +53,7 @@ function Synonyms({word, display, setDisplay, synonyms}) {
         && 
       displaySentences.length === 0 
         &&
-      <GreetBeforeDef word={word} display={nextGreeting} />
+      <GreetBeforeDef word={word} display={nextGreeting} setDisplay={setNextGreeting}/>
       } 
     </>
   )

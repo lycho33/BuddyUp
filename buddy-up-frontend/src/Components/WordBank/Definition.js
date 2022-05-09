@@ -15,6 +15,8 @@ function Definition({word, userDef, display}) {
 
   return (
     <div style={{ display: `${display}`}}>
+        <h2>Choose the definitions you like and it will be save to your wordbank</h2>
+        <br />
         <h4>Your Definition: {userDef}</h4>
         <h3>Dictionary Definition</h3>
         {renderDef()}
