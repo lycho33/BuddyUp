@@ -20,21 +20,20 @@ function Greeting({word}) {
         setCurrentDisplay('none')
     }
 
-    const renderSentences = () => {
-
-        synonyms.length === 0 && <Sentences word={word} display={nextChallenge} /> 
-      
-    }
-
   return (
     <>
         <div style={{ display: `${currentDisplay}`}}>
             <h4>Can you guess the definition of this word?</h4>
             <button onClick={clickNext}>Yes</button>
         </div>
+        
         <Synonyms word={word} synonyms={synonyms} display={nextDisplay} setDisplay={setNextDisplay} />
-        {synonyms && synonyms.length === 0 && <Sentences word={word} display={nextChallenge} setDisplay={setNextDisplay}/>}
 
+        {synonyms 
+          && 
+        synonyms.length === 0 
+          && 
+        <Sentences word={word} display={nextChallenge} setDisplay={setNextChallenge} />}
     </>
   )
 }
