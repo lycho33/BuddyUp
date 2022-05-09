@@ -1,10 +1,11 @@
-import React from 'react'
+import { useState } from 'react'
 import { useSelector, connect } from 'react-redux'
+import GreetBeforeDef from './GreetBeforeDef'
 
-function Sentences({word, display}) {
-    const wordbank = useSelector(state => state.wordbank)
-    const wordInfo = wordbank.filter(w => w.word === word)
-    const sentences = wordInfo[0].sentence
+function Sentences({word, display, setDisplay}) {
+  const wordbank = useSelector(state => state.wordbank)
+  const wordInfo = wordbank.filter(w => w.word === word)
+  const sentences = wordInfo[0].sentence
   
   const renderSentences = () => {
     if(sentences){
@@ -13,13 +14,21 @@ function Sentences({word, display}) {
       .map(s => s.map(phrase => console.log(!!phrase)))
     }
   }
-
+  const [nextChallenge, setNextChallenge] = useState('none')
+  const clickNext = () => {
+    setDisplay('none')
+    setNextChallenge('block')
+  }
 
   return (
-    <div style={{display: `${display}`}}>
-        <h2>Sample Sentences</h2>
-        {renderSentences()}
-    </div>
+    <>
+      <div style={{display: `${display}`}}>
+          <h2>Sample Sentences</h2>
+          {renderSentences()}
+          <button onClick={clickNext}>Next</button>
+      </div>
+      <GreetBeforeDef word={word} display={nextChallenge} />
+    </>
   )
 }
 

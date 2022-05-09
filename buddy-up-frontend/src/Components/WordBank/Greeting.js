@@ -15,9 +15,15 @@ function Greeting({word}) {
     const [nextChallenge, setNextChallenge] = useState('none')
 
     const clickNext = () => {
-        synonyms.length !== 0 ? setNextDisplay('block') : setNextDisplay('none')
+        if(synonyms) synonyms.length !== 0 && setNextDisplay('block')
         sentences && setNextChallenge('block')
         setCurrentDisplay('none')
+    }
+
+    const renderSentences = () => {
+      if(synonyms) {
+        synonyms.length === 0 && <Sentences word={word} display={nextChallenge} /> 
+      }
     }
 
   return (
@@ -27,7 +33,7 @@ function Greeting({word}) {
             <button onClick={clickNext}>Yes</button>
         </div>
         <Synonyms word={word} synonyms={synonyms} display={nextDisplay} setDisplay={setNextDisplay} />
-        <Sentences word={word} display={nextChallenge} />
+        {/* {synonyms.length === 0 && <Sentences word={word} display={nextChallenge} setDisplay={setNextDisplay}/>} */}
     </>
   )
 }

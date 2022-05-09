@@ -23,7 +23,7 @@ function Synonyms({word, display, setDisplay, synonyms}) {
           <button onClick={clickNext}>Next</button>
           <br />
       </div>
-      <Sentences word={word} display={nextChallenge} />
+      <Sentences word={word} display={nextChallenge} setDisplay={setNextChallenge}/>
     </>
   )
 }
