@@ -10,8 +10,6 @@ function Sentences({word}) {
     //   sentences.map(arr => arr.filter(sents => sents !== undefined))
     //   .filter(s => s.length > 0)
 
-    console.log(sentences)
-
 
   return (
     <div>
@@ -19,7 +17,7 @@ function Sentences({word}) {
         {sentences && 
         sentences.map(arr => arr.filter(sents => sents !== undefined))
         .filter(s => s.length > 0)
-        .map(s => <li>{s}</li>)
+        .map(s => s.map(phrase => <li>{phrase}</li>))
         }
     </div>
   )
