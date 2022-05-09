@@ -9,9 +9,7 @@ function MessageForm({ createMessage, conversation_id }) {
   const [state, setState] = useState({text: ''})
 
   const handleChange = e => {
-    setState({
-        text: e.target.value 
-    })
+    setState({text: e.target.value})
   }
 
   const handleSubmit = (e) => {

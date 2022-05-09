@@ -20,6 +20,7 @@ function Synonyms({word, display, setDisplay, synonyms}) {
       <div style={{ display: `${display}`}}>
           <h3>Synonyms</h3>
           {renderSynonyms()}
+          <br />
           <button onClick={clickNext}>Next</button>
           <br />
       </div>

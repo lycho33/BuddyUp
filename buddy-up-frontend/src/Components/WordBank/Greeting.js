@@ -21,9 +21,9 @@ function Greeting({word}) {
     }
 
     const renderSentences = () => {
-      if(synonyms) {
+
         synonyms.length === 0 && <Sentences word={word} display={nextChallenge} /> 
-      }
+      
     }
 
   return (
@@ -33,7 +33,8 @@ function Greeting({word}) {
             <button onClick={clickNext}>Yes</button>
         </div>
         <Synonyms word={word} synonyms={synonyms} display={nextDisplay} setDisplay={setNextDisplay} />
-        {/* {synonyms.length === 0 && <Sentences word={word} display={nextChallenge} setDisplay={setNextDisplay}/>} */}
+        {synonyms && synonyms.length === 0 && <Sentences word={word} display={nextChallenge} setDisplay={setNextDisplay}/>}
+
     </>
   )
 }

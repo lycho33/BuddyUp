@@ -11,7 +11,7 @@ function Sentences({word, display, setDisplay}) {
     if(sentences){
       return sentences.map(arr => arr.filter(sents => sents !== undefined))
       .filter(s => s.length > 0)
-      .map(s => s.map(phrase => console.log(!!phrase)))
+      .map(s => s.map(phrase => <li>{phrase}</li>))
     }
   }
   const [nextChallenge, setNextChallenge] = useState('none')
@@ -25,6 +25,7 @@ function Sentences({word, display, setDisplay}) {
       <div style={{display: `${display}`}}>
           <h2>Sample Sentences</h2>
           {renderSentences()}
+          <br />
           <button onClick={clickNext}>Next</button>
       </div>
       <GreetBeforeDef word={word} display={nextChallenge} />
