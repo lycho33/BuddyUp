@@ -28,7 +28,6 @@ const handleInputChange = (e) => {
 
 const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(state)
     login(state)
     redirect()
     
