@@ -22,14 +22,13 @@ class WordbanksController < ApplicationController
     end
 
     def update
-        byebug
-        wordbank = current_user.wordbank.find(params[:user_id])
+        wordbank = current_user.wordbank.find(params[:id])
         wordbank.update!(wordbank_params)
     end
 
     private
 
     def wordbank_params
-        params.require(:wordbank).permit!
+        params.require(:wordbank).permit(:id, :word, :definition, :synonyms, :image_url, :sentence, :user_id)
     end
 end
