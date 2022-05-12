@@ -175,10 +175,10 @@ export const getDictionary = word => {
   }
 }
 
-export const saveDictionary = (def, id) => {
+export const saveDictionary = (user_id, id, def) => {
   return dispatch => {
     const token = localStorage.token
-    axios.post(`${DOMAIN}/users/${id}/wordbanks`, {def}, {headers: {'Authorization': `Bearer ${token}`}})
+    axios.post(`${DOMAIN}/users/${user_id}/wordbanks/${id}`, {def}, {headers: {'Authorization': `Bearer ${token}`}})
     .then(r => {
       debugger
       dispatch({

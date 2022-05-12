@@ -14,7 +14,6 @@ function GreetBeforeDef({word, display, setDisplay}) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(e.target.value, state.definition)
         setDisplayDef('block')
         setDisplay('none')
     }

@@ -4,12 +4,13 @@ import '../../css/Definition.css'
 import {saveDictionary} from '../../redux/action'
 
 function Definition({word, userDef, display, saveDictionary}) {
-    const user = useSelector(state => state.user.id) 
+    const user_id = useSelector(state => state.user.id) 
     const wordbank = useSelector(state => state.wordbank)
     const wordInfo = wordbank.filter(w => w.word === word)
+    const wordbank_id = wordInfo[0].id
     const definition = wordInfo[0].definition
 
-    console.log("definition", user)
+    console.log("definition", user_id, wordbank_id)
 
     const renderDef = () => {
       if(definition){
@@ -17,9 +18,9 @@ function Definition({word, userDef, display, saveDictionary}) {
       }
     }
     const clickDef = e => {
-      console.log(e.target.innerHTML)
+      console.log(e.target.innerHTML, user_id)
       let def = e.target.innerHTML
-      saveDictionary(user, def)
+      saveDictionary(user_id, wordbank_id, def)
     }
 
   return (
