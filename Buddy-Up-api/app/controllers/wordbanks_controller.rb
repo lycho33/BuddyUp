@@ -1,5 +1,5 @@
 class WordbanksController < ApplicationController
-    skip_before_action :require_login, only: [:index]
+    skip_before_action :require_login, only: [:index, :show]
     
     def index
         user = User.find(params[:user_id])
@@ -14,6 +14,11 @@ class WordbanksController < ApplicationController
         else
             render json: {errors: wordbank.errors.full_messages}, status: :not_acceptable
         end
+    end
+
+    def show
+        @wordbank = Wordbank.find(params[:id])
+        render json: @wordbank
     end
 
     def update
