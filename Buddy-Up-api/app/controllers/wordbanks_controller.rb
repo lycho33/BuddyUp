@@ -22,8 +22,9 @@ class WordbanksController < ApplicationController
     end
 
     def update
-        wordbank = current_user.wordbank.find(params[:id])
-        wordbank.update!(wordbank_params)
+        @wordbank = current_user.wordbank.find(params[:id])
+        @wordbank.update!(wordbank_params)
+        render json: @wordbank
     end
 
     private
