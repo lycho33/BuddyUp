@@ -16,6 +16,12 @@ class WordbanksController < ApplicationController
         end
     end
 
+    def update
+        byebug
+        wordbank = current_user.wordbank.find(params[:user_id])
+        wordbank.update!(wordbank_params)
+    end
+
     private
 
     def wordbank_params
