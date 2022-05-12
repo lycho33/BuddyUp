@@ -68,6 +68,11 @@ const initialState = {
               state.wordbank[wordIndex].sentence = sentence
 
             return {...state, wordbank: [...state.wordbank]}
+          case 'SAV_DEF':
+            debugger
+            let wordIdx = state.wordbank.findIndex(w => w.id === action.payload.id)
+            state.wordbank[wordIdx].definition = action.payload.definition
+            return {...state, wordbank: [...state.wordbank]}
           default:
             return {...state}
       }

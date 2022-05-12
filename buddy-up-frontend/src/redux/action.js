@@ -115,7 +115,7 @@ export const getConvoData = (id) => {
           type: 'GET_CONVERSATION',
           payload: r.data
         })
-      })
+    })
   }
 }
 
@@ -135,12 +135,6 @@ export const createVocab = (word, user_id) => {
   return dispatch => {
     const token = localStorage.token
     axios.post(`${DOMAIN}/users/${user_id}/wordbanks`, {word, user_id}, {headers: {'Authorization': `Bearer ${token}`}})
-    // .then(r => {
-    //   dispatch({
-    //     type: 'CREATE_VOCAB',
-    //     payload: r.data
-    //   })
-    // })
   }
 }
 
@@ -175,15 +169,18 @@ export const getDictionary = word => {
   }
 }
 
-export const saveDictionary = (user_id, id, def) => {
+export const saveDictionary = (user_id, id, definition) => {
   return dispatch => {
     const token = localStorage.token
-    axios.post(`${DOMAIN}/users/${user_id}/wordbanks/${id}`, {def}, {headers: {'Authorization': `Bearer ${token}`}})
+    axios.patch(`${DOMAIN}/users/${user_id}/wordbanks/${id}`, {definition, id, user_id}, {headers: {'Authorization': `Bearer ${token}`}})
     .then(r => {
-      debugger
       dispatch({
         type: 'SAV_DEF',
-        payload: r.data
+        payload: {
+          definition: r.data.definition,
+          id: r.data.id,
+          user: r.data.user
+        }
       })
     })
   }

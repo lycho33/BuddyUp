@@ -10,7 +10,7 @@ function Definition({word, userDef, display, saveDictionary}) {
     const wordbank_id = wordInfo[0].id
     const definition = wordInfo[0].definition
 
-    console.log("definition", user_id, wordbank_id)
+    console.log("definition", wordbank)
 
     const renderDef = () => {
       if(definition){
