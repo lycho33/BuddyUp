@@ -1,12 +1,15 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, connect } from 'react-redux'
 import '../../css/Definition.css'
+import {saveDictionary} from '../../redux/action'
 
-function Definition({word, userDef, display}) {
+function Definition({word, userDef, display, saveDictionary}) {
+    const user = useSelector(state => state.user.id) 
     const wordbank = useSelector(state => state.wordbank)
     const wordInfo = wordbank.filter(w => w.word === word)
     const definition = wordInfo[0].definition
-    // console.log("definition", definition)
+
+    console.log("definition", user)
 
     const renderDef = () => {
       if(definition){
@@ -15,6 +18,8 @@ function Definition({word, userDef, display}) {
     }
     const clickDef = e => {
       console.log(e.target.innerHTML)
+      let def = e.target.innerHTML
+      saveDictionary(user, def)
     }
 
   return (
@@ -32,4 +37,4 @@ function Definition({word, userDef, display}) {
   )
 }
 
-export default Definition
+export default connect(null, { saveDictionary })(Definition)

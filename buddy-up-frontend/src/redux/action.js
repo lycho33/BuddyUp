@@ -174,3 +174,17 @@ export const getDictionary = word => {
     })
   }
 }
+
+export const saveDictionary = (def, id) => {
+  return dispatch => {
+    const token = localStorage.token
+    axios.post(`${DOMAIN}/users/${id}/wordbanks`, {def}, {headers: {'Authorization': `Bearer ${token}`}})
+    .then(r => {
+      debugger
+      dispatch({
+        type: 'SAV_DEF',
+        payload: r.data
+      })
+    })
+  }
+}

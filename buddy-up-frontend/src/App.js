@@ -14,7 +14,6 @@ import ConversationRoom from './Components/Conversation/ConversationRoom';
 import WordBank from './Components/WordBank/WordBank';
 import { getConvoData } from './redux/action'
 
-
 function App({ autoLogin, allUsers, cableApp }) {
 
   // const currentUser = useSelector(state => state.user)
