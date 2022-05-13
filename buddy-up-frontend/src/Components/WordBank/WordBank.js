@@ -11,7 +11,7 @@ function WordBank({ getWords, getDictionary }) {
   const [word, setWord] = useState('')
   const user = useSelector(state => state.user)
   const words = useSelector(state => state.wordbank)
-
+console.log(words)
   useEffect(() => {
     getWords(user.id)
   }, [])
@@ -28,11 +28,6 @@ function WordBank({ getWords, getDictionary }) {
       <Word 
         id={w.id} 
         word={w.word} 
-        definition={w.definition} 
-        sentence={w.sentence} 
-        synonym={w.synonym} 
-        // image_url={w.image_url} 
-        user={w.user}
         clickDefChallenges={clickDefChallenges}
       /> 
     </div>

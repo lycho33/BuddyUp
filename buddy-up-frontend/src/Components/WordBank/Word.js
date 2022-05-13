@@ -1,11 +1,12 @@
 import React from 'react'
 import '../../css/Wordbank.css'
 
-function Word({id, word, definition, sentence, synonym, user, clickDefChallenges}) {
+function Word({id, word, challengeDone, clickDefChallenges}) {
   return (
     <>
       <tr key={id}>
         <td className='word'>{word}</td>
+        {/* do a conditional here to replace GUESS with the definition*/}
         <td 
           className='wordInfo'
           value={word} 
