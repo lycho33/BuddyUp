@@ -5,6 +5,7 @@ import Greeting from './Greeting'
 function ModalWordChallenges({closeModal, word}) {
 
   return (
+    //close with display: none
     <div className='modal'>
       <div className='modal-header'>
         <h1>ModalWordChallenges</h1>

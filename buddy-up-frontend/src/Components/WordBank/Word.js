@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../css/Wordbank.css'
 
-function Word({id, word, challengeDone, clickDefChallenges}) {
+function Word({id, word, clickDefChallenges}) {
   return (
     <>
       <tr key={id}>

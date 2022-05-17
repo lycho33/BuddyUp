@@ -8,7 +8,7 @@ function Sentences({word, display, setDisplay, sentences}) {
     setDisplay('none')
     setNextChallenge('block')
   }
-console.log(sentences)
+
   return (
     <>
       <div style={{display: `${display}`}}>

@@ -9,11 +9,19 @@ function Synonyms({word, display, setDisplay, synonyms}) {
   const wordbank = useSelector(state => state.wordbank)
   const wordInfo = wordbank.filter(w => w.word === word)
   const sentences = wordInfo[0].sentence
-
+console.log(sentences)
   const displaySentences = sentences &&
       sentences.map(arr => arr.filter(sents => sents !== undefined))
       .filter(s => s.length > 0)
       .map(s => s)
+
+  //[
+      //[]
+      //[]
+      //[]
+  //]
+
+
 
   //SYNONYMS
   const renderSynonyms = () => {
@@ -42,16 +50,12 @@ function Synonyms({word, display, setDisplay, synonyms}) {
           <br />
       </div>
 
-      {sentences 
-        && 
-      displaySentences.length !== 0 
+      {displaySentences.length !== 0 
         && 
       <Sentences word={word} sentences={displaySentences} display={nextChallenge} setDisplay={setNextChallenge}/>
       }
 
-      {sentences 
-        && 
-      displaySentences.length === 0 
+      {displaySentences.length === 0 
         &&
       <GreetBeforeDef word={word} display={nextGreeting} setDisplay={setNextGreeting}/>
       } 

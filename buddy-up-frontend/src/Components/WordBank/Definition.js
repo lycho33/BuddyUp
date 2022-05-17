@@ -20,7 +20,7 @@ function Definition({word, userDef, display, saveDictionary}) {
     const clickDef = e => {
       let def = e.target.innerHTML
       saveDictionary(user_id, wordbank_id, def)
-      //close the modal
+      //close the modal with a timer
     }
 
   return (
