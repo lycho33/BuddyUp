@@ -7,10 +7,10 @@ import ModalWordChallenges from './ModalWordChallenges'
 import '../../css/Wordbank.css'
 
 function WordBank({ getWords, getDictionary }) {
-  const [openModal, setOpenModal] = useState(false)
   const [word, setWord] = useState('')
   const user = useSelector(state => state.user)
   const words = useSelector(state => state.wordbank)
+  const modal = useSelector(state => state.wordbank.modal)
 console.log(words)
   useEffect(() => {
     getWords(user.id)
@@ -19,7 +19,7 @@ console.log(words)
   const clickDefChallenges = (e) => {
     let word = e.target.parentElement.previousElementSibling.innerHTML
     getDictionary(word)
-    setOpenModal(true)
+    modal = true
     setWord(word)
   }
 
@@ -45,7 +45,7 @@ console.log(words)
         </tr>
       </table>
       {renderWords}
-      {openModal && <ModalWordChallenges closeModal={setOpenModal} word={word} />}
+      {modal && <ModalWordChallenges closeModal={modal} word={word} />}
     </div>
   )
 }

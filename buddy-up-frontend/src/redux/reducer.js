@@ -3,7 +3,7 @@ const initialState = {
     user: {},
     conversations: [],
     wordbank: [],
-    errors: []
+    errors: [],
 }
   
   export function reducer(state=initialState, action){
@@ -57,6 +57,7 @@ const initialState = {
           //     user: [updatedWordBank]
           //   }
           case 'GET_VOCABS':
+            action.payload.forEach(word => word.modal = false)
             return {...state, wordbank: [...action.payload]}
           case 'GET_VOCAB_INFO':
               let wordIndex = state.wordbank.findIndex(wb => wb.word === action.payload.word)
@@ -66,7 +67,7 @@ const initialState = {
               state.wordbank[wordIndex].definition = action.payload.definition
               state.wordbank[wordIndex].synonyms = action.payload.synonyms
               state.wordbank[wordIndex].sentence = sentence
-
+ 
             return {...state, wordbank: [...state.wordbank]}
 
           default:

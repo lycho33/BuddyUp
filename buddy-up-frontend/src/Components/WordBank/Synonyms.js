@@ -50,12 +50,16 @@ console.log(sentences)
           <br />
       </div>
 
-      {displaySentences.length !== 0 
+      {sentences 
+        &&
+      displaySentences.length !== 0 
         && 
       <Sentences word={word} sentences={displaySentences} display={nextChallenge} setDisplay={setNextChallenge}/>
       }
 
-      {displaySentences.length === 0 
+      {sentences
+        &&
+      displaySentences.length === 0 
         &&
       <GreetBeforeDef word={word} display={nextGreeting} setDisplay={setNextGreeting}/>
       } 
