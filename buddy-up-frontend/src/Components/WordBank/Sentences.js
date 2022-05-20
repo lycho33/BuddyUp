@@ -8,13 +8,12 @@ function Sentences({word, display, setDisplay, sentences}) {
     setDisplay('none')
     setNextChallenge('block')
   }
-
+console.log(sentences)
   return (
     <>
       <div style={{display: `${display}`}}>
           <h2>Sample Sentences</h2>
-          {sentences && sentences.map(s => s.map(phrase => <p>{phrase}</p>) )}
-          {/* {sentences && sentences[0].map(s => console.log(s))} */}
+          {sentences && sentences.map(s => <p>{s}</p> )}
           <br />
           <button onClick={clickNext}>Next</button>
       </div>

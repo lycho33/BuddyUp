@@ -33,7 +33,7 @@ function Greeting({word}) {
           && 
         synonyms.length === 0 
           && 
-        <Sentences word={word} display={nextChallenge} setDisplay={setNextChallenge} />}
+        <Sentences word={word} display={nextChallenge} sentences={sentences} setDisplay={setNextChallenge} />}
     </>
   )
 }

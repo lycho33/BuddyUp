@@ -1,10 +1,10 @@
-import React from 'react'
+import { useState } from 'react'
 import { useSelector, connect } from 'react-redux'
 import {saveDictionary} from '../../redux/action'
 import '../../css/Definition.css'
 
 function Definition({word, userDef, display, saveDictionary}) {
-
+    const [modal, setModal] = useState(false)
     const user_id = useSelector(state => state.user.id) 
     const wordbank = useSelector(state => state.wordbank)
     const wordInfo = wordbank.filter(w => w.word === word)
@@ -21,6 +21,14 @@ function Definition({word, userDef, display, saveDictionary}) {
       let def = e.target.innerHTML
       saveDictionary(user_id, wordbank_id, def)
       //close the modal with a timer
+      updateModal(word)
+    }
+
+    const updateModal = (word) => {
+      let idx = wordbank.findIndex(w => w.word === word) 
+      wordbank[idx].modal = false
+      setModal(false)
+      console.log(wordbank[idx].modal)
     }
 
   return (

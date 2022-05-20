@@ -66,7 +66,8 @@ const initialState = {
               //save all wordInfo into the right word
               state.wordbank[wordIndex].definition = action.payload.definition
               state.wordbank[wordIndex].synonyms = action.payload.synonyms
-              state.wordbank[wordIndex].sentence = sentence
+              //Flatten the array and only get the sentences 
+              state.wordbank[wordIndex].sentence = sentence.flat().filter(s => s !== undefined)
  
             return {...state, wordbank: [...state.wordbank]}
 
