@@ -29,6 +29,7 @@ function Definition({word, userDef, display, saveDictionary, closeModal}) {
       wordbank[idx].modal = false
       setModal(false)
       console.log(wordbank[idx].modal)
+      //use prop drilling to close modal
       closeModal(false)
     }
 

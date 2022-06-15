@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../css/Modal.css'
 import Greeting from './Greeting'
-import { useSelector, connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 function ModalWordChallenges({closeModal, word}) {
   const state = useSelector(state => state)

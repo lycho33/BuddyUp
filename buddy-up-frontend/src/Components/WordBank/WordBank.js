@@ -30,6 +30,7 @@ function WordBank({ getWords, getDictionary, modalAccess }) {
     let idx = words.findIndex(w => w.word === word) 
     words[idx].modal = true
     setModal(words[idx].modal)
+    //using redux to close modal
     modalAccess(true)
     //how to update the redux state modal?>??
     console.log(modals)
