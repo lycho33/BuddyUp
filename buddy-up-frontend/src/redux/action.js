@@ -159,7 +159,7 @@ export const getDictionary = word => {
         type: 'GET_VOCAB_INFO',
         payload: {
           word: r.data[0].word,
-          definition: r.data[0].meanings[0].definitions, 
+          definition: r.data[0].meanings, 
           sentence: r.data[0].meanings,
           // IMAGE
           synonyms: r.data[0].meanings[0].synonyms

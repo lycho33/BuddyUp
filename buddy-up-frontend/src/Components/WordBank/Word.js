@@ -7,7 +7,7 @@ function Word({id, word, clickDefChallenges}) {
   const words = useSelector(state => state.wordbank)
   let idx = words.findIndex(w => w.word === word) 
   let definition = words[idx].definition
-  console.log(words)
+  console.log(definition)
 
   const renderDefinition = () => {
       if(typeof definition === 'object' && definition !== null){
@@ -30,8 +30,8 @@ function Word({id, word, clickDefChallenges}) {
           className='wordInfo'
           value={word} 
           onClick={clickDefChallenges}>
-            {renderDefinition()}
-            {/* <span>Guess?</span> */}
+            {/* {renderDefinition()} */}
+            <span>Guess?</span>
         </td>
       </tr>
     </>

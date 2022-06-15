@@ -61,20 +61,22 @@ const initialState = {
             action.payload.forEach(word => word.modal = false)
             return {...state, wordbank: [...action.payload]}
           case 'GET_VOCAB_INFO':
+        
               let wordIndex = state.wordbank.findIndex(wb => wb.word === action.payload.word)
               let sentence = action.payload.sentence.map(info => info.definitions.map(sent => sent.example))
-
+              let definitions = action.payload.definition.map(info => info.definitions).flat()
+              console.log(action.payload.word, definitions)
+              debugger
               //save all wordInfo into the right word
-              state.wordbank[wordIndex].definition = action.payload.definition
+              state.wordbank[wordIndex].definition = definitions
               state.wordbank[wordIndex].synonyms = action.payload.synonyms
-              //Flatten the array and only get the sentences 
               state.wordbank[wordIndex].sentence = sentence.flat().filter(s => s !== undefined)
  
             return {...state, wordbank: [...state.wordbank]}
           case 'SAVE_DICTIONARY':
-            let wordIdx = state.wordbank.findIndex(wb => wb.word === action.payload.word)
-            state.wordbank[wordIdx].definition = action.payload.definition
-            return {...state, wordbank: [...state.wordbank]}
+            // let wordIdx = state.wordbank.findIndex(wb => wb.word === action.payload.word)
+            // state.wordbank[wordIdx].definition = action.payload.definition
+            // return {...state, wordbank: [...state.wordbank]}
           case 'MODAL_UPDATE': 
             console.log(action.payload)
             return {...state, modal: action.payload}
