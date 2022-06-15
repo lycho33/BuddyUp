@@ -39,15 +39,19 @@ console.log(sentences)
           <br />
       </div>
 
-      {sentences 
+      {sentences
+        &&
+      sentences.length > 0
         &&
       <Sentences word={word} sentences={sentences} display={nextChallenge} setDisplay={setNextChallenge}/>
       }
 
       {sentences
         &&
+      sentences.length === 0
+        &&
       <GreetBeforeDef word={word} display={nextGreeting} setDisplay={setNextGreeting}/>
-      } 
+      }
     </>
   )
 }
