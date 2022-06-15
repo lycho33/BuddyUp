@@ -12,7 +12,7 @@ function Word({id, word, clickDefChallenges}) {
       if(definition !== null && typeof definition === 'string'){ 
         return <span>{`${definition}`}</span>
       } else {
-        return <span>Guess?</span>
+        return <span className='guess'>Guess?</span>
       }
   } 
   
