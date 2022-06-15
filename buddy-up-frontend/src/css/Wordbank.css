@@ -13,6 +13,7 @@
     color: #FA95E4;
 }
 
+/* TABLE */
 table {
     width: 100%;
     margin: 20px auto;
@@ -53,7 +54,7 @@ td{
 }
 .guess{
     color: yellow;
-    padding-left: 8rem;
+    padding-left: 12rem;
 }
 .wordInfo span{
     cursor: pointer;
@@ -61,4 +62,8 @@ td{
 .wordInfo span:hover{
     color: rgb(255, 181, 194);
     font-weight: bold;
+}
+
+.greet-container{
+    padding-top: 3rem;
 }

@@ -8,11 +8,123 @@
     overflow: auto; /* Enable scroll if needed */
     background-color: pink; /* Fallback color */
 }
-.modal-header{
-    /* display: inline-flex; */
+.modal h1, h3, h4, li, p{
+    color: black;
 }
-.modal-header, button{
-    /* float: right; */
-    top: 0;
-    right: 0;
+.modal-header{
+    padding-top: 5rem;
+    display: inline-flex;
+}
+
+/* CLOSE BUTTON */
+.modal .close-container{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    /* margin-top: 100px; */
+    cursor: pointer;
+}
+.leftright{
+    height: 4px;
+    width: 50px;
+    position: absolute;
+    margin-top: 24px;
+    background-color: black;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    transition: all .3s ease-in;
+}
+.rightleft{
+    height: 4px;
+    width: 50px;
+    position: absolute;
+    margin-top: 24px;
+    background-color: black;
+    border-radius: 2px;
+    transform: rotate(-45deg);
+    transition: all .3s ease-in;
+}
+.close-container:hover .leftright{
+    transform: rotate(-45deg);
+    background-color: black;
+}
+.close-container:hover .rightleft{
+    transform: rotate(45deg);
+    background-color: black;
+}
+
+/* WORD PLACEMENT */
+.modal h3{
+    color: blue;
+    left: 2rem;
+    top: 0.5rem;
+    position: absolute;
+}
+
+/* Next Button for the next challenge */
+.button-56 {
+  position: relative;
+  margin-top: 5rem;
+  left: 45%;
+  align-items: center;
+  background-color: #fee6e3;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.button-56:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+.button-56:hover:after {
+  transform: translate(0, 0);
+}
+.button-56:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+.button-56:hover {
+  outline: 0;
+}
+@media (min-width: 768px) {
+  .button-56 {
+    padding: 0 40px;
+  }
+} 
+
+.greet-container h3{
+    color: black;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

@@ -9,11 +9,15 @@ function ModalWordChallenges({closeModal, word}) {
   return (
     //close with display: none
     <div className='modal'>
-      <div className='modal-header'>
-        <h1>ModalWordChallenges</h1>
-        <button onClick={() => closeModal()}> X </button>
+      <div className='close-container' onClick={() => closeModal()}>
+        <div class="leftright"></div>
+        <div class="rightleft"></div>
       </div>
-        <h3>Word: {word}</h3>
+      <h3>Word: {word}</h3>
+      <div className='modal-header'>
+        <h1>Word Challenges</h1>
+      </div>
+      
         < Greeting word={word} closeModal={closeModal}/>
     </div>
   )
