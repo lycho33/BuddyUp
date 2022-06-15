@@ -7,38 +7,22 @@
     border-radius: 5%;
 }
 
-/* 
-
-.wordbank-container table, th, td{
-    border: 1px solid;
-}
-
-.wordbank-container, table{
-    width: 80%;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-.wordbank-container th,
-.wordbank-container td {
-    padding: 1vw 2vw;
-} */
-/* Data rows */
-/* .word{
-    padding: 0.5rem;
-    width: 83%;
-}
 .wordInfo{
-    padding: 0.5rem;
-    
-} */
-
+    text-align: left;
+}
 .wordbank-container, h1{
     text-align: center;
+    color: #FA95E4;
+}
+.header th  {
+    color: #453e43;
+    font-weight: 900;
+    font-size: 1.2rem;
 }
 table {
     width: 100%;
     margin: 20px auto;
     table-layout: fixed;
-
 }
 table,
 td,
@@ -55,6 +39,7 @@ td {
 }
 td{
     width: 23.5vw;
+    color: rgb(200, 200, 200);
 }
 
 
