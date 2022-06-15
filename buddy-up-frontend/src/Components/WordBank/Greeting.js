@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import Synonyms from './Synonyms'
 import Sentences from './Sentences'
 
-function Greeting({word}) {
+function Greeting({word, closeModal}) {
 
   const wordbank = useSelector(state => state.wordbank)
   const wordInfo = wordbank.filter(w => w.word === word)
@@ -27,13 +27,13 @@ function Greeting({word}) {
             <button onClick={clickNext}>Yes</button>
         </div>
         
-        <Synonyms word={word} synonyms={synonyms} display={nextDisplay} setDisplay={setNextDisplay} />
+        <Synonyms word={word} synonyms={synonyms} display={nextDisplay} setDisplay={setNextDisplay} closeModal={closeModal}/>
 
         {synonyms 
           && 
         synonyms.length === 0 
           && 
-        <Sentences word={word} display={nextChallenge} sentences={sentences} setDisplay={setNextChallenge} />}
+        <Sentences word={word} display={nextChallenge} sentences={sentences} setDisplay={setNextChallenge} closeModal={closeModal}/>}
     </>
   )
 }

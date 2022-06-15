@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import Definition from "./Definition"
 
-function GreetBeforeDef({word, display, setDisplay}) {
+function GreetBeforeDef({word, display, setDisplay, closeModal}) {
 
     const [state, setState] = useState({definition: ''})
     const [displayDef, setDisplayDef] = useState('none')
@@ -32,7 +32,7 @@ function GreetBeforeDef({word, display, setDisplay}) {
                 <button type='submit'>Submit</button>
             </form>
         </div>
-        <Definition word={word} userDef={state.definition} display={displayDef} />
+        <Definition word={word} userDef={state.definition} display={displayDef} closeModal={closeModal}/>
     </>
   )
 }

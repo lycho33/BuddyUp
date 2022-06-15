@@ -175,3 +175,8 @@ export const saveDictionary = (user_id, id, definition) => {
     axios.patch(`${DOMAIN}/users/${user_id}/wordbanks/${id}`, {definition, id, user_id}, {headers: {'Authorization': `Bearer ${token}`}})
   }
 }
+
+export const modalAccess = (boolean) => ({
+  type: 'MODAL_UDPATE',
+  payload: boolean
+})

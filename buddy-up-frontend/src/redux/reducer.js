@@ -3,6 +3,7 @@ const initialState = {
     user: {},
     conversations: [],
     wordbank: [],
+    modal: false,
     errors: [],
 }
   
@@ -70,7 +71,9 @@ const initialState = {
               state.wordbank[wordIndex].sentence = sentence.flat().filter(s => s !== undefined)
  
             return {...state, wordbank: [...state.wordbank]}
-
+          case 'MODAL_UPDATE': 
+            console.log(action.payload)
+            return {...state, modal: action.payload}
           default:
             return {...state}
       }

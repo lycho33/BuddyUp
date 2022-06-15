@@ -3,7 +3,7 @@ import { useSelector, connect } from 'react-redux'
 import {saveDictionary} from '../../redux/action'
 import '../../css/Definition.css'
 
-function Definition({word, userDef, display, saveDictionary}) {
+function Definition({word, userDef, display, saveDictionary, closeModal}) {
     const [modal, setModal] = useState(false)
     const user_id = useSelector(state => state.user.id) 
     const wordbank = useSelector(state => state.wordbank)
@@ -29,6 +29,7 @@ function Definition({word, userDef, display, saveDictionary}) {
       wordbank[idx].modal = false
       setModal(false)
       console.log(wordbank[idx].modal)
+      closeModal(false)
     }
 
   return (

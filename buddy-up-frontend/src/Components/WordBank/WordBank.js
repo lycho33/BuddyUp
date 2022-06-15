@@ -2,17 +2,19 @@ import { useEffect, useState } from 'react'
 import { useSelector, connect } from 'react-redux'
 import { getWords } from '../../redux/action'
 import { getDictionary } from '../../redux/action'
+import { modalAccess } from '../../redux/action'
 import Word from './Word'
 import ModalWordChallenges from './ModalWordChallenges'
 import '../../css/Wordbank.css'
 
-function WordBank({ getWords, getDictionary }) {
+function WordBank({ getWords, getDictionary, modalAccess }) {
   const [modal, setModal] = useState(false)
   const [word, setWord] = useState('')
   const user = useSelector(state => state.user)
   const words = useSelector(state => state.wordbank)
+  const state = useSelector(state => state)
+  const modals = useSelector(state => state.modal)
 
-// console.log(words[0].modal)
   useEffect(() => {
     getWords(user.id)
   }, [])
@@ -27,8 +29,10 @@ function WordBank({ getWords, getDictionary }) {
   const updateModal = (word) => {
     let idx = words.findIndex(w => w.word === word) 
     words[idx].modal = true
-    setModal(true)
-    console.log(words[idx].modal)
+    setModal(words[idx].modal)
+    modalAccess(true)
+    //how to update the redux state modal?>??
+    console.log(modals)
   }
 
   const renderWords = words.map(w => 
@@ -58,4 +62,4 @@ function WordBank({ getWords, getDictionary }) {
   )
 }
 
-export default connect(null, { getWords, getDictionary })(WordBank)
+export default connect(null, { getWords, getDictionary, modalAccess })(WordBank)

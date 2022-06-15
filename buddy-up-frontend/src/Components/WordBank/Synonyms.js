@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import Sentences from './Sentences'
 import GreetBeforeDef from './GreetBeforeDef'
 
-function Synonyms({word, display, setDisplay, synonyms}) {
+function Synonyms({word, display, setDisplay, synonyms, closeModal}) {
 
   //SENTENCES
   const wordbank = useSelector(state => state.wordbank)
@@ -11,7 +11,7 @@ function Synonyms({word, display, setDisplay, synonyms}) {
   const sentences = wordInfo[0].sentence
 
 
-console.log(sentences)
+// console.log(sentences)
   //SYNONYMS
   const renderSynonyms = () => {
     if(synonyms){
@@ -43,14 +43,14 @@ console.log(sentences)
         &&
       sentences.length > 0
         &&
-      <Sentences word={word} sentences={sentences} display={nextChallenge} setDisplay={setNextChallenge}/>
+      <Sentences word={word} sentences={sentences} display={nextChallenge} setDisplay={setNextChallenge} closeModal={closeModal}/>
       }
 
       {sentences
         &&
       sentences.length === 0
         &&
-      <GreetBeforeDef word={word} display={nextGreeting} setDisplay={setNextGreeting}/>
+      <GreetBeforeDef word={word} display={nextGreeting} setDisplay={setNextGreeting} closeModal={closeModal}/>
       }
     </>
   )
