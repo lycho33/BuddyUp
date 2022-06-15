@@ -121,10 +121,31 @@
   }
 } 
 
+/* Greeting Component Styling */
 .greet-container h3{
     color: black;
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* Synonyms Component Styling */
+.synonyms-container h3{
+    font-size: 1.5rem;
+    color: black;
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+.synonyms-list{
+    color: black;
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+.synonyms-container .button-56{
+    left: 70%;
 }

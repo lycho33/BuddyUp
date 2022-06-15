@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import Sentences from './Sentences'
 import GreetBeforeDef from './GreetBeforeDef'
+import '../../css/Modal.css'
 
 function Synonyms({word, display, setDisplay, synonyms, closeModal}) {
 
@@ -31,11 +32,13 @@ function Synonyms({word, display, setDisplay, synonyms, closeModal}) {
 
   return (
     <>
-      <div style={{ display: `${display}`}}>
+      <div className='synonyms-container' style={{ display: `${display}`}}>
           <h3>Synonyms</h3>
-          {renderSynonyms()}
+          <div className='synonyms-list'>
+            {renderSynonyms()}
+          </div>
           <br />
-          <button onClick={clickNext}>Next</button>
+          <button className='button-56' onClick={clickNext}>Next</button>
           <br />
       </div>
 
