@@ -71,6 +71,10 @@ const initialState = {
               state.wordbank[wordIndex].sentence = sentence.flat().filter(s => s !== undefined)
  
             return {...state, wordbank: [...state.wordbank]}
+          case 'SAVE_DICTIONARY':
+            let wordIdx = state.wordbank.findIndex(wb => wb.word === action.payload.word)
+            state.wordbank[wordIdx].definition = action.payload.definition
+            return {...state, wordbank: [...state.wordbank]}
           case 'MODAL_UPDATE': 
             console.log(action.payload)
             return {...state, modal: action.payload}

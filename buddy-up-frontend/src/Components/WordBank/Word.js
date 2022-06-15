@@ -13,7 +13,7 @@ function Word({id, word, clickDefChallenges}) {
       if(typeof definition === 'object' && definition !== null){
         definition = definition[0].definition
       }
-      console.log(definition)
+      // console.log(definition)
       if(definition !== null){ 
         return <span>{`${definition}`}</span>
       } else {

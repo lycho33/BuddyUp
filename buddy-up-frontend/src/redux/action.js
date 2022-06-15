@@ -173,6 +173,15 @@ export const saveDictionary = (user_id, id, definition) => {
   return dispatch => {
     const token = localStorage.token
     axios.patch(`${DOMAIN}/users/${user_id}/wordbanks/${id}`, {definition, id, user_id}, {headers: {'Authorization': `Bearer ${token}`}})
+    .then(r => {
+      dispatch({
+        type: 'SAVE_DICTIONARY',
+        payload: {
+          definition: r.data.definition,
+          word: r.data.word
+        }
+      })
+    })
   }
 }
 
