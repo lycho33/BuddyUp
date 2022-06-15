@@ -64,9 +64,9 @@ const initialState = {
         
               let wordIndex = state.wordbank.findIndex(wb => wb.word === action.payload.word)
               let sentence = action.payload.sentence.map(info => info.definitions.map(sent => sent.example))
-              let definitions = action.payload.definition.map(info => info.definitions).flat()
+              let definitions = action.payload.definition.map(info => info.definitions).flat().map(d => d.definition)
               console.log(action.payload.word, definitions)
-              debugger
+ 
               //save all wordInfo into the right word
               state.wordbank[wordIndex].definition = definitions
               state.wordbank[wordIndex].synonyms = action.payload.synonyms
