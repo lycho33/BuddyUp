@@ -11,26 +11,20 @@ function Definition({word, userDef, display, saveDictionary, closeModal}) {
     const wordbank_id = wordInfo[0].id
     const definition = wordInfo[0].definition
 
-    // const renderDef = () => {
-    //   if(definition){
-    //     return definition.map((d, i) => <p key={i}><span className='def'>{d.definition}</span></p>)
-    //   }
-    // }
+    const renderDef = () => {
+      if(typeof definition === 'object'){
+        return definition.map((d, i) => <p key={i}><span className='def'>{`${d}`}</span></p>)
+      } else {
+        console.log(definition)
+        //close the modal HERE
+      }
+    }
 
     const clickDef = e => {
       let def = e.target.innerHTML
       saveDictionary(user_id, wordbank_id, def)
       //close the modal with a timer
-      updateModal(word)
-    }
-
-    const updateModal = (word) => {
-      let idx = wordbank.findIndex(w => w.word === word) 
-      wordbank[idx].modal = false
-      setModal(false)
-      console.log(wordbank[idx].modal)
-      //use prop drilling to close modal
-      closeModal(false)
+ 
     }
 
   return (
@@ -39,7 +33,7 @@ function Definition({word, userDef, display, saveDictionary, closeModal}) {
         <div onClick={clickDef}>
           <h4>Your Definition: <span className='def'>{userDef}</span></h4>
           <h3>Dictionary Definition</h3>
-          {/* {renderDef()} */}
+          {renderDef()}
         </div>
 
         <br />
