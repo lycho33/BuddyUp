@@ -8,13 +8,13 @@ function Word({id, word, clickDefChallenges}) {
   let idx = words.findIndex(w => w.word === word) 
   let definition = words[idx].definition
   // console.log(definition)
-// debugger
+
   const renderDefinition = () => {
-      if(typeof definition === 'object' && definition !== null){
-        definition = definition[0].definition
-      }
+      // if(typeof definition === 'object' && definition !== null){
+      //   definition = definition[0].definition
+      // }
       // console.log(definition)
-      if(definition !== null){ 
+      if(definition !== null && typeof definition === 'string'){ 
         return <span>{`${definition}`}</span>
       } else {
         return <span>Guess?</span>
@@ -30,8 +30,8 @@ function Word({id, word, clickDefChallenges}) {
           className='wordInfo'
           value={word} 
           onClick={clickDefChallenges}>
-            {/* {renderDefinition()} */}
-            <span>Guess?</span>
+            {renderDefinition()}
+            {/* <span>Guess?</span> */}
         </td>
       </tr>
     </>
