@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import GreetBeforeDef from './GreetBeforeDef'
+import '../../css/Modal.css'
 
 function Sentences({word, display, setDisplay, sentences}) {
 
@@ -8,14 +9,16 @@ function Sentences({word, display, setDisplay, sentences}) {
     setDisplay('none')
     setNextChallenge('block')
   }
-// console.log(sentences)
+
   return (
     <>
-      <div style={{display: `${display}`}}>
-          <h2>Sample Sentences</h2>
-          {sentences && sentences.map(s => <p>{s}</p> )}
+      <div className='sentences-container' style={{display: `${display}`}}>
+          <h3>Sample Sentences</h3>
+          <div className='sentences-list'>
+            {sentences && sentences.map(s => <li style={{margin: '10px 0'}}>{s}</li> )}
+          </div>
           <br />
-          <button onClick={clickNext}>Next</button>
+          <button className='button-56' onClick={clickNext}>Next</button>
       </div>
       <GreetBeforeDef word={word} display={nextChallenge} setDisplay={setNextChallenge}/>
     </>
