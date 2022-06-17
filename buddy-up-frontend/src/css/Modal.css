@@ -201,3 +201,27 @@
   left: 70%;
   margin-top: 6.5rem;
 }
+
+/* Definition */
+.dictionary-def {
+  color: black;
+  position: absolute;
+  top: 250px;
+  left: 550px;
+  /* transform: translate(-50%, -50%); */
+}
+.dictionary-def .real-def{
+  margin-top: 5rem;
+  text-align: left;
+}
+.my-def{
+  position: absolute;
+  top: 260px;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  width: 12rem;
+}
+.my-def span{
+  color: black;
+  margin-top: 5rem;
+}

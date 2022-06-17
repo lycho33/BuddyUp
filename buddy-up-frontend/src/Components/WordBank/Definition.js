@@ -28,12 +28,21 @@ function Definition({word, userDef, display, saveDictionary, closeModal}) {
     }
 
   return (
-    <div style={{ display: `${display}`}}>
+    <div className='def-container' style={{ display: `${display}`}}>
         <h4>Choose the definitions you like and it will be save to your wordbank</h4>
-        <div onClick={clickDef}>
-          <h4>Your Definition: <span className='def'>{userDef}</span></h4>
-          <h3>Dictionary Definition</h3>
-          {renderDef()}
+        <div className='' onClick={clickDef}>
+          <div className='my-def'>
+            <h3>Your Definition</h3>
+            <span className='def'>{userDef}</span>
+          </div>
+
+          <div className='dictionary-def'>         
+            <h3>Dictionary Definition</h3>
+            <div className='real-def'>
+              {renderDef()}
+            </div>
+          </div>
+ 
         </div>
 
         <br />
