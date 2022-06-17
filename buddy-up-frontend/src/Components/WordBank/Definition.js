@@ -33,7 +33,7 @@ function Definition({word, userDef, display, saveDictionary, closeModal}) {
         <div className='' onClick={clickDef}>
           <div className='my-def'>
             <h3>Your Definition</h3>
-            <span className='def'>{userDef}</span>
+            <p><span className='def'>{userDef}</span></p>
           </div>
 
           <div className='dictionary-def'>         

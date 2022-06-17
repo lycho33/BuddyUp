@@ -207,21 +207,23 @@
   color: black;
   position: absolute;
   top: 250px;
-  left: 550px;
+  left: 50%;
+  width: 25rem;
   /* transform: translate(-50%, -50%); */
 }
 .dictionary-def .real-def{
-  margin-top: 5rem;
+  margin-top: 80px;
   text-align: left;
 }
 .my-def{
   position: absolute;
-  top: 260px;
-  left: 30%;
+  top: 310px;
+  left: 25%;
   transform: translate(-50%, -50%);
   width: 12rem;
 }
-.my-def span{
+.my-def p{
   color: black;
-  margin-top: 5rem;
+  margin-top: 80px;
+  text-align: left;
 }
