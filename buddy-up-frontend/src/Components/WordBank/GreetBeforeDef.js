@@ -20,11 +20,11 @@ function GreetBeforeDef({word, display, setDisplay, closeModal}) {
 
   return (
     <>
-        <div style={{display: `${display}`}}>
+        <div className="greet-container" style={{display: `${display}`}}>
             <h3>Can you guess the definition?</h3>
-            <form onSubmit={handleSubmit}>
+            <form className="def-form" onSubmit={handleSubmit}>
                 <input 
-                    type="text" 
+                    type="definition" 
                     placeholder='your definition'
                     value={state.definition}
                     onChange={handleChange}

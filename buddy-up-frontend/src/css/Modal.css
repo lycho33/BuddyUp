@@ -129,6 +129,33 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+.greet-container form{
+  margin-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10rem;
+}
+.def-form input{
+  /* flex: 1 1 10ch; */
+  margin: 1rem;
+  width: 30vw;
+  border: none;
+  background: hsl(0 0% 93%);
+  border-radius: .25rem;
+  padding: .75rem 1rem;
+}
+.def-form button{
+  background: hotpink;
+  color: white;
+  box-shadow: 0 .75rem .5rem -.5rem hsl(0 50% 80%);
+  border: none;
+  border-radius: 10%;
+  width: 9%;
+  height: 50px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
 
 /* Synonyms Component Styling */
 .synonyms-container h3{
