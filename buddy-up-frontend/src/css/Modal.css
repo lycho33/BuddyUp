@@ -143,12 +143,13 @@
     width: 20rem;
     color: black;
     position: absolute;
-    top: 63%;
+    top: 60%;
     left: 30%;
     transform: translate(-50%, -50%);
 }
 .synonyms-container .button-56{
     left: 70%;
+    margin-top: 6.5rem;
 }
 
 /* Sentences Component Styling */
@@ -161,14 +162,15 @@
   transform: translate(-50%, -50%);
 }
 .sentences-list{
-  width: 20rem;
+  width: 25rem;
   color: black;
-  position: absolute;
+  position: fixed;
   text-align: left;
-  top: 68%;
-  left: 30%;
+  top: 63%;
+  left: 35%;
   transform: translate(-50%, -50%);
 }
 .sentences-container .button-56{
   left: 70%;
+  margin-top: 6.5rem;
 }
