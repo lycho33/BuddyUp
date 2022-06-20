@@ -22,6 +22,7 @@ function Definition({word, userDef, display, saveDictionary, closeModal}) {
 
     const clickDef = e => {
       let def = e.target.innerHTML
+      debugger
       saveDictionary(user_id, wordbank_id, def)
       //close the modal with a timer
  
@@ -29,7 +30,7 @@ function Definition({word, userDef, display, saveDictionary, closeModal}) {
 
   return (
     <div className='def-container' style={{ display: `${display}`}}>
-        <h4>Choose the definitions you like and it will be save to your wordbank</h4>
+        <h4>Choose the definitions you like and it will be saved to your wordbank</h4>
         <div className='' onClick={clickDef}>
           <div className='my-def'>
             <h3>Your Definition</h3>

@@ -12,15 +12,22 @@ const Conversations = ({ getConversations }) => {
     getConversations()
   })
 
+  const handleClick = (e) => {
+      
+  }
+
   const convos = useSelector(state => state.conversations)
   const all = convos.map(c => 
     <div className='conversation'>
       <RiChatSmile2Fill  size={50} className='conversation-list-icon'/>
       <Link to={`/conversations/${c.id}`} style={{ textDecoration: 'none' }}>
         <h3>{c.title}</h3>
+        <button onClick={handleClick}>X</button>
       </Link>
     </div>
     )
+
+  
 
   return (
     <div>
