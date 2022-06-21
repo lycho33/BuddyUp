@@ -15,7 +15,7 @@ const Conversations = ({ getConversations }) => {
   const handleClick = (e) => {
     let convo_title = e.target.parentElement.getElementsByTagName('h3')[0].innerHTML
     let convo_id = e.target.parentElement.id
-      debugger
+    
   }
 
   const convos = useSelector(state => state.conversations)

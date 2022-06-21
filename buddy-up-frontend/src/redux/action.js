@@ -189,3 +189,15 @@ export const modalAccess = (boolean) => ({
   type: 'MODAL_UDPATE',
   payload: boolean
 })
+
+export const deleteConvo = (id) => {
+  debugger
+  return dispatch => {
+    axios.delete(`${DOMAIN}/conversations/${id}`)
+      .then(r => {
+        dispatch({
+
+        })
+      })
+  }
+}
