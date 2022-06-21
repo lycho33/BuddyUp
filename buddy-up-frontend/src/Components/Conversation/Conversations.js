@@ -13,7 +13,7 @@ const Conversations = ({ getConversations }) => {
   })
 
   const handleClick = (e) => {
-      
+      debugger
   }
 
   const convos = useSelector(state => state.conversations)
@@ -22,8 +22,8 @@ const Conversations = ({ getConversations }) => {
       <RiChatSmile2Fill  size={50} className='conversation-list-icon'/>
       <Link to={`/conversations/${c.id}`} style={{ textDecoration: 'none' }}>
         <h3>{c.title}</h3>
-        <button onClick={handleClick}>X</button>
       </Link>
+      <button onClick={handleClick}>X</button>
     </div>
     )
 
