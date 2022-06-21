@@ -13,15 +13,17 @@ const Conversations = ({ getConversations }) => {
   })
 
   const handleClick = (e) => {
+    let convo_title = e.target.parentElement.getElementsByTagName('h3')[0].innerHTML
+    let convo_id = e.target.parentElement.id
       debugger
   }
 
   const convos = useSelector(state => state.conversations)
   const all = convos.map(c => 
-    <div className='conversation'>
+    <div className='conversation' key={c.id} id={c.id}>
       <RiChatSmile2Fill  size={50} className='conversation-list-icon'/>
       <Link to={`/conversations/${c.id}`} style={{ textDecoration: 'none' }}>
-        <h3>{c.title}</h3>
+        <h3 name='title'>{c.title}</h3>
       </Link>
       <button onClick={handleClick}>X</button>
     </div>
