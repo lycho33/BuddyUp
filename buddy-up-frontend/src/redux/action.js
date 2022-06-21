@@ -190,16 +190,16 @@ export const modalAccess = (boolean) => ({
   payload: boolean
 })
 
-export const deleteConvo = (id) => {
-  return dispatch => {
-    const token = localStorage.token
-    axios.delete(`${DOMAIN}/conversations/${id}`, {headers: {'Authorization': `Bearer ${token}`}})
-      .then(r => {
-        debugger
-        dispatch({
-          type: 'DELETE_CONVO',
-          payload: id,
-        })
-      })
-  }
-}
+// export const deleteConvo = (id) => {
+//   return dispatch => {
+//     const token = localStorage.token
+//     fetch(`${DOMAIN}/conversations/4`, {method: 'DELETE'})
+//       .then(r => {
+//         debugger
+//         dispatch({
+//           type: 'DELETE_CONVO',
+//           payload: id,
+//         })
+//       })
+//   }
+// }

@@ -1,5 +1,5 @@
 class ConversationsController < ApplicationController
-    before_action :find_Conversations, only: [:delete]
+    # before_action :find_Conversations, only: [:delete]
     skip_before_action :require_login, only: [:index, :show]
 
     def index
@@ -27,9 +27,9 @@ class ConversationsController < ApplicationController
     end
 
     def delete
-        # @conversation
+        conversation = Conversation.find(params[:id])
         byebug
-        @conversation.destroy
+        conversation.destroy
     end
 
     private 
