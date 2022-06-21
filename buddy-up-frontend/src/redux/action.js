@@ -191,12 +191,14 @@ export const modalAccess = (boolean) => ({
 })
 
 export const deleteConvo = (id) => {
-  debugger
   return dispatch => {
-    axios.delete(`${DOMAIN}/conversations/${id}`)
+    const token = localStorage.token
+    axios.delete(`${DOMAIN}/conversations/${id}`, {headers: {'Authorization': `Bearer ${token}`}})
       .then(r => {
+        debugger
         dispatch({
-
+          type: 'DELETE_CONVO',
+          payload: id,
         })
       })
   }

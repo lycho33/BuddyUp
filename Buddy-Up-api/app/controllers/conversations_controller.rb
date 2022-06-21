@@ -27,6 +27,8 @@ class ConversationsController < ApplicationController
     end
 
     def delete
+        # @conversation
+        byebug
         @conversation.destroy
     end
 

@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react'
 import { useSelector, connect } from 'react-redux'
 import { getConversations } from '../../redux/action'
+import { deleteConvo } from '../../redux/action'
 import { Link } from 'react-router-dom'
 import '../../css/Conversations.css'
 import { RiChatSmile2Fill } from 'react-icons/ri';
 import ConvoForm from './ConvoForm'
 
-const Conversations = ({ getConversations }) => {
+const Conversations = ({ getConversations, deleteConvo }) => {
 
   useEffect(() => {
     getConversations()
@@ -15,7 +16,7 @@ const Conversations = ({ getConversations }) => {
   const handleClick = (e) => {
     let convo_title = e.target.parentElement.getElementsByTagName('h3')[0].innerHTML
     let convo_id = e.target.parentElement.id
-    
+    deleteConvo(parseInt(convo_id))
   }
 
   const convos = useSelector(state => state.conversations)
@@ -48,4 +49,4 @@ const Conversations = ({ getConversations }) => {
   )
 }
 
-export default connect( null, { getConversations })(Conversations)
+export default connect( null, { getConversations, deleteConvo })(Conversations)
